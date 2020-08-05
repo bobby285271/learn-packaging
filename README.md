@@ -2,7 +2,7 @@
 
 https://wiki.aosc.io/zh/dev-sys-basics
 
-BuildKit 下载的是 [这个](ttps://mirrors.bfsu.edu.cn/anthon/aosc-os/os-amd64/buildkit/aosc-os_buildkit_latest_amd64.tar.xz)
+BuildKit 下载的是 [这个](https://mirrors.bfsu.edu.cn/anthon/aosc-os/os-amd64/buildkit/aosc-os_buildkit_latest_amd64.tar.xz)。
 
 **没有执行 `ciel update-os`。**
 
