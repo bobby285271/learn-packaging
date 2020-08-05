@@ -2,6 +2,10 @@
 
 https://wiki.aosc.io/zh/dev-sys-basics
 
+BuildKit 下载的是 [这个](ttps://mirrors.bfsu.edu.cn/anthon/aosc-os/os-amd64/buildkit/aosc-os_buildkit_latest_amd64.tar.xz)
+
+**没有执行 `ciel update-os`。**
+
 ### `ciel config -i stable` 时提示 `ciel-local.list` 不存在
 
 问题：
@@ -22,7 +26,7 @@ un-initialize local repository OK
                 unmount stable device or resource busy
 ```
 
-解决：？
+解决：搁置不管（??????）
 
 
 ### `ciel build -i stable` 提示 `/tree` 不存在
@@ -33,4 +37,11 @@ un-initialize local repository OK
 ```
 
 
-解决：？
+解决：玄学，看看有没有用？
+
+```
+cd stable
+mkdir tree
+cd ..
+cp -r TREE/. stable/tree
+```
