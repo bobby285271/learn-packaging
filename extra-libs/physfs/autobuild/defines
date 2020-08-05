@@ -1,0 +1,8 @@
+PKGNAME=physfs
+PKGSEC=libs
+PKGDES="A library to provide abstract access to various archives"
+PKGDEP="zlib"
+BUILDDEP="doxygen"
+
+ABSHADOW=0
+ABMK="all docs"

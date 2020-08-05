@@ -1,0 +1,20 @@
+PKGNAME=mpv
+PKGSEC=video
+PKGDEP="ffmpeg lcms2 mesa enca wayland desktop-file-utils hicolor-icon-theme \
+        xdg-utils lua libdvdnav jack openjpeg-legacy libvdpau libcdio-paranoia \
+        libguess samba libva libcaca uchardet rubberband youtube-dl libcdio \
+        libdvbpsi openal-soft sdl2 vulkan"
+PKGSUG="libva-vdpau-driver"
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    PKGSUG+=" libva-intel-driver"
+fi
+BUILDDEP="docutils ladspa-sdk"
+PKGDES="Video player based on MPlayer/mplayer2"
+
+if [[ "${CROSS:-$ARCH}" != "amd64" ]]; then
+    NOPARALLEL=yes
+fi
+
+COMPLETION_GEN_VER="3.3.17"
+
+PKGBREAK="celluloid<=0.17"

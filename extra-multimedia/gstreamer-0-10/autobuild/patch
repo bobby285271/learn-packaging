@@ -1,0 +1,2 @@
+patch -Np1 -i autobuild/patches/bison3.patch
+sed -e 's/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' -i configure.ac

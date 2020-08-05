@@ -1,0 +1,4 @@
+PKGNAME=cln
+PKGSEC=libs
+PKGDEP="gmp"
+PKGDES="Class library for numbers"

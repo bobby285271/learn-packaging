@@ -1,0 +1,4 @@
+PKGNAME=swig
+PKGDES="Generator for scripting interfaces to C/C++ code"
+PKGSEC=devel
+PKGDEP="gcc-runtime pcre"

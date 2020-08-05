@@ -1,0 +1,7 @@
+PKGNAME=openbox-theme-mistral
+PKGSEC=x11
+PKGDEP="openbox"
+BUILDDEP="p7zip"
+PKGDES="A Breeze theme for OpenBox"
+
+ABHOST=noarch

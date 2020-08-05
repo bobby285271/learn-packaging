@@ -1,0 +1,19 @@
+PKGNAME=pcre
+PKGDES="Perl Compatible Regular Expression"
+PKGSEC=libs
+PKGDEP="zlib bzip2 readline glibc"
+
+AUTOTOOLS_AFTER="--enable-utf --enable-unicode-properties --enable-pcregrep-libz \
+                 --enable-pcregrep-libbz2 --enable-pcretest-libreadline \
+                 --enable-pcre16 --enable-pcre32"
+
+# FIXME: JIT not implemented on riscv64
+#        JIT results in grep SIGILL on armel
+if [[ "${CROSS:-$ARCH}" != "riscv64" && "${CROSS:-$ARCH}" != "armel" ]]; then
+	AUTOTOOLS_AFTER+=" --enable-jit"
+else
+	AUTOTOOLS_AFTER+=" --disable-jit --disable-pcregrep-jit"
+fi
+
+RECONF=0
+AB_FLAGS_O3=1

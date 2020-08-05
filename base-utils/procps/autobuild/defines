@@ -1,0 +1,12 @@
+PKGNAME=procps
+PKGDES="Utilities for monitoring your system and its processes"
+PKGDEP="ncurses"
+PKGPROV="procps-ng"
+PKGSEC=utils
+
+AUTOTOOLS_AFTER="--exec-prefix=/ \
+                 --libdir=/usr/lib \
+                 --disable-kill \
+                 --enable-watch8bit"
+ABSHADOW=0
+RECONF=0

@@ -1,0 +1,7 @@
+PKGNAME=kgpg
+PKGSEC=kde
+PKGDEP="akonadi-contacts"
+BUILDDEP="boost extra-cmake-modules kdoctools"
+PKGDES="GnuPG frontend for KDE"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

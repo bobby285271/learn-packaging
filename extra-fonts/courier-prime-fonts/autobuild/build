@@ -1,0 +1,2 @@
+install -dm755 "$PKGDIR"/usr/share/fonts/TTF
+install -vm644 "Courier Prime"/*.ttf "$PKGDIR"/usr/share/fonts/TTF

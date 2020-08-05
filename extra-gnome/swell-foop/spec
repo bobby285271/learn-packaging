@@ -1,0 +1,3 @@
+VER=3.34.1
+SRCTBL="https://download.gnome.org/sources/swell-foop/${VER:0:4}/swell-foop-$VER.tar.xz"
+CHKSUM="sha256::61c6b6ff9047c00bdc0dbe11a880058a5462921c702123a2d6d1a652bbbe6280"

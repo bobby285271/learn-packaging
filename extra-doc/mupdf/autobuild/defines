@@ -1,0 +1,13 @@
+PKGNAME=mupdf
+PKGSEC=doc
+PKGDEP="curl desktop-file-utils freetype libjpeg-turbo openssl openjpeg mesa glu jbig2dec"
+PKGDES="Lightweight PDF and XPS viewer"
+
+NOSTATIC=0
+ABTYPE=plainmake
+MAKE_AFTER="build=release libs apps prefix=$PKGDIR/usr DESTDIR="
+PKGEPOCH=1
+
+if [[ "${CROSS:-$ARCH}" = arm* ]]; then
+    AB_FLAGS_SPECS=0
+fi

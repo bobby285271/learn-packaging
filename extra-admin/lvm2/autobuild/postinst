@@ -1,0 +1,11 @@
+if [ -f /run/systemd/private ]; then
+	# Equivalent to
+	# systemctl daemon-reexec
+	# However, this will be robuster when systemctl itself is not available.
+	# Of course, even better than
+	# systemctl daemon-reload
+	# Ref: https://manpages.ubuntu.com/manpages/disco/en/man1/init.1.html#signals
+	kill 1
+fi
+
+systemctl enable lvm2-monitor.service

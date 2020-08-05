@@ -1,0 +1,7 @@
+PKGNAME=spike
+PKGDES="RISC-V ISA simulator"
+PKGSEC=devel
+PKGDEP="fesvr dtc"
+PKGSUG="xterm"
+
+AB_FLAGS_SPECS=0

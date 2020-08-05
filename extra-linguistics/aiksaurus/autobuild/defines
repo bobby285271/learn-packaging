@@ -1,0 +1,9 @@
+PKGNAME=aiksaurus
+PKGSEC=utils
+PKGDEP="desktop-file-utils gtk-2"
+PKGDES="An English-language thesaurus library"
+
+ABSHADOW=no
+PKGREP="akisaurus"
+PKGPROV="akisaurus"
+PKGEPOCH=1

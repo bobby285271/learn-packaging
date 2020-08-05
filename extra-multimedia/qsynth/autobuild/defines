@@ -1,0 +1,7 @@
+PKGNAME=qsynth
+PKGSEC=sound
+PKGDEP="fluidsynth qt-5"
+PKGDES="Qt5 frontend for fluidsynth"
+
+ABSHADOW=no
+NOLTO=yes

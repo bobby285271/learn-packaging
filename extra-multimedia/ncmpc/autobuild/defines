@@ -1,0 +1,5 @@
+PKGNAME=ncmpc
+PKGSEC=sound
+PKGDEP="ncurses libmpdclient lirc boost"
+BUILDDEP="sphinx"
+PKGDES="Fully featured MPD client using ncurses"

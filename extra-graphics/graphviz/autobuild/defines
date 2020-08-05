@@ -1,0 +1,14 @@
+PKGNAME=graphviz
+PKGSEC=graphics
+PKGDES="Graph visualization software"
+
+PKGDEP="libgd libtool librsvg x11-lib ghostscript pango gts"
+BUILDDEP="gtk-2 guile lua perl python-2 ruby tcl xterm swig tk mono php qt-4 r"
+ABSHADOW=0
+
+# FIXME: FTBFS with LTO
+NOLTO=1
+
+# FIXME: FTBFS
+AUTOTOOLS_AFTER="--disable-ocaml --disable-php"
+AUTOTOOLS_STRICT=0

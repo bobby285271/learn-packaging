@@ -1,0 +1,3 @@
+VER=20200402
+GITSRC="https://github.com/fcitx/fcitx5-gtk"
+GITCO='3e6795d218f512f566e0d9741c4dad0a7944bccb'

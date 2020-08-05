@@ -1,0 +1,8 @@
+PKGNAME=mate-backgrounds
+PKGSEC=MATE
+PKGDEP=""
+BUILDDEP="intltool"
+PKGDES="Background images and metadata for MATE"
+
+PKGREP="mate-background"
+ABHOST=noarch

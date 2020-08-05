@@ -1,0 +1,4 @@
+abinfo "Installing Python bindings ..."
+mkdir -pv "$PKGDIR"/usr/lib/python${PYVER}/site-packages
+cp -v python/libvoikko.py \
+    "$PKGDIR"/usr/lib/python${PYVER}/site-packages/libvoikko.py

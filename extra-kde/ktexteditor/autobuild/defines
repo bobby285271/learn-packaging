@@ -1,0 +1,8 @@
+PKGNAME=ktexteditor
+PKGSEC=kde
+PKGDEP="editorconfig-core-c kparts libgit2 syntax-highlighting"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Advanced embeddable text editor framework"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

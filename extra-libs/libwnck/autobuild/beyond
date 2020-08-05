@@ -1,0 +1,2 @@
+abinfo "Removing files shipped with libwnck-3 ..."
+rm -rv "$PKGDIR"/usr/bin/wnck{prop,-urgency-monitor}

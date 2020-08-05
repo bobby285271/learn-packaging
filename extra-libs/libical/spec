@@ -1,0 +1,3 @@
+VER=3.0.7
+SRCTBL="https://github.com/libical/libical/releases/download/v$VER/libical-$VER.tar.gz"
+CHKSUM="sha256::0abe66df1ea826e57db7f281c704ede834c84139012e6c686ea7adafd4e763fc"

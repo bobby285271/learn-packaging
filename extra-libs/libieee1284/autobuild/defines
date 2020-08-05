@@ -1,0 +1,6 @@
+PKGNAME=libieee1284
+PKGSEC=libs
+PKGDEP="python-2"
+PKGDES="A library to query devices connected in parallel port"
+
+RECONF=0

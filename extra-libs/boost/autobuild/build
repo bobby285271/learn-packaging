@@ -1,0 +1,62 @@
+export _stagedir="$SRCDIR/stagedir"
+export JOBS="$(sed -e 's/.*\(-j *[0-9]\+\).*/\1/' <<< ${MAKEFLAGS})"
+
+./bootstrap.sh --with-toolset=gcc --with-icu \
+               --with-python=/usr/bin/python2
+
+case "${CROSS:-$ARCH}" in
+	amd64|x86_64)
+		export _bindir="bin.linuxx86_64"
+		echo "using mpi ;" >> project-config.jam;;
+	armel|armhfp|arm64)
+		export _bindir="bin.linuxarm" ;;
+	mips64el|mipsel|mipsn32el)
+		export _bindir="bin.linuxmips" ;;
+        powerpc|ppc64|ppc64el)
+		export _bindir="bin.linuxppc" ;;
+esac
+install -Dm755 tools/build/src/engine/$_bindir/b2 "${_stagedir}"/bin/b2
+
+install -dm755 "${_stagedir}"/share/boostbook
+cp -a tools/boostbook/{xsl,dtd} "${_stagedir}"/share/boostbook/
+
+"${_stagedir}"/bin/b2 \
+    variant=release \
+    debug-symbols=off \
+    threading=multi \
+    runtime-link=shared \
+    link=shared,static \
+    toolset=gcc \
+    python=2.7 \
+    cflags="${CPPFLAGS} ${CXXFLAGS} -O3" linkflags="${LDFLAGS}" \
+    --layout=system \
+    --prefix="${_stagedir}" \
+    ${JOBS} -d+2 \
+    install
+
+rm -rf bin.v2/libs/python/
+
+./bootstrap.sh --with-toolset=gcc --with-icu \
+               --with-python=/usr/bin/python3 --with-libraries=python
+
+"${_stagedir}"/bin/b2 \
+    variant=release \
+    debug-symbols=off \
+    threading=multi \
+    runtime-link=shared \
+    link=shared,static \
+    toolset=gcc \
+    python=3.8 \
+    cflags="${CPPFLAGS} ${CXXFLAGS} -O3" linkflags="${LDFLAGS}" \
+    --layout=system \
+    --prefix="${_stagedir}" \
+    ${JOBS} -d+2 \
+    install
+
+install -dm755 "$PKGDIR"/usr
+cp -a "${_stagedir}"/{bin,include,lib,share} "$PKGDIR"/usr
+
+install -d "$PKGDIR"/usr/lib
+cp -a "${_stagedir}"/lib/*.a "$PKGDIR"/usr/lib/
+
+ln -s /usr/bin/b2 "$PKGDIR"/usr/bin/bjam

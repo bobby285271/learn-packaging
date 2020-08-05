@@ -1,0 +1,6 @@
+PKGNAME=tcl
+PKGDES="Tool Command Language"
+PKGDEP="zlib"
+PKGSEC=devel
+
+NOSTATIC=no

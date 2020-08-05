@@ -1,0 +1,8 @@
+PKGNAME=kwayland
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Qt-style Client and Server library wrapper for the Wayland libraries"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

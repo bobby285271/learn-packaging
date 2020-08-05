@@ -1,0 +1,2 @@
+abinfo "Drop executable bit from /etc/profile.d/udisks-bash-completion.sh ..."
+chmod -v 644 "$PKGDIR"/etc/profile.d/udisks-bash-completion.sh

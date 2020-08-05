@@ -1,0 +1,7 @@
+PKGNAME=jedi
+PKGSEC=python
+PKGDEP="parso"
+BUILDDEP="setuptools"
+PKGDES="Awesome autocompletion for Python"
+
+ABHOST=noarch

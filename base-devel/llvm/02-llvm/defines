@@ -1,0 +1,12 @@
+PKGNAME=llvm
+PKGSEC=devel
+PKGDEP="llvm-runtime perl python-2"
+PKGDES="Low Level Virtual Machine Infrastructure"
+
+NOSTATIC=0
+NOLTO=1
+USECLANG=1
+PKGPROV="clang"
+
+PKGBREAK="llvm-runtime<=3.7.0-2"
+PKGREP="llvm-runtime<=3.7.0-2"

@@ -1,0 +1,8 @@
+PKGNAME=konquest
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme libkdegames"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="The KDE version of Gnu-Lactic"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

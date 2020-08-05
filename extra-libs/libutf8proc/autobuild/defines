@@ -1,0 +1,6 @@
+PKGNAME=libutf8proc
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="A C library for processing UTF-8 encoded Unicode strings"
+
+CMAKE_AFTER="-DBUILD_SHARED_LIBS=ON"

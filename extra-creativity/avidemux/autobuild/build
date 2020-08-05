@@ -1,0 +1,7 @@
+bash bootStrap.bash --with-core --with-cli --with-plugins
+make install DESTDIR="$PKGDIR"
+
+mv "$SRCDIR"/{install,abdist}
+
+install -Dm644 avidemux_icon.png "$PKGDIR"/usr/share/pixmaps/avidemux.png
+install -Dm644 man/avidemux.1 "$PKGDIR"/usr/share/man/man1/avidemux.1

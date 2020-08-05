@@ -1,0 +1,5 @@
+PKGNAME=game-music-emu
+PKGSEC=libs
+PKGDEP="gcc-runtime zlib"
+BUILDDEP="cmake"
+PKGDES="Video game music file emulation/playback library"

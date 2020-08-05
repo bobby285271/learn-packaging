@@ -1,0 +1,6 @@
+PKGNAME=libatomic-ops
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Library for semi-portable access to hardware provided atomic memory operations"
+
+AUTOTOOLS_AFTER="--enable-shared"

@@ -1,0 +1,9 @@
+PKGNAME=socat
+PKGSEC=net
+PKGDEP="openssl readline"
+PKGDES="Multi-purpose relay for bidirectional data transfer"
+
+ABSHADOW=0
+RECONF=0
+
+PKGEPOCH=1

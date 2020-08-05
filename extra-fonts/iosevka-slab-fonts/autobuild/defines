@@ -1,0 +1,7 @@
+PKGNAME=iosevka-slab-fonts
+PKGSEC=fonts
+PKGDEP="fontconfig"
+PKGDES="A slender monospace sans-serif and slab-serif typeface (Slab variant)"
+
+PKGPROV="ttf-iosevka-slab"
+ABHOST=noarch

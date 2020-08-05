@@ -1,0 +1,3 @@
+VER=20190606
+GITSRC="https://github.com/matrix-org/purple-matrix"
+GITCO="4494ba22b479917f0b1f96a3019792d3d75bcff1"

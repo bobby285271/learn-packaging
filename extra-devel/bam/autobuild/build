@@ -1,0 +1,3 @@
+./make_unix.sh
+mkdir -p "$PKGDIR"/usr/bin
+cp bam "$PKGDIR"/usr/bin

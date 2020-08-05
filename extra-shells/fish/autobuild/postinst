@@ -1,0 +1,2 @@
+# aosc-aaa
+grep -Fq '/bin/fish' /etc/shells || echo '/bin/fish' >> /etc/shells

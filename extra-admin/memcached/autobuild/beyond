@@ -1,0 +1,3 @@
+abinfo "Installing memcached-tool ..."
+install -Dvm0755 scripts/memcached-tool \
+    "$PKGDIR"/usr/bin/memcached-tool

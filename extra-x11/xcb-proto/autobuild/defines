@@ -1,0 +1,6 @@
+PKGNAME=xcb-proto
+PKGDES="XCB protocol headers"
+PKGDEP=""
+PKGSEC=x11
+
+PKGEPOCH=1

@@ -1,0 +1,4 @@
+PKGNAME=chmlib
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Support for Microsoft ITSS/CHM file formats"

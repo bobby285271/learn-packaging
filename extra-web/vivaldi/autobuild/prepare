@@ -1,0 +1,2 @@
+mkdir -pv "${PKGDIR}"
+bsdtar xvf vivaldi-$PKGVER.bin -C "${PKGDIR}"

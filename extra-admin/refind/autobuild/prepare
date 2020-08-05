@@ -1,0 +1,2 @@
+echo "[*] Copying AOSC theme files..."
+cp -r autobuild/assets/*.png refind/icons/

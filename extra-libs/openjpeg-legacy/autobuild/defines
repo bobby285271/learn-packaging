@@ -1,0 +1,5 @@
+PKGNAME=openjpeg-legacy
+PKGSEC=libs
+PKGDEP="zlib lcms2 libpng"
+PKGDES="An open source JPEG 2000 codec (legacy 1.x)"
+AUTOTOOLS_AFTER="--enable-shared"

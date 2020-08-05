@@ -1,0 +1,14 @@
+PKGNAME=librsvg
+PKGDES="SVG rendering and manipulation library"
+PKGSEC=libs
+PKGDEP="libcroco pango gdk-pixbuf"
+BUILDDEP="gobject-introspection gtk-doc intltool vala vim"
+
+if [[ "${CROSS:-$ARCH}" != "powerpc" && "${CROSS:-$ARCH}" != "ppc64" && \
+      "${CROSS:-$ARCH}" != "armel" ]]; then
+    BUILDDEP+=" rustc"
+fi
+
+AUTOTOOLS_AFTER="--enable-vala --enable-gtk-doc"
+ABSHADOW=no
+RECONF=no

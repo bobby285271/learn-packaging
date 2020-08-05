@@ -1,0 +1,6 @@
+PKGNAME=freepats
+PKGSEC=sound
+PKGDES="A free and open set of GUS instrument patches for use with softsynths like wildmidi and timidity"
+PKGSUG="timidity++ wildmidi"
+
+ABHOST=noarch

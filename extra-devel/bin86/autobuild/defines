@@ -1,0 +1,6 @@
+PKGNAME=bin86
+PKGSEC=devel
+PKGDEP="glibc"
+PKGDES="A complete 8086 assembler and loader"
+
+FAIL_ARCH="!(amd64)"

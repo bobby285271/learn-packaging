@@ -1,0 +1,8 @@
+PKGNAME=libqalculate
+PKGSEC=libs
+PKGDEP="libxml2 cln glib wget"
+BUILDDEP="intltool"
+PKGDES="Multi-purpose desktop calculator"
+
+ABSHADOW=0
+PKGBREAK="cantor<=18.12.2-1 kde-workspace<=5.15.2-1 step<=18.12.2-1"

@@ -1,0 +1,4 @@
+mkdir -p "$PKGDIR"/usr/share/fonts/OTF
+for i in `find . -type f -name '*.otf' -o -name '*.OTF'`; do
+    cp -v $i "$PKGDIR"/usr/share/fonts/OTF/
+done

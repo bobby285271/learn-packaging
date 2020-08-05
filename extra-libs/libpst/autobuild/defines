@@ -1,0 +1,7 @@
+PKGNAME=libpst
+PKGSEC=libs
+PKGDEP="python-3 boost libgsf"
+PKGDES="Outlook .pst file converter"
+
+AUTOTOOLS_AFTER="--enable-libpst-shared --disable-dii PYTHON=/usr/bin/python3"
+ABSHADOW=no

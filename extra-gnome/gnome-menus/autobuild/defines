@@ -1,0 +1,5 @@
+PKGNAME=gnome-menus
+PKGDES="GNOME menu specifications"
+PKGSEC=gnome
+PKGDEP="glib"
+BUILDDEP="intltool gobject-introspection"

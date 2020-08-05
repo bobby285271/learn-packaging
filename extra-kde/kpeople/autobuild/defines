@@ -1,0 +1,8 @@
+PKGNAME=kpeople
+PKGSEC=kde
+PKGDEP="kitemviews kservice kwidgetsaddons"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A library that provides access to all contacts and the people who hold them"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

@@ -1,0 +1,10 @@
+PKGNAME=p7zip
+PKGSEC=utils
+PKGDEP="gcc-runtime"
+BUILDDEP="ninja"
+if [ "${CROSS:-$ARCH}" = "amd64" ]; then
+    BUILDDEP+=" yasm"
+fi
+PKGDES="POSIX version of the 7zip compressed file archiver"
+
+ABRPMAUTOPROVONLY=yes

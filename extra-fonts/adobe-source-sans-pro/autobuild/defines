@@ -1,0 +1,6 @@
+PKGNAME=adobe-source-sans-pro
+PKGSEC=fonts
+PKGDES="Sans Serif font family for user interfaces"
+PKGDEP="fontconfig"
+
+ABHOST=noarch

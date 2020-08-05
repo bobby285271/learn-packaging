@@ -1,0 +1,3 @@
+install -dm0700 "$PKGDIR"/var/lib/tor
+chown 443:443 "$PKGDIR"/var/lib/tor
+mv "$PKGDIR"/etc/tor/torrc.sample "$PKGDIR"/etc/tor/torrc-dist

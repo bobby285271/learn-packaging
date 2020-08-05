@@ -1,0 +1,19 @@
+PKGNAME=mongodb
+PKGSEC=database
+PKGDEP="pcre snappy openssl gperftools cyrus-sasl boost libpcap yaml-cpp"
+BUILDDEP="boost scons valgrind typing pyyaml cheetah3 go"
+PKGDES="A high performance, open source, schema-free and document oriented database"
+
+NOLTO=yes
+FAIL_ARCH="(powerpc|ppc64)"
+
+if [[ "${CROSS:-$ARCH}" = "amd64" || "${CROSS:-$ARCH}" = "arm64" || \
+      "${CROSS:-$ARCH}" = "ppc64" ]]; then
+    WIREDTIGER="--wiredtiger=on"
+else
+    WIREDTIGER="--wiredtiger=off"
+fi
+
+PKGBREAK="mongodb-tools<=4.0.0"
+PKGREP="mongodb-tools<=4.0.0"
+PKGPROV="mongodb-tools==1:0"

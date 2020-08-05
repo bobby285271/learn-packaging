@@ -1,0 +1,7 @@
+cmake . ${CMAKE_DEF}
+make
+
+install -d "$PKGDIR"/usr/bin
+install -Dm755 bin/* "$PKGDIR"/usr/bin/
+install -Dm644 heimdall/60-heimdall.rules \
+    "$PKGDIR"/usr/lib/udev/rules.d/60-heimdall.rules

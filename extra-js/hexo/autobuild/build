@@ -1,0 +1,1 @@
+npm i -g --user root --prefix="$PKGDIR" ../hexo-$PKGVER.tar.gz

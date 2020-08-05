@@ -1,0 +1,2 @@
+abinfo "Appending -ffat-lto-objects to avoid endianess test failure when LTO is enabled ..."
+export CFLAGS="${CFLAGS} -ffat-lto-objects"

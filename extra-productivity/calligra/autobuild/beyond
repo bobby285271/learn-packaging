@@ -1,0 +1,1 @@
+rm -fv `find "$PKGDIR" -name '*krita*' -type f`

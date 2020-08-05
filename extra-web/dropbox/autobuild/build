@@ -1,0 +1,11 @@
+install -d "$PKGDIR"/usr/lib
+cp -vR "$SRCDIR"/dropbox-lnx.x86_64-$PKGVER "$PKGDIR"/usr/lib/dropbox
+
+find "$PKGDIR"/usr/lib/dropbox/ \
+    -type f -exec chmod -v 644 {} \;
+chmod -v 755 "$PKGDIR"/usr/lib/dropbox/dropboxd
+chmod -v 755 "$PKGDIR"/usr/lib/dropbox/dropbox
+
+install -vd "$PKGDIR"/usr/bin
+ln -sv ../lib/dropbox/dropbox \
+    "$PKGDIR"/usr/bin/dropbox

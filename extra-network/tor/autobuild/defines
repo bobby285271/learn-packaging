@@ -1,0 +1,9 @@
+PKGNAME=tor
+PKGSEC=net
+PKGDEP="openssl libevent libseccomp"
+BUILDDEP="asciidoc"
+PKGDES="Anonymizing overlay network"
+
+if [[ "${CROSS:-$ARCH}" = "ppc64" || "${CROSS:-$ARCH}" = "powerpc" ]]; then
+    AUTOTOOLS_AFTER+=" --disable-seccomp"
+fi

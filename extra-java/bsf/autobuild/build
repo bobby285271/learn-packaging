@@ -1,0 +1,2 @@
+mkdir -p "$PKGDIR"/usr/share/java/bsf
+cp lib/bsf*.jar "$PKGDIR"/usr/share/java/bsf/

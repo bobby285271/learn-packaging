@@ -1,0 +1,2 @@
+install -Dm644 commons-vfs2-$PKGVER.jar $PKGDIR/usr/share/java/$PKGNAME/commons-vfs2-$PKGVER.jar
+ln -sv commons-vfs2-$PKGVER.jar $PKGDIR/usr/share/java/$PKGNAME/$PKGNAME.jar

@@ -1,0 +1,5 @@
+PKGNAME=thebe
+PKGSEC=libs
+PKGDES="Jupyter JavaScript plugin for static sites"
+
+ABHOST=noarch

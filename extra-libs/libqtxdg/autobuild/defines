@@ -1,0 +1,8 @@
+PKGNAME=libqtxdg
+PKGSEC=libs
+PKGDEP="qt-5 libxkbcommon"
+BUILDDEP="lxqt-build-tools"
+PKGDES="Qt implementation of the XDG standards"
+NOLTO=no
+
+CMAKE_AFTER="-DUSE_QT5=ON"

@@ -1,0 +1,19 @@
+# FIXME: Assuming root, not safe.
+export HOME=/root
+
+cd apache-maven-$PKGVER
+# FIXME: This is horrible.
+mvn install
+
+mkdir -p "$PKGDIR"/usr/lib
+pushd "$PKGDIR"/usr/lib
+tar xf \
+    $HOME/.m2/repository/org/apache/maven/apache-maven/$PKGVER/apache-maven-$PKGVER-bin.tar.gz
+mv apache-maven-$PKGVER maven
+popd
+
+rm "$PKGDIR"/usr/lib/maven/*.txt
+mkdir -p "$PKGDIR"/usr/bin
+ln -s /usr/lib/maven/bin/mvn "$PKGDIR"/usr/bin/mvn
+
+rm -rfv "$PKGDIR"/usr/lib/maven/lib/jansi-native/{freebsd*,linux32}

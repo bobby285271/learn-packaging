@@ -1,0 +1,7 @@
+abinfo "Installing example /etc/bird.conf ..."
+install -Dvm644 "$SRCDIR"/doc/bird.conf.example2 \
+    "$PKGDIR"/etc/bird.conf
+
+abinfo "Moving /var/run => /run ..."
+mv -v "$PKGDIR"/{var/,}run
+rm -rv "$PKGDIR"/var

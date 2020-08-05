@@ -1,0 +1,4 @@
+PKGNAME=sslh
+PKGSEC=net
+PKGDEP="libconfig tcp-wrappers"
+PKGDES="A ssl/ssh multiplexer"

@@ -1,0 +1,3 @@
+VER=0.3.11
+SRCTBL="https://download.gnome.org/sources/grilo-plugins/${VER%.*}/grilo-plugins-$VER.tar.xz"
+CHKSUM="sha256::dde2e605b1994341c6bf012493e056b406b08571834dea3b3c671d5b8b1dcd73"

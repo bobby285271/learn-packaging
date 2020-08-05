@@ -1,0 +1,7 @@
+PKGNAME=evtest
+PKGSEC=utils
+PKGDEP="glibc"
+BUILDDEP="asciidoc xmlto"
+PKGDES="Input device event monitor and query tool"
+
+ABSHADOW=no

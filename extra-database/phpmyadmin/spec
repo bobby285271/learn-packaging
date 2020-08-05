@@ -1,0 +1,3 @@
+VER=5.0.2
+GITCO="tags/RELEASE_${VER//\./_}"
+GITSRC="https://github.com/phpmyadmin/phpmyadmin/"

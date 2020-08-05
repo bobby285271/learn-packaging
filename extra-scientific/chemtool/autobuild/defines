@@ -1,0 +1,6 @@
+PKGNAME=chemtool
+PKGSEC=science
+PKGDEP="gtk-2 transfig"
+PKGDES="A small program for drawing chemical structures"
+
+ABSHADOW=0

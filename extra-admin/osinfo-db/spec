@@ -1,0 +1,4 @@
+VER=20191125
+SRCTBL="https://releases.pagure.org/libosinfo/osinfo-db-${VER}.tar.xz"
+CHKSUM="sha256::e8f4e8c3e3ee738191511a4549fc8e4895b501312f2a7d383d5bde72a76f5580"
+SUBDIR=.

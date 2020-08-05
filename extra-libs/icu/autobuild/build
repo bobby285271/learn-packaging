@@ -1,0 +1,12 @@
+cd "$SRCDIR"/source
+
+cp /usr/share/automake-1.16/config.* .
+
+./configure ${AUTOTOOLS_DEF}
+make
+make doc
+
+make install DESTDIR="$PKGDIR" -j1
+make install-doc DESTDIR="$PKGDIR" docdir=/usr/share/doc -j1
+
+cd "$SRCDIR"

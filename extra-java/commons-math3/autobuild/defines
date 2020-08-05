@@ -1,0 +1,6 @@
+PKGNAME=commons-math3
+PKGSEC=java
+PKGDEP="openjdk"
+PKGDES="Lightweight, self-contained mathematics and statistics components"
+ABHOST=noarch
+VER_NONE=1

@@ -1,0 +1,6 @@
+PKGNAME=jbig2dec
+PKGSEC=libs
+PKGDEP="libpng"
+PKGDES="Decoder implementation of the JBIG2 image compression format"
+
+ABSHADOW=0

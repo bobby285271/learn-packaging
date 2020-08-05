@@ -1,0 +1,28 @@
+cat > "$SRCDIR"/config.toml <<EOF
+[llvm]
+link-shared = true
+ninja = true
+
+[build]
+python = "/usr/bin/python3"
+extended = true
+verbose = 2
+sanitizers = true
+profiler = true
+vendor = true
+print-step-timings = true
+
+[install]
+prefix = "/usr"
+
+[rust]
+# LLVM crashes when passing an object through ThinLTO twice.
+# This is triggered when using rust code in cross-language
+# LTO if libstd was built using ThinLTO.
+# http://blog.llvm.org/2019/09/closing-gap-cross-language-lto-between.html
+# https://github.com/rust-lang/rust/issues/54872
+codegen-units-std = 1
+debuginfo-level = 2
+channel = "stable"
+rpath = false
+EOF

@@ -1,0 +1,7 @@
+PKGNAME=pyudev
+PKGSEC=python
+PKGDEP="six systemd"
+PKGDES="A pure Python binding for libudev"
+
+ABHOST=noarch
+ABTYPE=python

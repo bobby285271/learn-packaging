@@ -1,0 +1,12 @@
+PKGNAME=telepathy-qt
+PKGSEC=libs
+PKGDEP="telepathy-farstream qt-5"
+BUILDDEP="cmake doxygen"
+PKGDES="Qt bindings for Telepathy"
+
+CMAKE_AFTER="-DCMAKE_BUILD_TYPE=Release \
+             -DCMAKE_INSTALL_PREFIX=/usr \
+             -DDESIRED_QT_VERSION=5 \
+             -DDISABLE_WERROR:BOOL=ON \
+             -DENABLE_TESTS=OFF"
+NOSTATIC=no

@@ -1,0 +1,5 @@
+PKGNAME=darkhttpd
+PKGSEC=net
+PKGDEP="glibc"
+PKGDES="A small and secure web server daemon"
+

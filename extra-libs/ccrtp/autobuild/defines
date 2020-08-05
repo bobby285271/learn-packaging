@@ -1,0 +1,5 @@
+PKGNAME=ccrtp
+PKGSEC=libs
+PKGDEP="ucommon libgcrypt"
+BUILDDEP="doxygen"
+PKGDES="An implementation of RTP, the real-time transport protocol from the IETF"

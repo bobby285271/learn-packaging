@@ -1,0 +1,3 @@
+abinfo "Installing jpegint.h ..."
+install -vm644 "$SRCDIR"/jpegint.h \
+    "$PKGDIR"/usr/include

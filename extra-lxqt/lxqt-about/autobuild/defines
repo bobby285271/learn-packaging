@@ -1,0 +1,6 @@
+PKGNAME=lxqt-about
+PKGSEC=LxQt
+PKGDEP="liblxqt"
+BUILDDEP="cmake lxqt-build-tools"
+PKGDES="About dialog for LxQt"
+NOLTO=no

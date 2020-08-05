@@ -1,0 +1,4 @@
+PKGNAME=lua-socket
+PKGSEC=devel
+PKGDEP="lua"
+PKGDES="Networking support library for the Lua language"

@@ -1,0 +1,3 @@
+VER=1.2.2
+SRCTBL="https://github.com/linrunner/TLP/archive/$VER.tar.gz"
+CHKSUM="sha256::5c28bdda51661160f75b10634fa0fffad96e83204a7c704dad0095de6fee3315"

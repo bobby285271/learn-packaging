@@ -1,0 +1,3 @@
+VER=20200516
+GITSRC="https://github.com/AOSC-Dev/aosc-default-settings"
+GITCO="d107d10417164af72362071d83146be56e517c15"

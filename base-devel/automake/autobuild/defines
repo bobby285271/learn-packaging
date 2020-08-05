@@ -1,0 +1,9 @@
+PKGNAME=automake
+PKGDES="Automatic Makefile.in generator"
+PKGDEP="autoconf"
+BUILDDEP="config"
+PKGSEC=devel
+
+PKGEPOCH=1
+ABHOST=noarch
+ABSHADOW=0

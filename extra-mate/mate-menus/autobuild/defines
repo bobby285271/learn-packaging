@@ -1,0 +1,9 @@
+PKGNAME=mate-menus
+PKGSEC=MATE
+PKGDEP="glib python-2"
+BUILDDEP="gobject-introspection mate-common"
+PKGDES="MATE menu specifications"
+
+PKGREP="mate-control-center<=1.12.1"
+PKGBREAK="mate-control-center<=1.12.1"
+PKGEPOCH=1

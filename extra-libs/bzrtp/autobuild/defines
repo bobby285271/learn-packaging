@@ -1,0 +1,5 @@
+PKGNAME=bzrtp
+PKGSEC=libs
+PKGDEP="bctoolbox libxml2 mbedtls"
+BUILDDEP="bcunit"
+PKGDES="Open source implementation of ZRTP keys exchange protocol"

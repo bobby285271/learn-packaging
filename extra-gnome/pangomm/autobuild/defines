@@ -1,0 +1,11 @@
+PKGNAME=pangomm
+PKGSEC=libs
+PKGDEP="pango glibmm cairomm"
+BUILDDEP="doxygen"
+PKGDES="C++ bindings for Pango"
+
+ABSHADOW=no
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+AUTOTOOLS_AFTER__RETRO="--disable-documentation"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"

@@ -1,0 +1,7 @@
+PKGNAME=gexiv2 
+PKGSEC=gnome
+PKGDEP="exiv2 pygobject-3"
+BUILDDEP="gobject-introspection gtk-doc vala"
+PKGDES="GObject-based wrapper around the Exiv2 library"
+
+ABTYPE="meson"

@@ -1,0 +1,9 @@
+PKGNAME=glib+32
+PKGSEC=libs
+PKGDEP="glibc+32 pcre+32 libffi+32 elfutils+32"
+PKGSUG="python-2"
+BUILDDEP="python-2 32subsystem"
+PKGDES="Common C routines used by GTK+ and other libs (optenv32)"
+
+NOLTO=yes
+ABHOST=noarch

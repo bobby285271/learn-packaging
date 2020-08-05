@@ -1,0 +1,33 @@
+abinfo "Building GPS Daemon ..."
+scons prefix=/usr \
+      sbindir=/usr/bin
+      systemd=yes \
+      libQgpsmm=no \
+      gpsd_group=uucp \
+      PYTHONPATH=/usr/bin/python3
+scons build
+
+abinfo "Fixing man page references ..."
+sed -e 's|.so gps.1|.so man1/gps.1|' \
+    -i "$SRCDIR"/cgps.1 \
+    -i "$SRCDIR"/lcdgps.1 \
+    -i "$SRCDIR"/xgps.1 \
+    -i "$SRCDIR"/xgpsspeed.1
+
+abinfo "Installing GPS Daemon ..."
+export DESTDIR="$PKGDIR"
+scons install
+
+abinfo "Installing UDev rules ..."
+install -Dvm644 "$SRCDIR"/gpsd.rules \
+    "$PKGDIR"/usr/lib/udev/rules.d/25-gpsd-usb.rules
+sed -e 's|/etc/default/gpsd|/etc/gpsd|' \
+    -i "$SRCDIR"/gpsd.hotplug
+install -Dvm755 "$SRCDIR"/gpsd.hotplug \
+    "$PKGDIR"/lib/udev/gpsd.hotplug
+
+abinfo "Installing systemd units ..."
+install -Dvm644 "$SRCDIR"/systemd/gpsd.service \
+    "$PKGDIR"/usr/lib/systemd/system/gpsd.service
+install -Dvm644 "$SRCDIR"/systemd/gpsd.socket \
+    "$PKGDIR"/usr/lib/systemd/system/gpsd.socket

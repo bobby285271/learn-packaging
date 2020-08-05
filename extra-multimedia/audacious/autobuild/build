@@ -1,0 +1,20 @@
+abinfo "Building Audacious ..."
+./configure \
+    --prefix=/usr \
+    --with-buildstamp='AOSC OS'
+make
+make install DESTDIR="$PKGDIR"
+
+abinfo "Building Audacious Plugins ..."
+cd "$SRCDIR"/audacious-plugins-$PKGVER
+./configure \
+    --prefix=/usr
+make
+make install DESTDIR="$PKGDIR"
+
+abinfo "Installing AppData XML ..."
+cd "$SRCDIR"
+install -Dvm0644 "$SRCDIR"/contrib/audacious.appdata.xml \
+    "$PKGDIR"/usr/share/appdata/audacious.appdata.xml
+appstream-util validate-relax \
+    "$PKGDIR"/usr/share/appdata/audacious.appdata.xml

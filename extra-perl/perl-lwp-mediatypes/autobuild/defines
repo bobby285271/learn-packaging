@@ -1,0 +1,6 @@
+PKGNAME=perl-lwp-mediatypes
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="Guess the media type of a file or a URL"
+
+ABHOST=noarch

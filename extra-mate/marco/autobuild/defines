@@ -1,0 +1,8 @@
+PKGNAME=marco
+PKGSEC=MATE
+PKGDEP="gtk-3 libcanberra libgtop mate-desktop startup-notification yelp zenity"
+BUILDDEP="mate-common yelp-tools"
+PKGDES="Window manager for MATE"
+
+AUTOTOOLS_AFTER="--enable-startup-notification"
+PKGEPOCH=1

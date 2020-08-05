@@ -1,0 +1,6 @@
+PKGNAME=net-tools
+PKGSEC=net
+PKGDEP="glibc"
+PKGDES="Configuration tools for Linux networking (legacy)"
+
+NOPARALLEL=yes

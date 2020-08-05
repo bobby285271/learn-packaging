@@ -1,0 +1,5 @@
+PKGNAME=cinnamon-menus
+PKGSEC=Cinnamon
+PKGDEP="glib"
+BUILDDEP="gnome-common gobject-introspection intltool"
+PKGDES="Cinnamon menu specifications"

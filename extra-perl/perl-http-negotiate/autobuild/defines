@@ -1,0 +1,6 @@
+PKGNAME=perl-http-negotiate
+PKGSEC=perl
+PKGDEP="perl-http-message"
+PKGDES="Choose a variant to serve"
+
+ABHOST=noarch

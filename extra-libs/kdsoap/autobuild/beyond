@@ -1,0 +1,2 @@
+sed -e 's|${PACKAGE_PREFIX_DIR}|/usr|g' \
+    -i `find "$PKGDIR" -name '*.cmake'`

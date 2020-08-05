@@ -1,0 +1,6 @@
+PKGNAME=jcs
+PKGSEC=java
+PKGDEP="openjdk"
+PKGDES="Java Caching System"
+
+ABHOST=noarch

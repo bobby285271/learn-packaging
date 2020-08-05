@@ -1,0 +1,3 @@
+VER=20200325
+GITSRC="https://gitlab.freedesktop.org/plymouth/plymouth"
+GITCO="e31c81f9849c176d7b293ca79cc4507ba740c2fa"

@@ -1,0 +1,5 @@
+PKGNAME="bigcat-dbg"
+PKGDES="An debugging tools for Linux"
+BUILDDEP="cmake gcc"
+PKGSEC="devel"
+ABSTRIP=0

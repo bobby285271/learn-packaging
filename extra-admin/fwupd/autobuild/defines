@@ -1,0 +1,39 @@
+PKGNAME=fwupd
+PKGSEC=admin
+PKGDEP="appstream-glib colord dbus efivar elfutils gcab glib gnutls \
+        gpgme json-glib libarchive libgpg-error libgusb libsoup libxmlb \
+        modemmanager pango pillow polkit pycairo pygobject-3 python-3 \
+        shared-mime-info sqlite systemd tpm2-tss"
+BUILDDEP="docbook-sgml gobject-introspection gtk-doc intltool meson \
+          ninja pkg-config vala valgrind"
+PKGDES="Firmware update daemon and utilities"
+
+MESON_AFTER="-Dagent=true
+             -Dgtkdoc=true \
+             -Dgpg=true \
+             -Dman=true \
+             -Dpkcs7=true \
+             -Dplugin_modem_manager=true \
+             -Dplugin_nvme=true \
+             -Dplugin_redfish=true \
+             -Dsystemd=true \
+             -Dconsolekit=true \
+             -Dtests=false"
+
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    MESON_AFTER+=" -Denable-thunderbolt=true \
+                   -Dplugin_dell=true \
+                   -Dplugin_synaptics=true"
+    BUILDDEP+=" libsmbios thunderbolt-software-user-space"
+else
+    MESON_AFTER+=" -Denable-thunderbolt=false \
+                   -Dplugin_dell=false \
+                   -Dplugin_synaptics=false"
+fi
+if [[ "${CROSS:-$ARCH}" != mips* && "${CROSS:-$ARCH}" != "powerpc" && \
+      "${CROSS:-$ARCH}" != "ppc64" ]]; then
+    BUILDDEP+=" cairo dejavu-fonts fontconfig freetype gnu-efi"
+    MESON_AFTER+=" -Dplugin_uefi=true"
+fi
+
+PKGBREAK="gnome-software<=3.26.1"

@@ -1,0 +1,8 @@
+PKGNAME=ksirk
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme libkdegames qca"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A computerized version of a well-known strategy game"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

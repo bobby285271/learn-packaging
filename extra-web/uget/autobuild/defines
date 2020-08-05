@@ -1,0 +1,9 @@
+PKGNAME=uget
+PKGSEC=net
+PKGDEP="curl gstreamer-1-0 gtk-3 libnotify"
+BUILDDEP="intltool"
+PKGSUG="aria2"
+PKGDES="A multi-platform GTK+ download manager"
+
+AUTOTOOLS_AFTER="--disable-appindicator"
+RECONF=no

@@ -1,0 +1,3 @@
+VER=3.34.4
+SRCTBL="https://download.gnome.org/sources/gnome-tetravex/${VER:0:4}/gnome-tetravex-$VER.tar.xz"
+CHKSUM="sha256::3ea6d491a58ad67794807baf6168d7fa71558cb3abc075268702bc78a705a9ea"

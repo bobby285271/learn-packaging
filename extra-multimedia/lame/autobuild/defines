@@ -1,0 +1,9 @@
+PKGNAME=lame
+PKGDES="High quality MP3 Encoder"
+PKGSEC=sound
+PKGDEP="ncurses"
+
+AUTOTOOLS_AFTER="--enable-mp3rtp \
+                 --enable-shared \
+                 --enable-nasm"
+RECONF=0

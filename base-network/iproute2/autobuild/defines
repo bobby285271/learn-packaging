@@ -1,0 +1,10 @@
+PKGNAME=iproute2
+PKGDES="IP routing utilities"
+PKGSEC=admin 
+PKGDEP="glibc iptables"
+
+NOSTATIC=no
+NOPARALLEL=yes
+
+MAKE_AFTER="DESTDIR=$PKGDIR SBINDIR=/usr/bin MANDIR=/usr/share/man LIBDIR=/usr/lib CONFDIR=/etc/iproute2"
+ABTYPE=plainmake

@@ -1,0 +1,3 @@
+# The libtcc.so shared runtime
+install -D -m 755 build/libtcc.so "${pkgdir}/usr/lib/libtcc.so"
+install -D -m 644 build/libtcc1.a "${pkgdir}/usr/lib/tcc/libtcc1.a"

@@ -1,0 +1,8 @@
+PKGNAME=libnova
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="A general purpose, double precision, celestial mechanics, astrometry and astrodynamics library"
+
+ABSHADOW=no
+AB_FLAGS_SPECS=0
+AB_FLAGS_PIC=1

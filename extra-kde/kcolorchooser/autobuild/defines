@@ -1,0 +1,7 @@
+PKGNAME=kcolorchooser
+PKGSEC=kde
+PKGDEP="kxmlgui"
+BUILDDEP="extra-cmake-modules"
+PKGDES="A color chooser for KDE"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

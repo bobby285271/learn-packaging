@@ -1,0 +1,8 @@
+PKGNAME=ksnakeduel
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme libkdegames"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A simple snake duel game for KDE"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

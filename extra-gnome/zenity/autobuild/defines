@@ -1,0 +1,5 @@
+PKGNAME=zenity
+PKGSEC=gnome
+PKGDEP="libnotify webkit2gtk"
+BUILDDEP="itstool gtk-doc yelp-tools"
+PKGDES="Display graphical dialog boxes from shell scripts"

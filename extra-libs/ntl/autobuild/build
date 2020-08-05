@@ -1,0 +1,7 @@
+./configure \
+    SHARED=on NTL_GF2X_LIB=on NATIVE=off TUNE=generic \
+    LDFLAGS="${LDFLAGS} -fPIC" CXXFLAGS="${CXXFLAGS} ${CPPFLAGS} -fPIC"
+make
+make install PREFIX="$PKGDIR"/usr
+
+chmod +x "$PKGDIR"/usr/lib/libntl.so.*

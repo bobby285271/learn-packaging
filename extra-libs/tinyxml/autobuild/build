@@ -1,0 +1,14 @@
+for i in tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp; do
+  g++ ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -fPIC -o $i.o -c $i
+done
+g++ ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -shared -o libtinyxml.so.0.${PKGVER%.*} \
+   -Wl,-soname,libtinyxml.so.0 *.cpp.o
+
+rm -rf "$PKGDIR"
+# Not really designed to be build as lib, DYI
+mkdir -p "$PKGDIR"/usr/lib
+mkdir -p "$PKGDIR"/usr/include
+install -m 755 libtinyxml.so.0.${PKGVER%.*} "$PKGDIR"/usr/lib
+ln -s libtinyxml.so.0.${PKGVER%.*} "$PKGDIR"/usr/lib/libtinyxml.so.0
+ln -s libtinyxml.so.0.${PKGVER%.*} "$PKGDIR"/usr/lib/libtinyxml.so
+install -p -m 644 tinyxml.h "$PKGDIR"/usr/include

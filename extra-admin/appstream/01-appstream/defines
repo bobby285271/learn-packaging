@@ -1,0 +1,10 @@
+PKGNAME=appstream
+PKGSEC=admin
+PKGDEP="libxml2 polkit protobuf xapian-core yaml"
+BUILDDEP="cmake docbook-xsl gobject-introspection intltool qt-5 xmlto \
+          meson ninja gtk-doc vala gperf"
+PKGDES="Provides a standard for creating app stores across distributions"
+
+ABTYPE=meson
+MESON_AFTER="-Dstemming=false -Dapt-support=true -Dqt=true \
+             -Dvapi=true"

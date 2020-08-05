@@ -1,0 +1,7 @@
+PKGNAME=zathura-pdf-poppler
+PKGSEC=doc
+PKGDEP="poppler zathura"
+PKGDES="Poppler PDF backend support for Zathura"
+
+ABTYPE=meson
+AB_FLAGS_PIE=0

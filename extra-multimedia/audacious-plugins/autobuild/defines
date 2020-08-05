@@ -1,0 +1,7 @@
+PKGNAME=audacious-plugins
+PKGSEC=sound
+PKGDEP="audacious"
+PKGDES="Plugins for Audacious (Transitional Package)"
+
+ABHOST=noarch
+PKGEPOCH=1

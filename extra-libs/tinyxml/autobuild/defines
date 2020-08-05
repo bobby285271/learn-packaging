@@ -1,0 +1,5 @@
+PKGNAME=tinyxml
+PKGSEC=libs
+PKGDEP="gcc-runtime"
+BUILDDEP="setconf"
+PKGDES="A simple, small, C++ XML parser"

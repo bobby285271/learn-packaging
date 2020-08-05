@@ -1,0 +1,6 @@
+make
+
+mkdir -pv "$PKGDIR"/usr/{bin,lib}
+cp -rv build/host/bin/* "$PKGDIR/usr/bin"
+cp -rv build/host/lib/*.a "$PKGDIR/usr/lib"
+cp -arv include "$PKGDIR/usr"

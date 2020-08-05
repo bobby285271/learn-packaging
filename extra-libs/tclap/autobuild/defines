@@ -1,0 +1,8 @@
+PKGNAME=tclap
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="A small, flexible library that provides a simple interface for defining and accessing command line arguments"
+
+ABHOST=noarch
+AB_FLAGS_SPECS=0
+AB_FLAGS_PIC=1

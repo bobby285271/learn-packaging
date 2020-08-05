@@ -1,0 +1,7 @@
+PKGNAME=kwidgetsaddons
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Addons to QtWidgets modules"
+
+CMAKE_AFTER="-DBUILD_QCH=ON"

@@ -1,0 +1,2 @@
+abinfo "Copying a hacked config.guess to fix tuplet detection ..."
+cp autobuild/config.guess cmake/

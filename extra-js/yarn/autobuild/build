@@ -1,0 +1,2 @@
+npm i -g --user root --prefix="$PKGDIR/usr" "$SRCDIR"/yarn-$PKGVER.tar.gz
+rm -rfv "$PKGDIR"/etc/

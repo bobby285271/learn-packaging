@@ -1,0 +1,4 @@
+VER=4.4.2
+SRCTBL="https://github.com/linuxmint/cinnamon-translations/archive/$VER.tar.gz"
+CHKSUM="sha256::c13cdedf4efd71bf60583765b922e7a12dd6820e30c8207cfd5f8cd47c648037"
+SUBDIR="cinnamon-translations-$VER"

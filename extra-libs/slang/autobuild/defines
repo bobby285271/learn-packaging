@@ -1,0 +1,8 @@
+PKGNAME=slang
+PKGSEC=devel
+PKGDEP="pcre zlib"
+PKGDES="A powerful interpreted language"
+PKGEPOCH=1
+
+NOSTATIC=no
+NOPARALLEL=yes

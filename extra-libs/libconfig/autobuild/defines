@@ -1,0 +1,6 @@
+PKGNAME=libconfig
+PKGDEP="gcc-runtime"
+PKGDES="C/C++ Configuration File Library"
+PKGSEC=libs
+
+ABSHADOW=no

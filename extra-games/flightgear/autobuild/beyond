@@ -1,0 +1,12 @@
+install -Dm0644 package/org.flightgear.FlightGear.desktop "$PKGDIR"/usr/share/applications/flightgear.desktop
+install -Dm0644 package/flightgear.ico "$PKGDIR"/usr/share/icons/flightgear.ico
+install -Dm0644 scripts/completion/fg-completion.bash "$PKGDIR"/usr/share/bash-completion/completions/fgfs
+
+sed -e 's|Exec=.*|Exec=fgfs --fg-root=/usr/share/FlightGear/data|' \
+    -i "$PKGDIR"/usr/share/applications/flightgear.desktop
+
+tar xf FlightGear-${PKGVER}-data.tar.bz2
+
+mkdir -p "$PKGDIR"/usr/share/FlightGear
+cp -r fgdata "$PKGDIR"/usr/share/FlightGear/data
+chown -R root:root "$PKGDIR"/usr/share/FlightGear/data

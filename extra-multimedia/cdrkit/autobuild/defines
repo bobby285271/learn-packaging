@@ -1,0 +1,6 @@
+PKGNAME=cdrkit
+PKGEPOCH=1
+PKGSEC=utils
+PKGDES="Portable utilities for CDs"
+PKGDEP="file bzip2"
+

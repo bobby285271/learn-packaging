@@ -1,0 +1,24 @@
+PKGNAME=w3m
+PKGSEC=web
+PKGDES="A text-based Web browser and pager"
+
+PKGDEP="openssl gc ncurses imlib2"
+PKGDEP__RETRO="openssl ncurses gc"
+PKGDEP__I486="$PKGDEP__RETRO"
+
+AUTOTOOLS_AFTER="--libexecdir=/usr/lib \
+                 --enable-image=x11,fb \
+                 --with-imagelib=imlib2 \
+                 --with-termlib=ncurses \
+                 --disable-w3mmailer"
+AUTOTOOLS_AFTER__RETRO=" \
+                 --libexecdir=/usr/lib \
+                 --disable-image \
+                 --without-imagelib \
+                 --with-termlib=ncurses \
+                 --disable-w3mmailer"
+AUTOTOOLS_AFTER__I486="$AUTOTOOLS_AFTER__RETRO"
+RECONF=0
+
+ABRPMAUTOPROVONLY=1
+PKGEPOCH=2

@@ -1,0 +1,6 @@
+PKGNAME=nuget
+PKGSEC=cli-mono
+PKGDEP="mono"
+PKGDES="Package manager for NuGet repos"
+
+PKGEPOCH=1

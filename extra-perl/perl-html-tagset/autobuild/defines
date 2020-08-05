@@ -1,0 +1,6 @@
+PKGNAME=perl-html-tagset
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="Data tables useful in parsing HTML"
+
+ABHOST=noarch

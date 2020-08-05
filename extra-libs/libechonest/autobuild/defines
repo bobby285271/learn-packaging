@@ -1,0 +1,5 @@
+PKGNAME=libechonest
+PKGSEC=libs
+PKGDEP="qjson qt-5"
+BUILDDEP="cmake doxygen"
+PKGDES="C++ library for interfacing with Echo Nest"

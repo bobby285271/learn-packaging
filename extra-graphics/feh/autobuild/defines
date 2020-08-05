@@ -1,0 +1,4 @@
+PKGNAME=feh
+PKGSEC=graphics
+PKGDEP="imlib2"
+PKGDES="Fast and light imlib2 based image viewer"

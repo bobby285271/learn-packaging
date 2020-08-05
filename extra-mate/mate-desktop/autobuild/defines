@@ -1,0 +1,9 @@
+PKGNAME=mate-desktop
+PKGSEC=MATE
+PKGDEP="dconf gtk-3 hwdata startup-notification iso-codes"
+BUILDDEP="gobject-introspection gtk-doc mate-common yelp-tools"
+PKGDES="Library with common API for various MATE modules"
+
+AUTOTOOLS_AFTER="--disable-schemas-compile \
+                 --enable-gtk-doc \
+                 --with-pnp-ids-path=/usr/share/hwdata"

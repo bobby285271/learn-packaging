@@ -1,0 +1,6 @@
+PKGNAME=breeze-ob
+PKGSEC=x11
+PKGDEP="openbox"
+PKGDES="A Breeze style Openbox WM theme"
+
+ABHOST=noarch

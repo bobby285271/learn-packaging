@@ -1,0 +1,8 @@
+PKGNAME=kauth
+PKGSEC=kde
+PKGDEP="polkit-qt-1 kcoreaddons"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Abstraction to system policy and authentication features"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DLIBEXEC_INSTALL_DIR=lib"

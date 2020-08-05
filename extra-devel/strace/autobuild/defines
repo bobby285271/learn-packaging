@@ -1,0 +1,17 @@
+PKGNAME=strace
+PKGSEC=devel
+PKGDEP="perl"
+PKGDES="A useful diagnostic, instructional, and debugging tool"
+
+if [[ "${CROSS:-$ARCH}" = "riscv64" ]]; then
+    AUTOTOOLS_AFTER="--without-libunwind"
+else
+    PKGDEP+=" libunwind"
+fi
+
+if [[ "${CROSS:-$ARCH}" = "arm64" || "${CROSS:-$ARCH}" = "riscv64" || \
+      "${CROSS:-$ARCH}" = "ppc64el" ]]; then
+    AUTOTOOLS_AFTER+=" --enable-mpers=no"
+fi
+
+RECONF=0

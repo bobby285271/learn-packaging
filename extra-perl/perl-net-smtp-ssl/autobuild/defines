@@ -1,0 +1,6 @@
+PKGNAME=perl-net-smtp-ssl
+PKGSEC=perl
+PKGDEP="perl-io-socket-ssl"
+PKGDES="SSL support for Net::SMTP"
+
+ABHOST=noarch

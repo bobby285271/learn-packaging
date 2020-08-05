@@ -1,0 +1,4 @@
+PKGNAME=lttng-ust
+PKGSEC=libs
+PKGDEP="liburcu util-linux"
+PKGDES="LTTng user space tracing libraries for LTTng"

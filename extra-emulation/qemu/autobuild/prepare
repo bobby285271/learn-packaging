@@ -1,0 +1,3 @@
+abwarn "FIXME: Hardening breaks build ..."
+export CFLAGS="${CFLAGS} -fPIC"
+export LDFLAGS="${LDFLAGS} -fPIC"

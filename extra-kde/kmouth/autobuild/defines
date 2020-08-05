@@ -1,0 +1,8 @@
+PKGNAME=kmouth
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme kio"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A speech synthesizer frontend for KDE"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

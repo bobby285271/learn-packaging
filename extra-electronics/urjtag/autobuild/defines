@@ -1,0 +1,7 @@
+PKGNAME=urjtag
+PKGDES="JTAG programmer for various boards"
+PKGSEC=electronics
+PKGDEP="libusb libusb-compat libftdi"
+
+ABSHADOW=no
+ABTYPE=autotools

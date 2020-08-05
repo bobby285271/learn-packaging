@@ -1,0 +1,7 @@
+PKGNAME=kcodecs
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules gperf"
+PKGDES="Methods for working with various of codecs"
+
+CMAKE_AFTER="-DBUILD_QCH=ON"

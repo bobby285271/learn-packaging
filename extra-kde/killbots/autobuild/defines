@@ -1,0 +1,7 @@
+PKGNAME=killbots
+PKGSEC=kde
+PKGDEP="libkdegames"
+BUILDDEP="extra-cmake-modules cmake"
+PKGDES="A classic Unix robot escape game"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

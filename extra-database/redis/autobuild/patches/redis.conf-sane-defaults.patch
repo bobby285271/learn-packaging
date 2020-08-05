@@ -1,0 +1,13 @@
+diff --git a/redis.conf.orig b/redis.conf
+index 22e00bc..3bb0430 100644
+--- a/redis.conf.orig
++++ b/redis.conf
+@@ -244,7 +244,7 @@ dbfilename dump.rdb
+ # The Append Only File will also be created inside this directory.
+ #
+ # Note that you must specify a directory here, not a file name.
+-dir ./
++dir /var/lib/redis/
+ 
+ ################################# REPLICATION #################################
+ 

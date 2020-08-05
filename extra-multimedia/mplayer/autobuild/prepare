@@ -1,0 +1,10 @@
+export AUTOTOOLS_DEF=""
+
+if [[ "${CROSS:-$ARCH}" != "i486" && "${CROSS:-$ARCH}" != "powerpc" ]]; then
+    export LDFLAGS="${LDFLAGS} -lopenal"
+fi
+
+"$SRCDIR"/version.sh
+
+sed -E "s|(#include <samba-4.0/libsmbclient.h>)|#include <time.h>\n\1|g" \
+    -i "$SRCDIR"/stream/stream_smb.c

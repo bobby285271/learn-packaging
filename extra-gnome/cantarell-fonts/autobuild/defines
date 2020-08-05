@@ -1,0 +1,8 @@
+PKGNAME=cantarell-fonts
+PKGSEC=fonts
+PKGDEP="fontconfig"
+BUILDDEP="appstream meson ninja"
+PKGDES="Cantarell font family"
+
+ABHOST=noarch
+ABTYPE=meson

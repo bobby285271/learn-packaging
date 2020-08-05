@@ -1,0 +1,7 @@
+PKGNAME=karchive
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Framework providing support for handling multiple archiving formats"
+
+CMAKE_AFTER="-DBUILD_QCH=ON"

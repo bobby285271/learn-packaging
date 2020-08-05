@@ -1,0 +1,2 @@
+install -Dm644 commons-io-$PKGVER.jar \
+    "$PKGDIR"/usr/share/java/commons-io/commons-io.jar

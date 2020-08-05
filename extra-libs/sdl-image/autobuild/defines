@@ -1,0 +1,6 @@
+PKGNAME=sdl-image
+PKGDES="A simple library to load images of various formats as SDL surfaces"
+PKGSEC=libs
+PKGDEP="sdl libjpeg-turbo libpng libtiff libwebp"
+
+AUTOTOOLS_AFTER="--enable-jpg-shared --enable-tif-shared --enable-webp-shared"

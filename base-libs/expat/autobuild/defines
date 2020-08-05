@@ -1,0 +1,4 @@
+PKGNAME=expat
+PKGDEP="glibc"
+PKGSEC=libs
+PKGDES="A stream-oriented C library for parsing XML"

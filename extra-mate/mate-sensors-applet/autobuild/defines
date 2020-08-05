@@ -1,0 +1,8 @@
+PKGNAME=mate-sensors-applet
+PKGSEC=MATE
+PKGDEP="libatasmart libnotify lm-sensors mate-panel"
+BUILDDEP="mate-common"
+PKGDES="A MATE Panel applet to display readings from hardware sensors"
+
+ABSHADOW=0
+PKGEPOCH=1

@@ -1,0 +1,19 @@
+PKGNAME=v4l-utils
+PKGSEC=utils
+PKGDES="Utilities for Video4Linux and DVB devices"
+PKGDEP="alsa-lib gcc-runtime libjpeg-turbo sysfsutils sdl2-image"
+BUILDDEP="doxygen"
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+	BUILDDEP+=" qt-5"
+	PKGSUG+=" qt-5"
+fi
+
+NOPARALLEL=yes
+if [[ "${CROSS:-$ARCH}" = "riscv64" ]]; then
+    AUTOTOOLS_AFTER="--disable-libdvbv5 --enable-doxygen-man"
+else
+    AUTOTOOLS_AFTER="--enable-libdvbv5 --enable-doxygen-man"
+fi
+ABSHADOW=0
+
+alias BUILD_FINAL='make doxygen-run'

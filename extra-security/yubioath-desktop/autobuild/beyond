@@ -1,0 +1,5 @@
+install -Dm644 "$SRCDIR"/resources/yubioath-desktop.desktop \
+    "$PKGDIR"/usr/share/applications/yubioath.desktop
+mkdir -p "$PKGDIR"/usr/share/pixmaps
+install -Dm644 resources/icons/yubioath.png \
+    "$PKGDIR"/usr/share/pixmaps/

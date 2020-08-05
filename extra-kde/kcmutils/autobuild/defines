@@ -1,0 +1,8 @@
+PKGNAME=kcmutils
+PKGSEC=kde
+PKGDEP="kdeclarative"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Utilities for interacting with KCModules"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

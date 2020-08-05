@@ -1,0 +1,6 @@
+PKGNAME=zsync
+PKGSEC=net
+PKGDEP="glibc"
+PKGDES="Partial/differential file download client over HTTP"
+
+ABSHADOW=no

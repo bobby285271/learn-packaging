@@ -1,0 +1,7 @@
+PKGNAME=dmd
+PKGSEC=devel
+PKGDEP="gcc"
+PKGDES="The D programming language reference compiler"
+
+FAIL_ARCH="!(amd64)"
+AB_FLAGS_SPECS=0

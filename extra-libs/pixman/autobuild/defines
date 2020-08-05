@@ -1,0 +1,7 @@
+PKGNAME=pixman
+PKGDES="Pixel manipulation library for X and Cairo"
+PKGDEP="glibc"
+PKGSEC=libs
+
+RECONF=0
+AB_FLAGS_O3=1

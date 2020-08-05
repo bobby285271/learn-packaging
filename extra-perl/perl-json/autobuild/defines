@@ -1,0 +1,6 @@
+PKGNAME=perl-json
+PKGSEC=perl
+PKGDEP="perl-json-xs"
+PKGDES="JSON (JavaScript Object Notation) encoder/decoder"
+
+ABHOST=noarch

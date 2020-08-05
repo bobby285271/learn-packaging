@@ -1,0 +1,5 @@
+HOME="." ./bootstrap
+
+install -Dm0755 rebar3 "$PKGDIR"/usr/bin/rebar3
+install -Dm0644 priv/shell-completion/bash/rebar3 \
+    "$PKGDIR"/usr/share/bash-completion/completions/rebar3

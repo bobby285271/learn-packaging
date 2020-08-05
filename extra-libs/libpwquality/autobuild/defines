@@ -1,0 +1,6 @@
+PKGNAME=libpwquality
+PKGSEC=libs
+PKGDEP="cracklib python-2"
+PKGDES="Library for password quality checking and generating random passwords"
+
+ABSHADOW=no

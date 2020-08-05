@@ -1,0 +1,4 @@
+cd "$SRCDIR"/build
+DESTDIR="$PKGDIR" ninja install
+rm -r "$PKGDIR"{/etc,/usr/{bin,include/appstream,lib/{girepository-1.0,libappstream*,pkgconfig},share}}
+cd "$SRCDIR"

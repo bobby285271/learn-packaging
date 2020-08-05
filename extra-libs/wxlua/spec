@@ -1,0 +1,4 @@
+VER=252
+SVNSRC="https://svn.code.sf.net/p/wxlua/svn/trunk"
+SUBDIR="wxlua/wxLua"
+REL=1

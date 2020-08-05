@@ -1,0 +1,6 @@
+PKGNAME=tinc
+PKGSEC=net
+PKGDEP="lzo openssl zlib"
+PKGDES="A Virtual Private Network (VPN) daemon"
+
+ABSHADOW=0

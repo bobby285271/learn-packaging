@@ -1,0 +1,8 @@
+PKGNAME=flex
+PKGDES="A LEX replacement"
+PKGDEP="glibc m4"
+PKGSEC=devel
+
+
+AUTOTOOLS_AFTER="--enable-static"
+NOSTATIC=0

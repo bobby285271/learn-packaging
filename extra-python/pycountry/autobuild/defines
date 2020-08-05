@@ -1,0 +1,6 @@
+PKGNAME=pycountry
+PKGSEC=python
+PKGDEP="lxml"
+PKGDES="ISO country, subdivision, language, currency and script definitions and their translations"
+
+ABHOST=noarch

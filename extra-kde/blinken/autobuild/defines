@@ -1,0 +1,7 @@
+PKGNAME=blinken
+PKGSEC=kde
+PKGDEP="kxmlgui phonon"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A game of pattern memory"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

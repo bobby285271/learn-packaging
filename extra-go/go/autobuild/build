@@ -1,0 +1,107 @@
+export GOROOT="$SRCDIR"
+export GOBIN="$GOROOT/bin"
+export GOPATH="$SRCDIR/../"
+export GOROOT_FINAL=/usr/lib/go
+export GOROOT_BOOTSTRAP=/usr/lib/go
+
+case ${CROSS:-$ARCH} in
+    amd64)
+        buildarch="amd64" ;;
+    armel)
+        buildarch="arm" ;;
+    arm64)
+        buildarch="arm64" ;;
+    mipsel)
+        buildarch="mipsle" ;;
+    mips64el)
+        buildarch="mips64le" ;;
+    ppc64el)
+        buildarch="ppc64le" ;;
+esac
+
+export GOOS=linux
+export GOARCH="$buildarch"
+
+cd "$SRCDIR"/src
+
+bash make.bash --no-clean -v
+if [[ "${CROSS:-$ARCH}" != "ppc64" && "${CROSS:-$ARCH}" != "ppc64el" ]]; then
+    PATH="$GOBIN:$PATH" go install -v -buildmode=shared std
+    PATH="$GOBIN:$PATH" go install -v -race std
+    PATH="$GOBIN:$PATH" go install -v -msan std
+else
+    PATH="$GOBIN:$PATH" go install -v std
+fi
+
+cd "$SRCDIR"
+
+mkdir -p \
+    "$PKGDIR/"{etc/profile.d,usr/{share/go,lib/go,lib/go/src,lib/go/site/src}}
+
+cp -rv "$SRCDIR"/{doc,misc} -t "$PKGDIR/usr/share/go"
+ln -sv /usr/share/go/doc "$PKGDIR/usr/lib/go/doc"
+cp -av "$SRCDIR"/bin "$PKGDIR/usr"
+cp -av "$SRCDIR"/pkg "$PKGDIR/usr/lib/go"
+cp -av "$GOROOT/src" "$PKGDIR/usr/lib/go/"
+cp -av "$GOROOT/src/cmd" "$PKGDIR/usr/lib/go/src/cmd"
+cp -av "$GOROOT/lib" "$PKGDIR/usr/lib/go/"
+
+install -Dvm644 "$SRCDIR"/src/Make.* \
+    "$PKGDIR/usr/lib/go/src"
+
+find "$PKGDIR/usr/lib/go/src/" \
+    -type f -name '*.[ao]' -delete
+find "$PKGDIR" \
+    -type f -name sql.go -exec chmod -x {} \;
+find "$PKGDIR/usr/lib/go/src" \
+    -type f -executable -delete
+
+ln -svf /usr/bin \
+    "$PKGDIR/usr/lib/go/bin"
+
+install -Dvm755 src/make.bash \
+    "$PKGDIR/usr/lib/go/src/make.bash"
+install -Dvm755 src/run.bash \
+    "$PKGDIR/usr/lib/go/src/run.bash"
+cp -rv "$SRCDIR"/misc "$PKGDIR/usr/lib/go/"
+
+install -Dvm644 favicon.ico \
+    "$PKGDIR/usr/lib/go/favicon.ico"
+rm -fv "$PKGDIR/usr/share/go/doc/articles/wiki/get.bin"
+
+install -Dvm644 "$SRCDIR"/VERSION \
+    "$PKGDIR/usr/lib/go/VERSION"
+find "$PKGDIR/usr/"{lib/go/pkg,bin} \
+    -type f -exec touch '{}' +
+
+install -dvm755 "$PKGDIR"/usr/lib/go/pkg/tool/"${GOOS}"_"$GOARCH"
+install -pvm755 "$SRCDIR"/pkg/tool/"${GOOS}"_"$GOARCH"/* \
+   "$PKGDIR"/usr/lib/go/pkg/tool/"${GOOS}"_"$GOARCH"
+
+mv -v "$PKGDIR"/usr/bin/go{,-google}
+mv -v "$PKGDIR"/usr/bin/gofmt{,-google}
+
+mkdir -v "$SRCDIR"/go-tools
+cd "$SRCDIR"/go-tools
+
+git clone -b release-branch.go${PKGVER:0:4} \
+    https://go.googlesource.com/tools
+git clone -b release-branch.go${PKGVER:0:4} \
+    https://github.com/golang/net
+mkdir -pv src/golang.org/x/
+cp -rf tools src/golang.org/x/tools
+cp -rf net src/golang.org/x/net
+cd src/golang.org/x/tools
+export GOPATH="$SRCDIR/go-tools"
+"$GOROOT"/bin/go install -v -a -trimpath \
+    ./cmd/...
+
+# List adapted from Arch Linux.
+for i in benchcmp callgraph compilebench cover digraph eg fiximports \
+         go-contrib-init godex godoc goimports gomvpkg gorename gotype \
+         goyacc guru html2article present ssadump stringer gopls \
+         toolstash; do
+    install -Dvm755 "$SRCDIR"/bin/$i "$PKGDIR"/usr/bin/$i
+done
+
+cd "$SRCDIR"

@@ -1,0 +1,9 @@
+PKGNAME=poedit
+PKGSEC=localization
+PKGDEP="gtkspell3 wxgtk3 lucene++ desktop-file-utils cld2 cpprestsdk \
+        icu boost"
+PKGDES="Cross-platform gettext catalogs editor"
+
+ABSHADOW=0
+AUTOTOOLS_AFTER="--libexecdir=/usr/lib/poedit \
+                 --without-cpprest"

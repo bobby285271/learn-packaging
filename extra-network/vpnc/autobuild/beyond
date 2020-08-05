@@ -1,0 +1,2 @@
+install -Dvm755 "$SRCDIR"/vpnc-script \
+    "$PKGDIR"/etc/vpnc/vpnc-script

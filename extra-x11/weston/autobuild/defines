@@ -1,0 +1,8 @@
+PKGNAME=weston
+PKGSEC=misc
+PKGDEP="poppler glu mtdev libinput libunwind pango colord wayland \
+        freerdp pipewire"
+BUILDDEP="doxygen xmlto wayland-protocols graphviz"
+PKGDES="A wayland compositor"
+
+MESON_AFTER="-Dsimple-dmabuf-drm=auto"

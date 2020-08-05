@@ -1,0 +1,3 @@
+VER=5.19.0
+SRCTBL="https://download.kde.org/stable/plasma/$VER/powerdevil-$VER.tar.xz"
+CHKSUM="sha256::c58dcc39e55cf68cdcc377bfa458a1ff6a80b5970ae568bd62af68d78bdbed4e"

@@ -1,0 +1,10 @@
+PKGNAME=radare2
+PKGDES="A reverse-engineering statical analyze tool"
+PKGDEP="capstone libzip openssl"
+PKGSEC=devel
+
+AUTOTOOLS_AFTER="--prefix=/usr \
+                 --with-syscapstone \
+                 --with-syszip \
+                 --with-openssl"
+ABSHADOW=0

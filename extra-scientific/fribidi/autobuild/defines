@@ -1,0 +1,6 @@
+PKGNAME=fribidi
+PKGSEC=libs
+PKGDEP="glib"
+PKGDES="Free implementation of BiDi algorithm"
+
+AB_FLAGS_O3=1

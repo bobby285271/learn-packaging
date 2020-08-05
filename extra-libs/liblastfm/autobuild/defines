@@ -1,0 +1,7 @@
+PKGNAME=liblastfm
+PKGSEC=libs
+PKGDES="Library that implements LastFM support"
+PKGDEP="qt-4 qt-5 fftw libsamplerate"
+BUILDDEP="cmake doxygen"
+
+CMAKE_AFTER="-DBUILD_FINGERPRINT=FALSE"

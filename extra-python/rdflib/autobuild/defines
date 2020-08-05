@@ -1,0 +1,7 @@
+PKGNAME=rdflib
+PKGSEC=python
+PKGDEP="isodate"
+BUILDDEP="setuptools"
+PKGDES="A python library for working with RDF"
+
+ABHOST=noarch

@@ -1,0 +1,5 @@
+PKGNAME=cgdb
+PKGSEC=devel
+PKGDEP="ncurses gdb"
+BUILDDEP="help2man"
+PKGDES="Curses-based interface to GNU DeBugger"

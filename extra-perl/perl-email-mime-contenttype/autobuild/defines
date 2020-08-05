@@ -1,0 +1,6 @@
+PKGNAME=perl-email-mime-contenttype
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="Parses a MIME content-type header"
+
+ABHOST=noarch

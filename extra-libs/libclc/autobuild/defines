@@ -1,0 +1,8 @@
+PKGNAME=libclc
+PKGSEC=libs
+PKGDEP=""
+BUILDDEP="llvm"
+PKGDES="Library requirements of the OpenCL C programming language"
+
+USECLANG=yes
+ABHOST=noarch

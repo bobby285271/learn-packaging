@@ -1,0 +1,3 @@
+VER=5.71.0
+SRCTBL="https://download.kde.org/stable/frameworks/${VER:0:4}/kded-$VER.tar.xz"
+CHKSUM="sha256::404c8caae0f4abe2ef85c2e82b5db2b14ae4b607fa30e4f16d15dad53c269fcc"

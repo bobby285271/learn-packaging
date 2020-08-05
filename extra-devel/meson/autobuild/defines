@@ -1,0 +1,8 @@
+PKGNAME=meson
+PKGSEC=devel
+PKGDEP="ninja setuptools"
+PKGDES="High productivity build system"
+
+ABTYPE=python
+NOPYTHON2=1
+ABHOST=noarch

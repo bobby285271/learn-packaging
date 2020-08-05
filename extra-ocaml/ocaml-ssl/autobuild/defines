@@ -1,0 +1,7 @@
+PKGNAME=ocaml-ssl
+PKGSEC=ocaml
+PKGDEP="openssl ocaml"
+BUILDDEP="findlib dune bubblewrap opam"
+PKGDES="OCaml SSL bindings"
+
+NOSTATIC=0

@@ -1,0 +1,3 @@
+VER=1.14.1
+SRCTBL="https://github.com/minbrowser/min/releases/download/v$VER/min_${VER}_amd64.deb"
+CHKSUM="sha256::552dbdf6c620fb892cd4494832975ecdb348a6424cde832531a0d13290e9606d"

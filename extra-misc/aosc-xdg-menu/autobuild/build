@@ -1,0 +1,18 @@
+install -Dvm0755 "$SRCDIR"/xdg_menu \
+    "$PKGDIR"/usr/bin/xdg_menu
+install -Dvm0755 "$SRCDIR"/xdg_menu_su \
+    "$PKGDIR"/usr/bin/xdg_menu_su
+install -Dvm0755 "$SRCDIR"/update-menus \
+    "$PKGDIR"/usr/bin/update-menus
+install -Dvm0644 "$SRCDIR"/update-menus.conf \
+    "$PKGDIR"/etc/update-menus.conf
+
+mkdir -pv "$PKGDIR"/usr/share/desktop-directories/
+cp -v aosc-desktop-directories/* \
+    "$PKGDIR"/usr/share/desktop-directories/
+
+mkdir -pv "$PKGDIR"/etc/xdg/menus/
+cp -v aosc-xdg-menu/* \
+    "$PKGDIR"/etc/xdg/menus/
+
+mkdir -pv "$PKGDIR"/var/cache/xdg-menu

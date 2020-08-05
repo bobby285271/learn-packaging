@@ -1,0 +1,9 @@
+PKGNAME=avahi-tqt
+PKGSEC=Trinity
+PKGDEP="avahi tqt3"
+PKGDES="Avahi TQt integration library"
+
+CMAKE_AFTER="-DWITH_GCC_VISIBILITY=OFF \
+             -DLIB_INSTALL_DIR=/usr/lib"
+NOLIBTOOL=0
+NOSTATIC=0

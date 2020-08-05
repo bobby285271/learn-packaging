@@ -1,0 +1,2 @@
+mkdir -p "${PKGDIR}/usr/share/themes"
+./install.sh -d "${PKGDIR}/usr/share/themes"

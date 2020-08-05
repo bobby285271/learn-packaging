@@ -1,0 +1,3 @@
+gcc ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -DMPACK_USE_SYSTEM -I/usr/include/lua5.1 -c lmpack.c -o lmpack.o
+gcc ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -lmpack -shared -o mpack.so lmpack.o
+install -Dm755 mpack.so "$PKGDIR"/usr/lib/lua/5.1/mpack.so

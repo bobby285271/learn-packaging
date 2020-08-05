@@ -1,0 +1,5 @@
+PKGNAME=traits
+PKGSEC=python
+PKGDEP="numpy"
+BUILDDEP="setuptools"
+PKGDES="Explicitly typed attributes for Python"

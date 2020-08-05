@@ -1,0 +1,6 @@
+abinfo "Fixing permissions for man pages ..."
+chmod -v -s "$PKGDIR"/usr/share/man/man3
+chown -v -R root:root "$PKGDIR"/usr/share/man/man3
+
+abinfo 'Fixing permission for $SRCDIR ...'
+chmod -v a-s "$SRCDIR"

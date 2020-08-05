@@ -1,0 +1,38 @@
+cd "$SRCDIR"/src/MEGASync/mega
+
+./autogen.sh
+./configure \
+        --prefix=/usr \
+        --disable-examples \
+        --disable-java \
+        --disable-php \
+        --disable-python \
+        --disable-silent-rules \
+        --disable-curl-checks \
+        --disable-megaapi \
+        --enable-chat \
+        --enable-gcc-hardening \
+        --with-cares \
+        --with-cryptopp \
+        --with-curl \
+        --with-sodium \
+        --with-sqlite \
+        --with-zlib \
+        --without-freeimage \
+        --without-termcap \
+        --without-ffmpeg \
+        --disable-examples
+
+cd "$SRCDIR"/src
+
+/usr/bin/qmake-qt5 \
+	"CONFIG += FULLREQUIREMENTS" MEGA.pro
+/usr/bin/lrelease-qt5 MEGASync/MEGASync.pro
+make
+
+make INSTALL_ROOT="$PKGDIR" install
+
+cd "$SRCDIR"
+
+install -Dvm755 "$SRCDIR"/src/MEGASync/megasync \
+    "$PKGDIR"/usr/bin/megasync

@@ -1,0 +1,5 @@
+PKGNAME=lightsoff
+PKGSEC=gnome
+PKGDEP="clutter-gtk librsvg desktop-file-utils"
+BUILDDEP="gobject-introspection intltool itstool vala appstream-glib"
+PKGDES="Turn off all the lights"

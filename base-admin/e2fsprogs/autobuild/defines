@@ -1,0 +1,17 @@
+PKGNAME=e2fsprogs
+PKGSEC=utils
+PKGDEP="glibc"
+PKGDES="Ext2/3/4 filesystem utilities"
+
+ABSHADOW=0
+NOSTATIC=0
+
+AUTOTOOLS_AFTER="--with-root-prefix= \
+                 --enable-elf-shlibs \
+                 --disable-libblkid \
+                 --disable-libuuid \
+                 --disable-uuidd \
+                 --disable-fsck"
+MAKE_INSTALL_AFTER="-j1"
+
+RECONF=0

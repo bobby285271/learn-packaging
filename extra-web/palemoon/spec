@@ -1,0 +1,4 @@
+VER=28.9.3
+GITSRC="https://github.com/MoonchildProductions/Pale-Moon"
+GITCO="tags/${VER}_Release"
+REL=1

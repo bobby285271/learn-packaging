@@ -1,0 +1,7 @@
+PKGNAME=logrotate
+PKGSEC=admin
+PKGDEP="acl gzip popt"
+PKGDES="Rotates, compresses, removes and mails system log files"
+
+AUTOTOOLS_AFTER="--with-acl"
+ABSHADOW=0

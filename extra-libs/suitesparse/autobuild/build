@@ -1,0 +1,9 @@
+# Adapted from Arch Linux.
+
+BLAS=-lblas TBB=-ltbb SPQR_CONFIG=-DHAVE_TBB \
+    make
+
+install -dvm755 "$PKGDIR"/usr/{include,lib}
+
+BLAS=-lblas TBB=-ltbb SPQR_CONFIG=-DHAVE_TBB \
+    make INSTALL_LIB="$PKGDIR"/usr/lib INSTALL_INCLUDE="$PKGDIR"/usr/include install

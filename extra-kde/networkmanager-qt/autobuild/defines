@@ -1,0 +1,8 @@
+PKGNAME=networkmanager-qt
+PKGSEC=kde
+PKGDEP="networkmanager qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Qt wrapper for NetworkManager DBus API"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

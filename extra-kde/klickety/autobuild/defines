@@ -1,0 +1,8 @@
+PKGNAME=klickety
+PKGSEC=kde
+PKGDEP="knotifyconfig libkdegames"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A clone of Clickomania"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

@@ -1,0 +1,8 @@
+PKGNAME=avogadrolibs
+PKGSEC=libs
+PKGDEP="glew jsoncpp molequeue openbabel spglib libmsym"
+BUILDDEP="boost cmake eigen-3"
+PKGDES="Advanced molecular editor (libraries)"
+
+NOSTATIC=no
+CMAKE_AFTER="-DUSE_MMTF=OFF"

@@ -1,0 +1,3 @@
+VER=20200529
+GITSRC="https://gn.googlesource.com/gn"
+GITCO="b175fa5d6ae1640742aad593185780a08f6ba224"

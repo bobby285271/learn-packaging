@@ -1,0 +1,9 @@
+PKGNAME=ldc
+PKGSEC=devel
+PKGDEP="liblphobos llvm"
+BUILDDEP="cmake"
+PKGDES="The LLVM-based D compiler"
+
+AB_FLAGS_SPECS=0
+NOLTO=yes
+NOSTATIC=no

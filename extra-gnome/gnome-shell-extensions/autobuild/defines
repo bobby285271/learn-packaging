@@ -1,0 +1,7 @@
+PKGNAME=gnome-shell-extensions
+PKGSEC=gnome
+PKGDEP="gnome-shell nautilus"
+BUILDDEP="intltool meson ninja"
+PKGDES="Extensions for GNOME shell, including classic mode"
+
+MESON_AFTER="-Dextension_set=all"

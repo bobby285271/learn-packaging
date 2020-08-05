@@ -1,0 +1,9 @@
+PKGNAME=gnome-keyring
+PKGDES="The GNOME password management daemon"
+PKGSEC=gnome
+PKGDEP="gcr libcap-ng"
+BUILDDEP="gtk-doc intltool"
+
+AUTOTOOLS_AFTER="--with-pam-dir=/usr/lib/security \
+                 --disable-schemas-compile"
+ABSHADOW=0

@@ -1,0 +1,7 @@
+PKGNAME=polkit-gnome
+PKGDES="Legacy PolicyKit authentication agent for GNOME"
+PKGSEC=gnome
+PKGDEP="polkit gtk-3"
+BUILDDEP="intltool"
+
+AUTOTOOLS_AFTER="--libexecdir=/usr/lib/polkit-gnome"

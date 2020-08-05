@@ -1,0 +1,4 @@
+VER=3.32.1
+LOCAL_VER=3320100
+SRCTBL="https://sqlite.org/2020/sqlite-src-$LOCAL_VER.zip"
+CHKSUM="sha256::5ccc7dd634ab820dbcef56318279d27ee945ccaba17e70d4932e5c624a7872d0"

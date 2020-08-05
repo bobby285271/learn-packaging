@@ -1,0 +1,10 @@
+PKGNAME=munkres
+PKGSEC=python
+PKGDEP="python-2 python-3"
+BUILDDEP="setuptools"
+PKGDES="Munkres algorithm for the assignment problem"
+
+ABTYPE=python
+ABHOST=noarch
+
+PKGEPOCH=1

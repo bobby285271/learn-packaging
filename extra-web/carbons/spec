@@ -1,0 +1,3 @@
+VER=0.2.2
+SRCTBL="https://github.com/gkdr/carbons/archive/v${VER}.tar.gz"
+CHKSUM="sha256::af1919f22dd0b8ecfd5b611da389fa169c44047cda85981f8e993ed63878c891"

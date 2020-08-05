@@ -1,0 +1,6 @@
+python2 waf configure --prefix=/usr --enable-fftw3f $MIPS_NOTESTS
+python2 waf build $MAKEFLAGS $MIPS_NOTESTS
+python2 waf --destdir="$PKGDIR" install $MIPS_NOTESTS
+
+python2 setup.py build
+python2 setup.py install --root="$PKGDIR" --optimize=1

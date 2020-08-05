@@ -1,0 +1,5 @@
+PKGNAME=xfce4-datetime-plugin
+PKGDES="Date and time plugin for Xfce4 panel"
+PKGDEP="xfce4-panel"
+BUILDDEP="intltool"
+PKGSEC=xfce

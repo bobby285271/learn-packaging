@@ -1,0 +1,7 @@
+PKGNAME=libratbag
+PKGSEC=libs
+PKGDEP="libevdev python-3 systemd json-glib"
+BUILDDEP="check doxygen graphviz meson ninja swig"
+PKGDES="A DBus daemon to configure gaming mice"
+
+ABTYPE=meson

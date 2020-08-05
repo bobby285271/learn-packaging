@@ -1,0 +1,4 @@
+VER=20200804
+GITSRC="https://github.com/AOSC-Dev/autobuild3"
+GITCO="baa8ac22fabc5b554112d0026b34a5ee21346313"
+SUBDIR=.

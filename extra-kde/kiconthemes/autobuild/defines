@@ -1,0 +1,8 @@
+PKGNAME=kiconthemes
+PKGSEC=kde
+PKGDEP="karchive kconfigwidgets kitemviews"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Support for icon themes manipulation and settings"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

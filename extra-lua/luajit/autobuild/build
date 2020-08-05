@@ -1,0 +1,5 @@
+make amalg PREFIX=/usr \
+     CFLAGS="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"
+make install DESTDIR="$PKGDIR" PREFIX=/usr
+
+ln -sv luajit-${PKGVER/b/-beta} "$PKGDIR"/usr/bin/luajit

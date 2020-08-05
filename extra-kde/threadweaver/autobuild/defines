@@ -1,0 +1,8 @@
+PKGNAME=threadweaver
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A high-level multithreading framework"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

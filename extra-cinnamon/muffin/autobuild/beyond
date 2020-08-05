@@ -1,0 +1,4 @@
+make -C src DESTDIR="$PKGDIR" uninstall-binPROGRAMS uninstall-desktopfilesDATA
+make -C src/tools DESTDIR="$PKGDIR" uninstall
+make -C src/compositor/plugins DESTDIR="$PKGDIR" uninstall
+make -C doc/man DESTDIR="$PKGDIR" uninstall

@@ -1,0 +1,10 @@
+PKGNAME=firmware-nonfree
+PKGSEC=non-free/kernel
+PKGDEP=""
+PKGDES="Firmwares for Linux Kernel (The non-free part)"
+
+PKGPROV="linux-firmware"
+PKGSUG="firmware-free"
+ABHOST=noarch
+
+ABSTRIP=0

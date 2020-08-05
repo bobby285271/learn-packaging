@@ -1,0 +1,8 @@
+PKGNAME=ca-certs
+PKGSEC=libs
+PKGDEP="openssl"
+PKGDES="Certificate Authority Certificates"
+
+ABHOST=noarch
+CERTHASH="9a29c1a5384ddd718f2953d3f2e71fa9043bd121"
+VER_NONE=1

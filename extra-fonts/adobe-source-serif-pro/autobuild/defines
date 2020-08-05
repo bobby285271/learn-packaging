@@ -1,0 +1,6 @@
+PKGNAME=adobe-source-serif-pro
+PKGSEC=fonts
+PKGDES="A Serif OpenType font family"
+PKGDEP="fontconfig"
+
+ABHOST=noarch

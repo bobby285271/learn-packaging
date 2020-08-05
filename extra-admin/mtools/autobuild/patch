@@ -1,0 +1,1 @@
+sed -i '/^SAMPLE FILE$/s:^:# :' mtools.conf

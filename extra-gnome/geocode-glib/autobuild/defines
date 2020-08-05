@@ -1,0 +1,7 @@
+PKGNAME=geocode-glib
+PKGSEC=gnome
+PKGDEP="glib json-glib libsoup"
+BUILDDEP="gobject-introspection gtk-doc intltool"
+PKGDES="Geocode Helper Library"
+
+ABTYPE=meson

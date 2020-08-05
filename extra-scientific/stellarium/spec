@@ -1,0 +1,3 @@
+VER=0.19.2
+SRCTBL="https://github.com/Stellarium/stellarium/releases/download/v$VER/stellarium-$VER.tar.gz"
+CHKSUM="sha256::e4d005c5473e3be15b3101585e8959f422437147a602b1649e4aba22a92e6081"

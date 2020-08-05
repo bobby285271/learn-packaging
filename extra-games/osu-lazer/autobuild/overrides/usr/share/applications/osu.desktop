@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=osu!lazer
+Comment=Rhythm is just a *click* away!
+Exec=/usr/bin/osu-lazer %U
+Icon=osu-lazer
+Type=Application
+StartupNotify=true
+StartupWMClass=Code
+Categories=Game;
+Keywords=osu;music;beatmap;
+MimeType=application/x-osz;

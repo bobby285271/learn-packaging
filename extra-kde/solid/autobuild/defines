@@ -1,0 +1,8 @@
+PKGNAME=solid
+PKGSEC=kde
+PKGDEP="media-player-info qt-5 udisks-2 upower"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Hardware integration and detection framework"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

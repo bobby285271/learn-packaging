@@ -1,0 +1,7 @@
+PKGNAME=gio-sharp
+PKGSEC=libs
+PKGDEP="gtk-sharp"
+PKGDES="Mono binding for GIO"
+
+NOPARALLEL=1
+ABSHADOW=0

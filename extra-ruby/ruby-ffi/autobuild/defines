@@ -1,0 +1,6 @@
+PKGNAME=ruby-ffi
+PKGSEC=ruby
+PKGDEP="ruby"
+PKGDES="An FFI (Foreign Function Interface) implementation for Ruby"
+
+ABTYPE=ruby

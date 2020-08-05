@@ -1,0 +1,3 @@
+mkdir -p "$PKGDIR"/usr/bin
+make -C source DESTDIR="$PKGDIR" PREFIX="/usr" LIBDIR=/usr/lib install
+make -C apps DESTDIR="$PKGDIR" PREFIX="/usr" LIBDIR=/usr/lib BINDIR=/usr/bin install

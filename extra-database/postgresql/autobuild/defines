@@ -1,0 +1,27 @@
+PKGNAME=postgresql
+PKGSEC=database
+PKGDEP="krb5 libxml2 linux-pam openssl python-2 readline tcl util-linux"
+BUILDDEP="docbook2x python-2 perl tcl"
+PKGDES="A sophisticated object-relational DBMS"
+
+NOSTATIC=no
+AUTOTOOLS_AFTER="--datadir=/usr/share/postgresql \
+                 --with-gssapi \
+                 --with-libxml \
+                 --with-openssl \
+                 --with-perl \
+                 --with-python \
+                 --with-tcl \
+                 --with-pam \
+                 --with-system-tzdata=/usr/share/zoneinfo \
+                 --with-uuid=e2fs \
+                 --enable-nls \
+                 --enable-thread-safety"
+
+if [[ "${CROSS:-$ARCH}" = "riscv64" ]]; then
+	AUTOTOOLS_AFTER+=" --disable-spinlocks"
+fi
+
+ABMK="world"
+ABSHADOW=no
+RECONF=no

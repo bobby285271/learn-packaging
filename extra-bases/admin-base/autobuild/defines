@@ -1,0 +1,20 @@
+PKGNAME=admin-base
+PKGSEC=Bases
+PKGDEP="apt btrfs-progs cryptsetup dbus debianutils dosfstools e2fsprogs \
+        f2fs-tools fcron fuse gnupg gptfdisk os-prober parted polkit rfkill \
+        shadow smartmontools sysfsutils trousers xfsprogs sudo bcache-tools \
+        mdadm multipath-tools mtd-utils nvme-cli quota-tools sg3-utils \
+        core-base genfstab kernel-tools exfat-utils gpart jfsutils \
+        reiserfsprogs hfsprogs hddtemp powertop apt-file"
+PKGDEP__AMD64="${PKGDEP} acpi acpid tlp pstate-frequency"
+PKGDEP__ARM64="${PKGDEP} cyanberry-config acpi acpid"
+PKGDEP__ARMEL="${PKGDEP} cyanberry-config"
+
+PKGDEP__RETRO="apt dbus e2fsprogs gnupg os-prober shadow sudo genfstab"
+PKGDEP__POWERPC="${PKGDEP__RETRO} powerpc-utils mac-fdisk hfsprogs"
+PKGDEP__I486="${PKGDEP__RETRO} dosfstools"
+PKGDEP__PPC64="${PKGDEP__POWERPC}"
+
+PKGDES="Meta package for AOSC OS basic administrative utilities"
+
+VER_NONE=1

@@ -1,0 +1,7 @@
+PKGNAME=ki18n
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Advanced internationalization framework"
+
+CMAKE_AFTER="-DBUILD_QCH=ON"

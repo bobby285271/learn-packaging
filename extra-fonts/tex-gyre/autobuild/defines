@@ -1,0 +1,6 @@
+PKGNAME=tex-gyre
+PKGSEC=fonts
+PKGDEP="fontconfig"
+PKGDES="The TeX Gyre (TG) Collection of Fonts"
+
+ABHOST=noarch

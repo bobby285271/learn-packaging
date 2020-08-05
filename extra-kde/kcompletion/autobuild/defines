@@ -1,0 +1,7 @@
+PKGNAME=kcompletion
+PKGSEC=kde
+PKGDEP="kwidgetsaddons kconfig"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Text completion support, helpers and widgets"
+
+CMAKE_AFTER="-DBUILD_QCH=ON"

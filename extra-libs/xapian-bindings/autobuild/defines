@@ -1,0 +1,10 @@
+PKGNAME=xapian-bindings
+PKGSEC=devel
+PKGDEP="xapian-core"
+PKGSUG="python-3 ruby tcl perl lua mono"
+BUILDDEP="${PKGSUG} sphinx"
+PKGDES="Language bindings for Xapian"
+
+AUTOTOOLS_AFTER="--with-python3 --with-ruby --with-tcl \
+                 --without-java --with-perl --with-lua \
+                 --with-csharp"

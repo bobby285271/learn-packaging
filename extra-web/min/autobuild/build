@@ -1,0 +1,4 @@
+dpkg -x min-${PKGVER}.bin "$PKGDIR"
+
+mkdir -pv "$PKGDIR"/usr/lib
+ln -sfv ../lib/min/min "$PKGDIR"/usr/bin/min

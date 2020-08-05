@@ -1,0 +1,23 @@
+PKGNAME=wget
+PKGDES="A network utility to retrieve files from the Internet"
+PKGSEC=web
+
+PKGDEP="openssl glibc libidn2 util-linux"
+PKGDEP__RETRO="openssl glibc util-linux"
+PKGDEP__I486="${PKGDEP__RETRO}"
+
+AUTOTOOLS_AFTER="--with-ssl=openssl \
+                 --enable-nls \
+                 --disable-rpath \
+                 PYTHON=/usr/bin/python3"
+AUTOTOOLS_AFTER__RETRO=" \
+                 --with-ssl=openssl \
+                 --enable-nls \
+                 --disable-rpath \
+                 --disable-iri \
+                 --disable-pcre \
+                 --disable-pcre2 \
+                 PYTHON=/usr/bin/python3"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"
+
+RECONF=0

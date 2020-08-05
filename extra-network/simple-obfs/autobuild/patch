@@ -1,0 +1,1 @@
+patch -p1 -i debian/patches/0001-Use-libcork-dev-in-system.patch

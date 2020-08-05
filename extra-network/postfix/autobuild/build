@@ -1,0 +1,62 @@
+export CCARGS='
+       -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl
+       -DHAS_LDAP
+       -DUSE_TLS
+       -DHAS_PGSQL -I/usr/include/postgresql
+       -DHAS_SQLITE
+       -DHAS_CDB
+       -DDEF_COMMAND_DIR=\"/usr/lib/postfix/alternatives\"
+       -DDEF_DAEMON_DIR=\"/usr/lib/postfix/bin\"
+       -DDEF_SENDMAIL_PATH=\"/usr/lib/postfix/alternatives/sendmail\"
+       -DDEF_README_DIR=\"/usr/share/doc/postfix\"
+       -DDEF_MANPAGE_DIR=\"/usr/share/man\"
+'
+export AUXLIBS="-lsasl2 -lldap -llber -lssl -lcrypto -lz -lm -lpq -lsqlite3 -lpthread -lcdb"
+if [[ "${CROSS:-$ARCH}" != "mipsel" && "${CROSS:-$ARCH}" != "powerpc" && "${CROSS:-$ARCH}" != "riscv64" ]]; then
+    export CCARGS+=' -DHAS_MYSQL -I/usr/include/mysql'
+    export AUXLIBS+=" -lmysqlclient"
+fi
+make makefiles \
+	DEBUG='' \
+	shared=yes \
+	CCARGS="${CCARGS//$'\n'/}" \
+	AUXLIBS="${AUXLIBS//$'\n'/}" \
+	OPT="${CFLAGS} ${LDFLAGS}" \
+        SHLIB_RPATH="-Wl,-rpath,/usr/lib/postfix"
+make
+
+sed 's:bin/postconf -dhx:bin/postconf -c conf -dhx:g' -i postfix-install
+LD_LIBRARY_PATH=lib:$LD_LIBRARY_PATH \
+    sh postfix-install -non-interactive install_root="$PKGDIR"
+
+for name in posttls-finger {smtp,qmqp}-{sink,source}; do
+	install -Dm644 "man/man1/${name}.1" "$PKGDIR/usr/share/man/man1/${name}.1"
+	install -Dm755 "bin/${name}" "$PKGDIR/usr/lib/postfix/alternatives/${name}"
+done
+
+sed -r \
+	-e '/override=1/d' \
+	-e '/absolute path name/d' \
+	-e 's/\$POSTCONF -/$POSTCONF -c .\/etc\/postfix -/g' \
+	-e '/(if \[|chmod|chown|find|mkdir|test)/s/\$path/.\/$path/g' \
+	libexec/post-install > $SRCDIR/post-install
+
+cd $PKGDIR
+LD_LIBRARY_PATH=usr/lib/postfix:$LD_LIBRARY_PATH \
+sh $SRCDIR/post-install \
+    command_directory=usr/bin \
+    config_directory=etc/postfix \
+    meta_directory=etc/postfix \
+    setgid_group=75 \
+    mail_owner=73 \
+    set-permissions || true
+
+patch -p0 -i $SRCDIR/autobuild/patches/aliases.patch
+sed 's/^\(\$manpage[^:]*\):/\1.gz:/' -i "etc/postfix/postfix-files"
+cd $SRCDIR
+
+# Huh...
+rm -r $PKGDIR/usr/bin
+for i in mailq newaliases; do
+    ln -sv ../alternatives/sendmail $PKGDIR/usr/lib/postfix/alternatives/$i
+done

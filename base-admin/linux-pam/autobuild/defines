@@ -1,0 +1,24 @@
+PKGNAME=linux-pam
+PKGDES="Pluggable Authentication Modules"
+PKGSEC=admin
+
+PKGDEP="glibc cracklib libtirpc db"
+PKGDEP__RETRO="glibc libtirpc db"
+PKGDEP__I486="${PKGDEP__RETRO}"
+
+BUILDDEP="docbook-xsl"
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+
+AUTOTOOLS_AFTER="--docdir=/usr/share/doc/Linux-PAM \
+                 --libdir=/usr/lib \
+                 --enable-static"
+AUTOTOOLS_AFTER__RETRO=" \
+                 --disable-regenerate-docu \
+                 --libdir=/usr/lib \
+                 --disable-static --disable-cracklib"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"
+
+ABMK="SCONFIGDIR=/etc/security"
+NOPARALLEL=1
+NOSTATIC=0

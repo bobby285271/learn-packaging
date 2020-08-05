@@ -1,0 +1,8 @@
+PKGNAME=mate-icon-theme
+PKGSEC=MATE
+PKGDEP="hicolor-icon-theme"
+BUILDDEP="icon-naming-utils intltool"
+PKGDES="Default icon theme for MATE"
+
+ABHOST=noarch
+PKGEPOCH=1

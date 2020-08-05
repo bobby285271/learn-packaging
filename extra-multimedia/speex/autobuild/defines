@@ -1,0 +1,5 @@
+PKGNAME=speex
+PKGEPOCH=2
+PKGDES="An audio compression format designed especially for speech"
+PKGDEP="libogg"
+PKGSEC=libs

@@ -1,0 +1,4 @@
+PKGNAME=qoauth
+PKGSEC=libs
+PKGDEP="qca"
+PKGDES="Qt-based C++ library for OAuth authorization scheme"

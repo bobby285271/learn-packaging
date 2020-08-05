@@ -1,0 +1,4 @@
+PKGNAME=cppunit
+PKGSEC=devel
+PKGDES="Glibc"
+PKGDES="A C++ unit testing framework"

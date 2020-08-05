@@ -1,0 +1,5 @@
+make CC="gcc -std=gnu99 ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
+make install DESTDIR="$PKGDIR"
+
+chown root:utmp "$PKGDIR"/usr/lib/utempter/utempter
+chmod 2755 "$PKGDIR"/usr/lib/utempter/utempter

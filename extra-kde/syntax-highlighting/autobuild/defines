@@ -1,0 +1,8 @@
+PKGNAME=syntax-highlighting
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Framework for syntax highlighting of structured text/code"
+
+CMAKE_AFTER="-DBUILD_TESTING=OFF \
+             -DBUILD_QCH=ON"

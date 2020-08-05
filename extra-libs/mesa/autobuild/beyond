@@ -1,0 +1,2 @@
+abinfo "Making a symlink from libGLX_mesa to libGLX_indirect ..."
+ln -sv /usr/lib/libGLX_mesa.so.0 "$PKGDIR"/usr/lib/libGLX_indirect.so.0

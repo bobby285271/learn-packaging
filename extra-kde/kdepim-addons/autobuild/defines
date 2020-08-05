@@ -1,0 +1,10 @@
+PKGNAME=kdepim-addons
+PKGSEC=kde
+PKGDEP="akonadi-import-wizard incidenceeditor khtml ktnef libkgapi \
+        mailcommon kitinerary libksieve prison5 kontactinterface"
+BUILDDEP="boost extra-cmake-modules kdesignerplugin kdoctools"
+PKGDES="Addons for KDE PIM applications"
+
+CMAKE_AFTER="-DLIBEXEC_INSTALL_DIR=lib"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

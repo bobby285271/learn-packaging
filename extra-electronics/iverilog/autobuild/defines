@@ -1,0 +1,9 @@
+PKGNAME=iverilog
+PKGDES="A Verilog simulator"
+PKGSEC=electronics
+PKGDEP="bzip2 gcc-runtime readline"
+BUILDDEP="gperf"
+
+ABSHADOW=0
+NOSTATIC=0
+NOPARALLEL=1

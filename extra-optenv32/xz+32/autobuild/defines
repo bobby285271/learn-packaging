@@ -1,0 +1,9 @@
+PKGNAME=xz+32
+PKGDES="General-purpose data compression software with a high compression ratio (optenv32)"
+PKGDEP="glibc+32"
+BUILDDEP="32subsystem"
+PKGSEC=utils
+
+MAKE_AFTER="pkgconfigdir=/usr/lib/pkgconfig"
+NOLTO=yes
+ABHOST=noarch

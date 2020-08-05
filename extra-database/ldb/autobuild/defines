@@ -1,0 +1,20 @@
+ABSHADOW=no
+PKGNAME=ldb 
+PKGSEC=database
+PKGDEP="talloc tevent tdb popt lmdb"
+BUILDDEP="doxygen cmocka"
+PKGDES="Schema-less ldap-like API and database"
+
+AUTOTOOLS_STRICT=0
+AUTOTOOLS_AFTER="--prefix=/usr \
+                 --disable-rpath \
+                 --disable-rpath-install \
+                 --bundled-libraries=NONE \
+                 --builtin-libraries=replace \
+                 --with-modulesdir=/usr/lib/ldb/modules \
+                 --with-privatelibdir=/usr/lib/ldb"
+NOPARALLEL=1
+
+alias BUILD_FINAL='doxygen Doxyfile'
+
+PKGEPOCH=2

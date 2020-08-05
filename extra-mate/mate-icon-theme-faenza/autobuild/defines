@@ -1,0 +1,8 @@
+PKGNAME=mate-icon-theme-faenza
+PKGSEC=MATE
+PKGDEP="hicolor-icon-theme"
+BUILDDEP="icon-naming-utils intltool mate-common"
+PKGDES="Faenza icon theme for MATE"
+
+ABSHADOW=no
+ABHOST=noarch

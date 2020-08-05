@@ -1,0 +1,12 @@
+qmake-qt5
+make
+
+for i in UEFIReplace UEFIExtract UEFIFind UEFIPatch; do
+    cd "$SRCDIR"/$i
+    qmake-qt5
+    make
+    install -Dvm755 $i "$PKGDIR"/usr/bin/$i
+done
+
+cd "$SRCDIR"
+install -Dvm755 UEFITool "$PKGDIR"/usr/bin/UEFITool

@@ -1,0 +1,9 @@
+cd "$SRCDIR"/tools/basecurve
+
+cmake .
+make
+
+install -Dm0755 darktable-curve-tool "$PKGDIR"/usr/bin/darktable-curve-tool
+install -Dm0755 darktable-curve-tool-helper "$PKGDIR"/usr/bin/darktable-curve-tool-helper
+
+cd "$SRCDIR"

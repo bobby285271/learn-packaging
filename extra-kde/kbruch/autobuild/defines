@@ -1,0 +1,7 @@
+PKGNAME=kbruch
+PKGSEC=kde
+PKGDEP="kxmlgui"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="An educational application for kids to practice fractions"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

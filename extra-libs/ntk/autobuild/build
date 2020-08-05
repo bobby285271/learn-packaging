@@ -1,0 +1,4 @@
+chmod a+x waf
+./waf configure --prefix=/usr
+./waf -p -j$(nproc)
+./waf --destdir="$PKGDIR" install

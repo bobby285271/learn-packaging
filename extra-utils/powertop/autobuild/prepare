@@ -1,0 +1,3 @@
+sed -e "s|RUN-VERSION-SCRIPT-IN-GIT-REPOSITORY-ONLY|v$PKGVER|" \
+    -i "$SRCDIR"/scripts/version
+./autogen.sh

@@ -1,0 +1,7 @@
+PKGNAME=gnome-backgrounds
+PKGSEC=gnome
+PKGDEP=""
+BUILDDEP="intltool itstool"
+PKGDES="Background images for GNOME"
+
+ABHOST=noarch

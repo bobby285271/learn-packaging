@@ -1,0 +1,11 @@
+install -d "$PKGDIR"/var/lib/dhcp
+
+mv "$PKGDIR"/etc/dhcp/dhcpd.conf.example "$PKGDIR"/etc/dhcpd.conf
+cp "$PKGDIR"/etc/dhcpd{,6}.conf
+
+install -m755 -d "$PKGDIR"/usr/share/dhclient
+mv "$PKGDIR"/etc/dhcp/dhclient.conf.example "$PKGDIR"/usr/share/dhclient/
+
+install -d "$PKGDIR"/var/lib/dhclient
+
+install -m755 client/scripts/linux "$PKGDIR"/usr/bin/dhclient-script

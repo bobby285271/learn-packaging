@@ -1,0 +1,8 @@
+PKGNAME=telepathy-mission-control
+PKGSEC=net
+PKGDEP="telepathy-glib libgnome-keyring dconf networkmanager"
+BUILDDEP="libxslt gobject-introspection gtk-doc vim"
+PKGDES="Telepathy component providing abstraction of some details of connection managers"
+
+AUTOTOOLS_AFTER="--with-connectivity=nm --enable-gtk-doc \
+                 --disable-upower --disable-static --disable-schemas-compile"

@@ -1,0 +1,11 @@
+PKGNAME=volatility
+PKGSEC=utils
+PKGDEP="ipython libforensic1394 libraw1394 openpyxl pillow pycryptodome \
+        pytz ujson yara"
+PKGSUG="distorm"
+BUILDDEP="setuptools"
+PKGDES="Advanced memory forensics framework"
+
+NOPYTHON3=yes
+ABTYPE=python
+ABHOST=noarch

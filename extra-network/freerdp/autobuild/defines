@@ -1,0 +1,13 @@
+PKGNAME=freerdp
+PKGSEC=net
+PKGDEP="openssl x11-lib alsa-lib ffmpeg pulseaudio cups gst-plugins-base-1-0"
+PKGDES="FreeRDP client"
+
+CMAKE_AFTER="-DWITH_PULSE=ON \
+             -DWITH_CUPS=ON \
+             -DWITH_CHANNELS=ON \
+             -DWITH_CLIENT_CHANNELS=ON \
+             -DWITH_SERVER_CHANNELS=ON \
+             -DWITH_WAYLAND=ON \
+             -DCMAKE_INSTALL_LIBDIR=/usr/lib"
+PKGEPOCH=2

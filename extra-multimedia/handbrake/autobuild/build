@@ -1,0 +1,3 @@
+./configure --prefix=/usr
+make -C build
+make install DESTDIR="$PKGDIR" -C build

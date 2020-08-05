@@ -1,0 +1,9 @@
+PKGNAME=mate-power-manager
+PKGSEC=MATE
+PKGDEP="dbus-glib upower dconf libcanberra libgnome-keyring libnotify \
+        libunique3 mate-panel yelp"
+BUILDDEP="docbook2x mate-common yelp-tools xmlto"
+PKGDES="MATE power manager daemon and utilities"
+
+AUTOTOOLS_AFTER="--enable-applets"
+PKGEPOCH=1

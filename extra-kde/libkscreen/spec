@@ -1,0 +1,3 @@
+VER=5.19.0
+SRCTBL="https://download.kde.org/stable/plasma/$VER/libkscreen-$VER.tar.xz"
+CHKSUM="sha256::0bf55850a7d76d636848f6bcde44ad8fde2dc51ef2723f673e7f238f55e8d582"

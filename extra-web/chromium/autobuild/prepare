@@ -1,0 +1,36 @@
+export CFLAGS="${CFLAGS/-fexceptions/} -fPIC"
+export CXXFLAGS="${CXXFLAGS/-fexceptions/} -fPIC"
+export LDFLAGS="${LDFLAGS} -fPIC"
+
+export AR=/usr/bin/ar
+export NM=/usr/bin/nm
+
+if [[ "${CROSS:-$ARCH}" = "armel" ]]; then
+   ln -sv /usr/bin/gcc "$SRCDIR"/arm-linux-gnueabihf-gcc
+   ln -sv /usr/bin/ld.bfd "$SRCDIR"/arm-linux-gnueabihf-ld
+   ln -sv arm-linux-gnueabihf-ld "$SRCDIR"/ld
+   ln -sv /usr/bin/clang "$SRCDIR"/arm-linux-gnueabihf-clang
+   ln -sv /usr/bin/clang++ "$SRCDIR"/arm-linux-gnueabihf-clang++
+   ln -sv /usr/bin/g++ "$SRCDIR"/arm-linux-gnueabihf-g++
+   ln -sv /usr/bin/ar "$SRCDIR"/arm-linux-gnueabihf-ar
+   ln -sv /usr/bin/as "$SRCDIR"/arm-linux-gnueabihf-as
+   ln -sv /usr/bin/nm "$SRCDIR"/arm-linux-gnueabihf-nm
+   ln -sv /usr/bin/readelf "$SRCDIR"/arm-linux-gnueabihf-readelf
+   export PATH="$SRCDIR:$PATH"
+fi
+
+if [[ "${CROSS:-$ARCH}" = "arm64" ]]; then
+   ln -sv /usr/bin/gcc "$SRCDIR"/aarch64-linux-gnu-gcc
+   ln -sv /usr/bin/ld.bfd "$SRCDIR"/aarch64-linux-gnu-ld
+   ln -sv aarch64-linux-gnu-ld "$SRCDIR"/ld
+   ln -sv /usr/bin/clang "$SRCDIR"/aarch64-linux-gnu-clang
+   ln -sv /usr/bin/clang++ "$SRCDIR"/aarch64-linux-gnu-clang++
+   ln -sv /usr/bin/g++ "$SRCDIR"/aarch64-linux-gnu-g++
+   ln -sv /usr/bin/ar "$SRCDIR"/aarch64-linux-gnu-ar
+   ln -sv /usr/bin/as "$SRCDIR"/aarch64-linux-gnu-as
+   ln -sv /usr/bin/nm "$SRCDIR"/aarch64-linux-gnu-nm
+   ln -sv /usr/bin/readelf "$SRCDIR"/aarch64-linux-gnu-readelf
+   export PATH="$SRCDIR:$PATH"
+   export CFLAGS="${CFLAGS} -march=armv8-a+crc+crypto"
+   export CXXFLAGS="${CXXFLAGS} -march=armv8-a+crc+crypto"
+fi

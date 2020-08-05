@@ -1,0 +1,14 @@
+cp -rv numpy{,3}-$PKGVER
+
+cd "$SRCDIR"/numpy-$PKGVER
+python2 setup.py build
+python2 setup.py install --prefix=/usr --root="$PKGDIR" --optimize=1
+mv -v "$PKGDIR"/usr/bin/f2py{,2}
+
+cd "$SRCDIR"/numpy3-$PKGVER
+python3 setup.py build
+python3 setup.py install --prefix=/usr --root="$PKGDIR" --optimize=1
+mv -v "$PKGDIR"/usr/bin/f2py{,3}
+
+cd "$SRCDIR"
+ln -sv f2py2 "$PKGDIR"/usr/bin/f2py

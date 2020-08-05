@@ -1,0 +1,4 @@
+PKGNAME=nss-mdns
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Glibc plugin providing host name resolution via mDNS"

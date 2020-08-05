@@ -1,0 +1,8 @@
+PKGNAME=kglobalaccel
+PKGSEC=kde
+PKGDEP="kconfig kcrash kdbusaddons"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Support for global keyboard support in the Plasma Workspace"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

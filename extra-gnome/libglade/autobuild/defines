@@ -1,0 +1,14 @@
+PKGNAME=libglade
+PKGSEC=libs
+PKGDES="Allows you to load glade interface files in a program at runtime"
+PKGDEP="gtk-2 libxml2 python-2"
+PKGDEP__RETRO="gtk-2 libxml2"
+PKGDEP__I486="${PKGDEP__RETRO}"
+BUILDDEP="gtk-doc"
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+
+ABSHADOW=0
+RECONF=0
+AUTOTOOLS_AFTER__RETRO="--disable-gtk-doc"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"

@@ -1,0 +1,5 @@
+PKGNAME=evemu
+PKGSEC=libs
+PKGDEP="libevdev"
+PKGDES="Linux Evdev Event Emulation"
+

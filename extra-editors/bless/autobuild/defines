@@ -1,0 +1,8 @@
+PKGNAME=bless
+PKGSEC=devel
+PKGDEP="gtk-sharp"
+BUILDDEP="docbook-xml rarian"
+PKGDES="A hex data editor"
+
+AUTOTOOLS_AFTER="--without-scrollkeeper"
+ABSHADOW=no

@@ -1,0 +1,28 @@
+PKGNAME=valgrind
+PKGSEC=devel
+PKGDEP="perl"
+PKGDES="A tool to help find memory management problems in programs"
+
+# Filter out some flags that cause lots of valgrind test failures.
+# Also filter away -O2, valgrind adds it wherever suitable, but
+# not for tests which should be -O0, as they aren't meant to be
+# compiled with -O2 unless explicitely requested. Same for any -mcpu flag.
+# Ideally we will change this to only be done for the non-primary build
+# and the test suite.
+#
+# http://src.fedoraproject.org/cgit/rpms/valgrind.git/commit/?id=7a98f80d9b61ce167e4ef8129c81ed9284ecf4e1
+AB_FLAGS_SPECS=0
+AB_FLAGS_SSP=0
+AB_FLAGS_FTF=0
+NOLTO=1
+
+if [[ "${CROSS:-$ARCH}" != "powerpc" && "${CROSS:-$ARCH}" != "ppc64" && \
+      "${CROSS:-$ARCH}" != "riscv64" && "${CROSS:-$ARCH}" != "i586" ]]; then
+    PKGDEP+=" openmpi"
+    AUTOTOOLS_AFTER="--with-mpicc=mpicc"
+fi
+
+PKGDEP__RETRO="perl"
+PKGDEP__I486="${PKGDEP__RETRO}"
+AUTOTOOLS_AFTER__RETRO="--without-mpicc"
+AUTOTOOLS_AFTER__I486="--without-mpicc"

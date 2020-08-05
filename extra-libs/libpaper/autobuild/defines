@@ -1,0 +1,4 @@
+PKGNAME=libpaper
+PKGSEC=libs
+PKGDES="Library for handling paper characteristics"
+PKGDEP="bash"

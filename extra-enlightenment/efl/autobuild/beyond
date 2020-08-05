@@ -1,0 +1,7 @@
+pushd build
+cd doc
+abinfo 'Building documentation... '
+doxygen
+install -d "$PKGDIR"/usr/share/doc/efl
+cp -ar ../html "$PKGDIR"/usr/share/doc/efl/html
+popd

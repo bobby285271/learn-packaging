@@ -1,0 +1,5 @@
+PKGNAME=libgpg-error
+PKGDES="Support library for libgcrypt"
+PKGSEC=libs
+PKGDEP=glibc
+ABSHADOW=no

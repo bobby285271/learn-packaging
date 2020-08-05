@@ -1,0 +1,15 @@
+PKGNAME=libsecret
+PKGDES="A GObject based library for accessing the Secret Service API"
+PKGSEC=libs
+PKGDEP="glib libgcrypt"
+PKGSUG="gnome-keyring"
+PKGSUG__RETRO=""
+PKGSUG__I486="${PKGSUG__RETRO}"
+BUILDDEP="gtk-doc docbook-xsl gobject-introspection intltool vala vim"
+BUILDDEP__RETRO="intltool"
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+
+AUTOTOOLS_AFTER="--enable-gtk-doc"
+AUTOTOOLS_AFTER__RETRO="--disable-gtk-doc --disable-manpages"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"
+ABSHADOW=no

@@ -1,0 +1,8 @@
+PKGNAME=libpqxx
+PKGSEC=libs
+PKGDEP="postgresql"
+BUILDDEP="doxygen xmlto"
+PKGDES="C++ client API for PostgreSQL"
+
+ABSHADOW=0
+PKGBREAK="osm2pgrouting<=2.3.6-2"

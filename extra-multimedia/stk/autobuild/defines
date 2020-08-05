@@ -1,0 +1,6 @@
+PKGNAME=stk
+PKGSEC=sound
+PKGDEP="gcc-runtime jack"
+PKGDES="The Synthesis ToolKit"
+
+PKGBREAK="lmms<=2:1.2.1"

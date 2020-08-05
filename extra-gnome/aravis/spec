@@ -1,0 +1,3 @@
+VER=0.6.4
+SRCTBL="https://download.gnome.org/sources/aravis/${VER:0:3}/aravis-$VER.tar.xz"
+CHKSUM="sha256::b595a4724da51d0fdb71f2b6e2f1e12f328e423155c3e84607ee2ce704f516bd"

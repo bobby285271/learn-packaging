@@ -1,0 +1,4 @@
+PKGNAME=minitube
+PKGSEC=video
+PKGDEP="mpv qt-5"
+PKGDES="A native YouTube client"

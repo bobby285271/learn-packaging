@@ -1,0 +1,11 @@
+PKGNAME=nettle
+PKGDES="Low-level cryptographic library"
+PKGDEP="gmp"
+PKGSEC=libs
+
+AUTOTOOLS_AFTER="--enable-fat"
+AUTOTOOLS_AFTER__ARM64="${AUTOTOOLS_AFTER} --enable-arm-neon"
+AUTOTOOLS_AFTER__ARMEL="${AUTOTOOLS_AFTER} --enable-arm-neon"
+
+AUTOTOOLS_AFTER__RETRO="--disable-fat"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"

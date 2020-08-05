@@ -1,0 +1,6 @@
+PKGNAME=commons-logging
+PKGSEC=java
+PKGDEP="openjdk"
+PKGDES="Wrapper around a variety of logging API implementations"
+ABHOST=noarch
+VER_NONE=1

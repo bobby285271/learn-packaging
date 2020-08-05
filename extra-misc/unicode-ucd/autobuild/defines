@@ -1,0 +1,8 @@
+PKGNAME=unicode-ucd
+PKGSEC=misc
+PKGDEP=""
+PKGDES="Unicode Character Database"
+
+ABHOST=noarch
+UNIVER=11.0.0
+EMOVER=11.0

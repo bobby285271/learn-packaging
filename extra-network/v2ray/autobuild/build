@@ -1,0 +1,50 @@
+abinfo "Preparing build environment..."
+declare -A ARCH_MAP;
+ARCH_DEF=${CROSS:-$ARCH}
+ARCH_MAP=( ["amd64"]="64" ["armel"]="arm" ["arm64"]="arm64" ["mipsel"]="mipsle" ["mips64el"]="mips64le")
+GO_ARCH=${ARCH_MAP["$ARCH_DEF"]}
+
+export GOPATH="${SRCDIR}/build"
+export V2CONFIG="${SRCDIR}/build/src/v2ray.com/core/release/config"
+
+abinfo "Building V2Ray..."
+
+go get go.starlark.net/starlark \
+       github.com/golang/protobuf/proto \
+       golang.org/x/crypto/chacha20poly1305 \
+       golang.org/x/crypto/cryptobyte \
+       golang.org/x/crypto/curve25519 \
+       golang.org/x/crypto/hkdf \
+       golang.org/x/crypto/sha3 \
+       golang.org/x/net/dns/dnsmessage \
+       golang.org/x/net/http2 \
+       golang.org/x/net/http2/h2c \
+       google.golang.org/grpc \
+       github.com/refraction-networking/utls \
+       github.com/gorilla/websocket
+
+mkdir -pv "${GOPATH}/src"
+
+mkdir -pv "$GOPATH"/src/v2ray.com/
+mv -v "$SRCDIR"/v2ray-core-$PKGVER \
+    "$SRCDIR"/build/src/v2ray.com/core
+
+go build -o v2ray v2ray.com/core/main
+go build -o v2ctl v2ray.com/core/infra/control/main
+
+abinfo "Installing V2Ray..."
+
+install -Dvm644 "${V2CONFIG}/systemd/v2ray.service" "${PKGDIR}/usr/lib/systemd/system/v2ray.service"
+sed -e '/ExecStart/i Environment=V2RAY_LOCATION_ASSET=/etc/v2ray' \
+    -e 's|/usr/bin/v2ray/v2ray|/usr/bin/v2ray|' \
+    -i "${PKGDIR}"/usr/lib/systemd/system/v2ray.service
+
+install -Dvm755 "${SRCDIR}/v2ray" "${PKGDIR}/usr/bin/v2ray"
+install -Dvm755 "${SRCDIR}/v2ctl" "${PKGDIR}/usr/bin/v2ctl"
+
+install -Dvm644 "${V2CONFIG}/vpoint_socks_vmess.json" "${PKGDIR}/etc/v2ray/vpoint_socks_vmess.json"
+install -Dvm644 "${V2CONFIG}/vpoint_vmess_freedom.json" "${PKGDIR}/etc/v2ray/vpoint_vmess_freedom.json"
+
+install -Dvm644 "${V2CONFIG}"/*.json -t "$PKGDIR"/etc/v2ray/
+
+cd "$SRCDIR"

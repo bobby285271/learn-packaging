@@ -1,0 +1,3 @@
+abinfo "Removing QGpgme libraries, provided by gpgme ..."
+rm -rv "$PKGDIR"/usr/include/{qgpgme,gpgme++}
+rm -v "$PKGDIR"/usr/lib/libqgpgme.so

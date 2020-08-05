@@ -1,0 +1,23 @@
+# Adapted from Arch Linux community/hub.
+
+abinfo "Adjust source path..."
+mkdir -pv "$SRCDIR"/src/github.com/github
+cp -rv hub-$PKGVER "$SRCDIR"/src/github.com/github/hub
+
+abinfo "Preparing Go environment..."
+cd "$SRCDIR"/src/github.com/github/hub
+export GOPATH="$SRCDIR"
+
+abinfo "Building program and man pages..."
+make
+make man-pages
+
+abinfo "Packaging..."
+make PREFIX="$PKGDIR"/usr install
+
+install -Dvm644 etc/hub.bash_completion.sh \
+    "$PKGDIR"/usr/share/bash-completion/completions/hub
+install -Dvm644 etc/hub.zsh_completion \
+    "$PKGDIR"/usr/share/zsh/site-functions/_hub
+install -Dvm644 etc/hub.fish_completion \
+    "$PKGDIR"/usr/share/fish/vendor_completions.d/hub.fish

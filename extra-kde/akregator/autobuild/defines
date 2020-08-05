@@ -1,0 +1,12 @@
+PKGNAME=akregator
+PKGSEC=kde
+PKGDEP="syndication knotifyconfig kontactinterface ktexteditor messagelib"
+BUILDDEP="boost extra-cmake-modules kdesignerplugin kdoctools"
+PKGDES="A Feed Reader by KDE"
+
+PKGREP="kdepim<=16.11.90"
+PKGBREAK="kdepim<=16.11.90"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"
+
+CMAKE_AFTER="-DCMAKE_SKIP_RPATH=OFF"

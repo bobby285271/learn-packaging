@@ -1,0 +1,4 @@
+PKGNAME=libdvdread
+PKGSEC=libs
+PKGDEP="libdvdcss"
+PKGDES="Provides a simple foundation for reading DVD video disks"

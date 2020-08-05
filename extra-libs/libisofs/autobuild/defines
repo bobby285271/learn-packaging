@@ -1,0 +1,7 @@
+PKGNAME=libisofs
+PKGSEC=libs
+PKGDEP="acl zlib"
+PKGDES="Support library for ISO-9660 image files"
+
+AUTOTOOLS_AFTER="--enable-libacl"
+ABSHADOW=0

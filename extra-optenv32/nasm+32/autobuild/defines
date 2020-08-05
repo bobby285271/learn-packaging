@@ -1,0 +1,7 @@
+PKGNAME=nasm+32
+PKGDES="An 80x86 assembler designed for portability and modularity (optenv32)"
+PKGDEP="glibc+32"
+PKGSEC=devel
+
+NOLTO=yes
+ABHOST=noarch

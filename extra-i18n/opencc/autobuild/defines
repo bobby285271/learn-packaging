@@ -1,0 +1,10 @@
+PKGNAME=opencc
+PKGEPOCH=1
+PKGSEC=localization
+PKGDEP="gcc-runtime"
+BUILDDEP="cmake doxygen wheel"
+PKGDES="Open source Chinese conversion library and utilities"
+
+CMAKE_AFTER="-DBUILD_DOCUMENTATION:BOOL=ON \
+             -DCMAKE_SKIP_RPATH=OFF"
+AB_FLAGS_O3=1

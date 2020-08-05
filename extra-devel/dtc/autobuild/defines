@@ -1,0 +1,4 @@
+PKGNAME=dtc
+PKGSEC=devel
+PKGDEP="glibc"
+PKGDES="Device Tree Compiler"

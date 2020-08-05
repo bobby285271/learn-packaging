@@ -1,0 +1,9 @@
+PKGNAME=hugin
+PKGSEC=graphics
+PKGDEP="boost desktop-file-utils enblend-enfuse exiv2 lapack lensfun libpano13 make \
+        perl-image-exiftool python-3 wxgtk2"
+BUILDDEP="cmake swig tclap"
+PKGDES="Panorama photo stitcher"
+
+CMAKE_AFTER="-DENABLE_LAPACK=yes"
+NOLTO=yes

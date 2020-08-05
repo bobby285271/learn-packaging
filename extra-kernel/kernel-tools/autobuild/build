@@ -1,0 +1,122 @@
+export OLDARCH="$ARCH"
+unset ARCH
+
+unset CPPFLAGS CXXFLAGS CFLAGS LDFLAGS
+
+# perf
+cd "$SRCDIR"/tools/perf
+make -f Makefile.perf \
+        prefix=/usr \
+        lib=lib/perf \
+        perfexecdir=lib/perf \
+        NO_SDT=1 \
+        DESTDIR="$PKGDIR" -j1
+make -f Makefile.perf \
+        prefix=/usr \
+        lib=lib/perf \
+        perfexecdir=lib/perf \
+        NO_SDT=1 \
+        DESTDIR="$PKGDIR" \
+        install -j1
+
+# libtraceevent
+cd "$SRCDIR"/tools/lib/traceevent
+make
+install -dm 755 "$PKGDIR/usr/lib"
+install -m 644 libtraceevent.so "$PKGDIR/usr/lib"
+
+# cpupower
+cd "$SRCDIR"/tools/power/cpupower
+make VERSION="$PKGVER"
+make \
+    DESTDIR="$PKGDIR" \
+    sbindir="/usr/bin" \
+    mandir="/usr/share/man" \
+    docdir="/usr/share/doc/cpupower" \
+    install install-man
+
+# x86-energy-perf-policy
+if [[ "${CROSS:-$ARCH}" == "amd64" ]]; then
+    (
+        cd "$SRCDIR"/tools/power/x86/x86_energy_perf_policy
+        make
+        install -Dm 755 x86_energy_perf_policy "$PKGDIR"/usr/bin/x86_energy_perf_policy
+        install -Dm 644 x86_energy_perf_policy.8 "$PKGDIR"/usr/share/man/man8/x86_energy_perf_policy.8
+    )
+fi
+
+# usbip
+cd "$SRCDIR"/tools/usb/usbip
+./autogen.sh
+./configure --prefix=/usr --sbindir=/usr/bin
+make
+make install DESTDIR="$PKGDIR"
+
+# tmon
+cd "$SRCDIR"/tools/thermal/tmon
+make
+make install INSTALL_ROOT="$PKGDIR"
+
+# cgroup-event-listener
+cd "$SRCDIR"/tools/cgroup
+make
+install -Dm755 cgroup_event_listener "$PKGDIR"/usr/bin/cgroup_event_listener
+
+# iio
+cd "$SRCDIR"/tools/iio
+make
+make install INSTALL_ROOT="$PKGDIR"
+
+# gpio
+cd "$SRCDIR"/tools/gpio
+make -j1
+make install DESTDIR="$PKGDIR" -j1
+
+# turbostat
+if [[ "${CROSS:-$ARCH}" == "amd64" ]]; then
+    (
+        cd "$SRCDIR"/tools/power/x86/turbostat
+        make
+        make install DESTDIR="$PKGDIR"
+    )
+fi
+
+# hyperv
+cd "$SRCDIR"/tools/hv
+CFLAGS+=' -DKVP_SCRIPTS_PATH=\"/usr/lib/hyperv/kvp_scripts/\"' make
+for i in hv_fcopy_daemon hv_kvp_daemon hv_vss_daemon; do
+    install -Dm755 "$i" "$PKGDIR"/usr/bin/$i
+done
+install -dm755 "$PKGDIR"/usr/lib/hyperv/kvp_scripts
+
+# perf
+cd "$SRCDIR"/tools/perf
+make -f Makefile.perf \
+    prefix=/usr \
+    lib=lib/perf \
+    perfexecdir=lib/perf \
+    NO_SDT=1 \
+    PYTHON=python2 \
+    PYTHON_CONFIG=python2-config \
+    PERF_VERSION="$PKGVER" \
+    DESTDIR="$PKGVER" \
+    all man
+make -f Makefile.perf \
+    prefix=/usr \
+    lib=lib/perf \
+    perfexecdir=lib/perf \
+    NO_SDT=1 \
+    PYTHON=python2 \
+    PYTHON_CONFIG=python2-config \
+    PERF_VERSION="$PKGDIR" \
+    DESTDIR="$PKGDIR" \
+    install install-man
+mkdir "$PKGDIR"/etc/ld.so.conf.d
+echo '/usr/lib/perf' > "$PKGDIR"/etc/ld.so.conf.d/perf.conf
+
+cd "$SRCDIR"
+
+find "$PKGDIR"/usr/share -type f -exec chmod a-x {} \;
+
+export ARCH="$OLDARCH"
+unset OLDARCH

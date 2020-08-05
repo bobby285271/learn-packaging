@@ -1,0 +1,4 @@
+VER=0.9
+SRCTBL="https://nixos.org/releases/patchelf/patchelf-$VER/patchelf-$VER.tar.gz"
+CHKSUM="sha256::f2aa40a6148cb3b0ca807a1bf836b081793e55ec9e5540a5356d800132be7e0a"
+REL=1

@@ -1,0 +1,18 @@
+PKGNAME=r
+PKGSEC=science
+PKGDEP="lapack bzip2 libpng libjpeg-turbo libtiff ncurses pcre \
+        readline zlib perl x11-lib xz zip unzip tk"
+BUILDDEP="tk"
+if [[ "${CROSS:-$ARCH}" != "mipsel" ]]; then
+    BUILDDEP+=" openjdk"
+fi
+PKGDES="Language and environment for statistical computing and graphics"
+
+AB_FLAGS_SPECS=0
+AB_FLAGS_O3=1
+NOSTATIC=0
+NOPARALLEL=1
+
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    export LTO="--enable-lto"
+fi

@@ -1,0 +1,6 @@
+PKGNAME=ser2net
+PKGSEC=net
+PKGDEP="glibc"
+PKGDES="Serial port to network proxy"
+
+PKGEPOCH=1

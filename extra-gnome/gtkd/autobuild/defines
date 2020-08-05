@@ -1,0 +1,14 @@
+PKGNAME=gtkd
+PKGSEC=gnome
+PKGDEP="gtk-3 liblphobos gstreamer-1-0 gtksourceview-3 vte-gtk3"
+BUILDDEP="ldc"
+PKGDES="D language bindings for GTK+"
+
+NOSTATIC=0
+NOLTO=1
+
+if [[ "${CROSS:-$ARCH}" = *64 ]]; then
+    MAKE_AFTER+=" MODEL=64"
+fi
+
+PKGBREAK="tilix<=1.7.7"

@@ -1,0 +1,8 @@
+PKGNAME=gnome-user-share
+PKGSEC=gnome
+PKGDEP="dconf gtk-3 hicolor-icon-theme libnotify gnome-bluetooth \
+        libcanberra mod-dnssd"
+BUILDDEP="gtk-doc docbook-xsl intltool itstool nautilus"
+PKGDES="Easy-to-use user-level file sharing for GNOME"
+
+PKGEPOCH=1

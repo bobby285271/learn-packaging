@@ -1,0 +1,7 @@
+PKGNAME=soundtouch
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="An audio processing library"
+
+AUTOTOOLS_AFTER="--enable-shared"
+AB_FLAGS_O3=1

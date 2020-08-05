@@ -1,0 +1,10 @@
+[Unit]
+Description=Speech-Dispatcher daemon
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/speech-dispatcher -d
+
+[Install]
+WantedBy=multi-user.target

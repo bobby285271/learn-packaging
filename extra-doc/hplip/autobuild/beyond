@@ -1,0 +1,19 @@
+abinfo "Dropping unneeded files ..."
+rm -fv "$SRCDIR"/usr/share/hplip/hpaio.desc
+rm -fv "$PKGDIR"/usr/share/hplip/hplip-install
+rm -fv "$PKGDIR"/usr/share/hplip/install.*
+rm -fv "$PKGDIR"/usr/share/hplip/uninstall.*
+rm -fv "$PKGDIR"/usr/bin/hp-uninstall
+rm -fv "$PKGDIR"/usr/share/hplip/upgrade.*
+rm -fv "$PKGDIR"/usr/bin/hp-upgrade
+rm -fv "$PKGDIR"/usr/share/hplip/hpijs.drv.in.template
+rm -fv "$PKGDIR"/usr/share/cups/mime/pstotiff.types
+rm -fv "$PKGDIR"/usr/share/hplip/fax/pstotiff*
+rm -fv "$PKGDIR"/usr/lib/systemd/system/hplip-printer@.service
+rm -rfv "$PKGDIR"/etc/{sane.d,xdg}
+rm -rfv "$PKGDIR"/usr/share/hal
+rm -rfv "$PKGDIR"/etc/init.d
+
+abinfo "Enabling hpaio backend for SANE ..."
+mkdir -pv "$PKGDIR"/etc/sane.d/dll.d
+echo hpaio > "$PKGDIR"/etc/sane.d/dll.d/hpaio

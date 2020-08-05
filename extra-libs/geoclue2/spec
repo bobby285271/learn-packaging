@@ -1,0 +1,3 @@
+VER=2.5.2
+GITSRC="https://gitlab.freedesktop.org/geoclue/geoclue"
+GITCO="ed2d81fe558b657b52940dd52316bcc1a32d0cff"

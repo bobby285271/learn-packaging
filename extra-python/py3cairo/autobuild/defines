@@ -1,0 +1,7 @@
+PKGNAME=py3cairo
+PKGSEC=python
+PKGDEP="pycairo"
+PKGDES="Transitional package for PyCairo"
+
+ABHOST=noarch
+PKGEPOCH=1

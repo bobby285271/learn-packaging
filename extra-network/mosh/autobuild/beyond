@@ -1,0 +1,2 @@
+install -Dm644 conf/bash-completion/completions/mosh \
+    "$PKGDIR"/usr/share/bash-completion/completions/mosh

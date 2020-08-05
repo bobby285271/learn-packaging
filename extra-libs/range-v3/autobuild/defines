@@ -1,0 +1,7 @@
+PKGNAME=range-v3
+PKGSEC=libs
+PKGDEP=""
+PKGDES="Range library for C++14/17/20, basis for C++20's std::ranges"
+
+ABHOST=noarch
+PKGEPOCH=1

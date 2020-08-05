@@ -1,0 +1,8 @@
+PKGNAME=boto
+PKGSEC=python
+PKGDEP="python-2"
+BUILDDEP="setuptools"
+PKGDES="A Python interface to Amazon Web Services"
+
+NOPYTHON3=yes
+ABHOST=noarch

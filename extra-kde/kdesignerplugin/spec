@@ -1,0 +1,3 @@
+VER=5.71.0
+SRCTBL="https://download.kde.org/stable/frameworks/${VER:0:4}/portingAids/kdesignerplugin-$VER.tar.xz"
+CHKSUM="sha256::e77a96c2a6cd518f3040e9366f013f0128200791b6c93c3c5b2310af16fb040b"

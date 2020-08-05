@@ -1,0 +1,8 @@
+PKGNAME=signon
+PKGSEC=admin
+PKGDEP="qt-5"
+BUILDDEP="doxygen"
+PKGDES="A D-Bus service which performs user authentication on behalf of its clients"
+
+USEQT5=1
+ABMK="LIBDIR=/usr/lib"

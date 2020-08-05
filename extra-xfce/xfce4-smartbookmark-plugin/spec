@@ -1,0 +1,3 @@
+VER=0.5.1
+SRCTBL="https://archive.xfce.org/src/panel-plugins/xfce4-smartbookmark-plugin/${VER%.*}/xfce4-smartbookmark-plugin-$VER.tar.bz2"
+CHKSUM="sha256::3e28fb7cd2e2251e89a8715684081b862406e3fb4e6d8c0caa1b798a97703600"

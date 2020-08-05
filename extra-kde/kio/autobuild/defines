@@ -1,0 +1,9 @@
+PKGNAME=kio
+PKGSEC=kde
+PKGDEP="desktop-file-utils kdoctools kbookmarks kjobwidgets kwallet solid"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A framework for abstraction of data resources and network access"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF \
+             -DLIBEXEC_INSTALL_DIR=lib"

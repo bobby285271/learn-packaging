@@ -1,0 +1,18 @@
+PKGNAME=kodi
+PKGEPOCH=1
+PKGSEC=x11
+PKGDEP="afpfs-ng bluez dcadec fribidi glew hicolor-icon-theme \
+        libass libbluray libcdio libcec libjpeg-turbo libmicrohttpd \
+        libnfs libplist libssh libva lirc lsb-release lzo mariadb \
+        mesa-demos pillow pulseaudio samba shairplay simplejson sdl2 \
+        taglib tinyxml udisks unrar unzip upower yajl crossguid rtmpdump \
+        pybluez cwiid flatbuffers fmt fstrcmp rapidjson mariadb libxslt \
+        sndio"
+BUILDDEP="boost cmake curl doxygen gperf jasper openjdk swig zip"
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    BUILDDEP+=" yasm"
+fi
+PKGDES="Kodi Entertainment Center"
+
+CMAKE_AFTER="-DMARIADBCLIENT_INCLUDE_DIR=/usr/include/"
+NOLTO=1

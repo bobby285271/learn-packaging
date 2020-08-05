@@ -1,0 +1,5 @@
+mkdir -p "$PKGDIR"/usr/share/fonts/TTF
+pushd "$PKGDIR"/usr/share/fonts/TTF
+mv -v ../th/TTF/* .
+rm -rv ../th
+popd

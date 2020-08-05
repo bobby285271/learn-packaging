@@ -1,0 +1,9 @@
+PKGNAME=distcc
+PKGDES="Distributed C Compiler"
+PKGSEC=devel
+PKGDEP="gcc popt python-3"
+
+AUTOTOOLS_AFTER="--without-avahi --enable-rfc2553 \
+                 --without-gtk \
+                 PYTHON=/usr/bin/python3"
+AB_FLAGS_SPECS=0

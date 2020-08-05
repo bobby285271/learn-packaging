@@ -1,0 +1,4 @@
+PKGNAME=lua-messagepack
+PKGSEC=lua
+PKGDEP="lua"
+PKGDES="A Lua implementation of MessagePack"

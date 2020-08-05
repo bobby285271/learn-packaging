@@ -1,0 +1,8 @@
+PKGNAME=ksudoku
+PKGSEC=kde
+PKGDEP="glu hicolor-icon-theme libkdegames"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A Sudoku game"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

@@ -1,0 +1,6 @@
+PKGNAME=ttf-tibetan-machine-unicode
+PKGSEC=fonts
+PKGDEP="fontconfig"
+PKGDES="An OpenType, Unicode Tibetan Font"
+
+ABHOST=noarch

@@ -1,0 +1,8 @@
+PKGNAME=kdbusaddons
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules pyqt5"
+PKGDES="Addon libraries for QtDBus"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

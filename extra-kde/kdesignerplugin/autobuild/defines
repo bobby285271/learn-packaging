@@ -1,0 +1,7 @@
+PKGNAME=kdesignerplugin
+PKGSEC=kde
+PKGDEP="kio kplotting kdewebkit"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="Widget integration for Qt Designer/Creator"
+
+CMAKE_AFTER="-DBUILD_TESTING=OFF"

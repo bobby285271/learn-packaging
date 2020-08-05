@@ -1,0 +1,19 @@
+PKGNAME=sqlite
+PKGSEC=database
+PKGDES="A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine"
+PKGDEP="libedit readline tcl"
+
+ABSHADOW=0
+NOPARALLEL=1
+
+AUTOTOOLS_AFTER="--disable-amalgamation \
+                 --enable-fts3 \
+                 --enable-fts4 \
+                 --enable-fts5 \
+                 --enable-rtree \
+                 --enable-json1 \
+                 --enable-update-limit \
+                 --enable-geopoly \
+                 --enable-session"
+AUTOTOOLS_AFTER__RETRO="${AUTOTOOLS_AFTER} --disable-tcl"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"

@@ -1,0 +1,6 @@
+PKGNAME=cromfs
+PKGSEC=libs
+PKGDEP="fuse lzo"
+PKGDES="Compressed read-only filesystem based on FUSE"
+
+NOPARALLEL=1

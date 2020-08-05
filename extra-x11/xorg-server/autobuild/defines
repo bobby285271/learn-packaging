@@ -1,0 +1,112 @@
+PKGNAME=xorg-server
+PKGSEC=x11
+PKGDEP="xkeyboard-config x11-app x11-lib libdrm pixman mesa libgcrypt \
+        libepoxy xcb-util-renderutil x11-proto xcb-util-image \
+        xcb-util-keysyms xcb-util-wm x11-app x11-font"
+BUILDDEP="wayland"
+PKGDES="X.Org display server"
+
+AUTOTOOLS_AFTER="--enable-ipv6 \
+                 --enable-dri \
+                 --enable-dri3 \
+                 --enable-dmx \
+                 --enable-xvfb \
+                 --enable-xnest \
+                 --enable-composite \
+                 --enable-xcsecurity \
+                 --enable-xorg \
+                 --enable-xephyr \
+                 --enable-glamor \
+                 --enable-xwayland \
+                 --enable-kdrive \
+                 --enable-config-udev \
+                 --disable-systemd-logind \
+                 --enable-install-setuid \
+                 --enable-record \
+                 --disable-static \
+                 --libexecdir=/usr/bin \
+                 --localstatedir=/var \
+                 --with-xkb-path=/usr/share/X11/xkb \
+                 --with-xkb-output=/var/lib/xkb \
+                 --with-fontrootdir=/usr/share/fonts \
+                 --with-sha1=libgcrypt \
+                 --disable-silent-rules"
+
+# FIXME: causes segfault on armel.
+if [[ "${CROSS:-$ARCH}" != "armel" ]]; then
+    PKGDEP+=" libunwind"
+    AUTOTOOLS_AFTER+=" --enable-libunwind"
+else
+    AUTOTOOLS_AFTER+=" --disable-libunwind"
+fi
+
+PKGDEP__RETRO="xkeyboard-config x11-app x11-lib libdrm pixman mesa \
+               xcb-util-renderutil xcb-util-image xcb-util-keysyms \
+               xcb-util-wm libgcrypt"
+PKGDEP__I486="${PKGDEP__RETRO}"
+BUILDDEP__RETRO="x11-font"
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+
+AUTOTOOLS_AFTER__RETRO=" \
+                 --disable-ipv6 \
+                 --enable-dri \
+                 --enable-dri2 \
+                 --disable-dri3 \
+                 --enable-dmx \
+                 --disable-xvfb \
+                 --disable-xnest \
+                 --enable-composite \
+                 --enable-xcsecurity \
+                 --enable-xorg \
+                 --disable-xephyr \
+                 --disable-glamor \
+                 --disable-xwayland \
+                 --disable-kdrive \
+                 --enable-config-udev \
+                 --disable-systemd-logind \
+                 --enable-install-setuid \
+                 --disable-record \
+                 --disable-static \
+                 --libexecdir=/usr/bin \
+                 --localstatedir=/var \
+                 --with-xkb-path=/usr/share/X11/xkb \
+                 --with-xkb-output=/var/lib/xkb \
+                 --with-fontrootdir=/usr/share/fonts \
+                 --with-sha1=libgcrypt \
+                 --disable-silent-rules"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"
+
+PKGBREAK="nvidia<=375.10 virtualbox<=5.1.8 xf86-input-acecad<=1.5.0-5 \
+          xf86-input-elographics<=1.4.1-5 xf86-input-evdev<=2.10.6 \
+          xf86-input-joystick<=1.6.3 xf86-input-keyboard<=1.9.0 \
+          xf86-input-libinput<=0.28.0-1 xf86-input-mouse<=1.9.3 \
+          xf86-input-synaptics<=1.9.1 xf86-input-vmmouse<=13.1.0-2 \
+          xf86-input-wacom<=0.36.0 xf86-video-amdgpu<=18.0.1 \
+          xf86-video-armsoc<=1.4.1-2 \
+          xf86-video-ati<=18.0.1 \
+          xf86-video-dummy<=0.3.8 \
+          xf86-video-fbdev<=0.5.0 xf86-video-fbturbo<=20151006-2 \
+          xf86-video-intel<=1:20180326 \
+          xf86-video-nouveau<=1.0.15 \
+          xf86-video-qxl<=0.1.5-1 \
+          xf86-video-siliconmotion<=1.7.9 \
+          xf86-video-vboxvideo<=1.0.0 \
+          xf86-video-vesa<=2.4.0 \
+          xf86-video-vmware<=13.3.0 \
+          xf86-input-aiptek xf86-video-mga xf86-video-openchrome"
+PKGCONFL="xf86-video-modesetting<=0.9.0-1"
+PKGREP="xf86-video-modesetting<=0.9.0-1"
+
+AB_FLAGS_RRO=0
+AB_FLAGS_NOW=0
+AB_FLAGS_O3=1
+
+RECONF=no
+
+if [[ "${CROSS:-$ARCH}" = "ppc64" ]]; then
+    PKGEPOCH=1
+fi
+
+ABSHADOW=0
+
+NOLTO=1

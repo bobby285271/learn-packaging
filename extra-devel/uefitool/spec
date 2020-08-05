@@ -1,0 +1,3 @@
+VER=0.26.0
+GITSRC="https://github.com/LongSoft/UEFITool"
+GITCO="tags/$VER"

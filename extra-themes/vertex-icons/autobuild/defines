@@ -1,0 +1,6 @@
+PKGNAME=vertex-icons
+PKGSEC=x11
+PKGDEP=""
+PKGDES="A GNOME icon theme to match the Arc/Vertex GTK+ theme"
+
+ABHOST=noarch

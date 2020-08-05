@@ -1,0 +1,19 @@
+PKGNAME=openldap
+PKGSEC=net
+PKGDEP="e2fsprogs cyrus-sasl"
+BUILDDEP="groff"
+PKGDES="Lightweight Directory Access Protocol (LDAP) client/server"
+
+ABSHADOW=0
+NOSTATIC=0
+AUTOTOOLS_AFTER="--libexecdir=/usr/lib \
+                 --localstatedir=/var/lib/openldap \
+                 --enable-ipv6 --enable-syslog --enable-local \
+                 --disable-bdb --disable-hdb \
+                 --enable-crypt --enable-dynamic \
+                 --with-threads --disable-wrappers \
+                 --without-fetch \
+                 --enable-spasswd --with-cyrus-sasl \
+                 --enable-overlays=mod --enable-modules=yes \
+                 --enable-static"
+RECONF=0

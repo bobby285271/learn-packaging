@@ -1,0 +1,9 @@
+PKGNAME=ktp-auth-handler
+PKGSEC=kde
+PKGDEP="kdewebkit ktp-common-internals qca"
+BUILDDEP="extra-cmake-modules"
+PKGDES="UI/KWallet Integration For Passwords and SSL Errors on Account Connect"
+
+CMAKE_AFTER="-DLIBEXEC_INSTALL_DIR=lib"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

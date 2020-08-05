@@ -1,0 +1,8 @@
+PKGNAME=php
+PKGSEC=devel
+PKGEPOCH=1
+PKGDEP="php7"
+PKGDES="Transitional package for PHP 7"
+
+ABHOST=noarch
+VER_NONE=1

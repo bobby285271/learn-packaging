@@ -1,0 +1,2 @@
+install -Dvm644 grc/scripts/freedesktop/gnuradio-grc.desktop \
+    "$PKGDIR"/usr/share/applications/gnuradio-grc.desktop

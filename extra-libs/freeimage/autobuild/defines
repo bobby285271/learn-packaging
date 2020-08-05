@@ -1,0 +1,6 @@
+PKGNAME=freeimage
+PKGSEC=libs
+PKGDES="Library for popular graphics image formats"
+PKGDEP="glibc"
+
+AB_FLAGS_O3=1

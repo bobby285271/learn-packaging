@@ -1,0 +1,8 @@
+make version
+make core
+
+make prefix=/usr DESTDIR="$PKGDIR" install
+make prefix=/usr DESTDIR="$PKGDIR" install-linux-shortcuts
+make prefix=/usr DESTDIR="$PKGDIR" install-linux-mime
+make prefix=/usr DESTDIR="$PKGDIR" install-linux-appdata
+make prefix=/usr DESTDIR="$PKGDIR" install-man-page

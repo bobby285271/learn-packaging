@@ -1,0 +1,4 @@
+mkdir -p "$PKGDIR"/usr/share/gdb/guile/
+
+mv -v "$PKGDIR"/usr/lib/libguile-*-gdb.scm \
+    "$PKGDIR"/usr/share/gdb/guile/

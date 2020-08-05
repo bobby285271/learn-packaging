@@ -1,0 +1,10 @@
+PKGNAME=ktp-common-internals
+PKGSEC=kde
+PKGDEP="kaccounts-integration knotifyconfig kpeople ktexteditor libotr \
+        telepathy-qt telepathy-accounts-signon telepathy-logger-qt"
+BUILDDEP="doxygen extra-cmake-modules kdoctools"
+PKGDES="Common components for KDE-Telepathy"
+
+CMAKE_AFTER="-DLIBEXEC_INSTALL_DIR=lib"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

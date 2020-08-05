@@ -1,0 +1,8 @@
+abinfo "Drop APACHE_THREADED_MPM keys from sapi/apache2handler/config.m4, configure ..."
+sed -e '/APACHE_THREADED_MPM=/d' \
+    -i "$SRCDIR"/sapi/apache2handler/config.m4 \
+    -i "$SRCDIR"/configure
+
+abinfo "Setting $PKGVER in postinst ..."
+sed -e "s/TEMPVER/$PKGVER/g" \
+    -i "$SRCDIR"/autobuild/postinst

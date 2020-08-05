@@ -1,0 +1,13 @@
+PKGNAME=libproxy
+PKGSEC=libs
+PKGDEP="gcc-runtime"
+PKGSUG="perl python-2"
+BUILDDEP="${PKGSUG} cmake"
+PKGDES="A library that provides automatic proxy configuration management"
+
+CMAKE_AFTER="-DWITH_WEBKIT=OFF \
+             -DPERL_VENDORINSTALL=yes \
+             -DWITH_KDE4=OFF \
+             -DLIB_INSTALL_DIR=/usr/lib \
+             -DLIBEXEC_INSTALL_DIR=/usr/lib/libproxy"
+ABTYPE=cmake

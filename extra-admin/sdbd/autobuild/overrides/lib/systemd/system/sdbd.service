@@ -1,0 +1,13 @@
+[Unit]
+Description=Samsung Debugging Daemon
+
+[Service]
+ExecStart=/usr/bin/sdbd
+KillMode=process
+Restart=always
+Type=forking
+Environment="TERM=linux" "HOME=/root"
+
+[Install]
+WantedBy=multi-user.target
+

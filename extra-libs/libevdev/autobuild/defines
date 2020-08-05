@@ -1,0 +1,7 @@
+PKGNAME=libevdev
+PKGSEC=libs
+PKGDEP="glibc"
+BUILDDEP="doxygen"
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+PKGDES="Wrapper library for event devices"

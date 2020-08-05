@@ -1,0 +1,3 @@
+VER=5.71.0
+SRCTBL="https://download.kde.org/stable/frameworks/${VER:0:4}/kinit-$VER.tar.xz"
+CHKSUM="sha256::6ea625bced2c19b0f3e5bb504775dd6764358f02412364a16cbad731c5c299b6"

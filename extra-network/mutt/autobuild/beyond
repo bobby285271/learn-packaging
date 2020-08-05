@@ -1,0 +1,3 @@
+rm "$PKGDIR"/etc/mime.types{,.dist}
+rm "$PKGDIR"/usr/bin/{flea,muttbug}
+install -Dm644 contrib/gpg.rc "$PKGDIR"/etc/Muttrc.gpg.dist

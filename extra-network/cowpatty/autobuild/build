@@ -1,0 +1,5 @@
+sed -i -e 's|= -pipe|+&|g' -e 's|-g3 -ggdb||g' -i Makefile
+make all strip
+make DESTDIR=$PKGDIR BINDIR=/usr/bin install
+install -Dm 644 dict $PKGDIR/usr/share/cowpatty/dict
+install -Dm 644 README $PKGDIR/usr/share/doc/cowpatty/README

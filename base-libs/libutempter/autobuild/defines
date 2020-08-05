@@ -1,0 +1,6 @@
+PKGNAME=libutempter
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Interface for terminal emulators"
+
+AB_FLAGS_SPECS=0

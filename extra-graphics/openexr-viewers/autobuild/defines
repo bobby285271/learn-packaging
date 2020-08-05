@@ -1,0 +1,7 @@
+PKGNAME=openexr-viewers
+PKGSEC=graphics
+PKGDEP="fltk freeglut mesa openexr"
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    PKGDEP+=" cg"
+fi
+PKGDES="Exrdisplay and playexr OpenEXR image viewers"

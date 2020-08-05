@@ -1,0 +1,2 @@
+mkdir -pv "$PKGDIR"/usr/lib/rambox
+cp -arv "$SRCDIR"/Rambox-$PKGVER-linux-x64/* "$PKGDIR"/usr/lib/rambox/

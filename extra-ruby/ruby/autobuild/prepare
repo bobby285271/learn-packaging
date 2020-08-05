@@ -1,0 +1,7 @@
+autoreconf -fi
+
+if [[ "${CROSS:-$ARCH}" = arm64 ]]; then
+    unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
+fi
+
+export optflags="${CPPFLAGS} ${CFLAGS}"

@@ -1,0 +1,7 @@
+PKGNAME=gnome-mpv
+PKGSEC=gnome
+PKGDEP="celluloid"
+PKGDES="A GTK+3/GNOME frontend for MPV (transitional package for Celluloid)"
+
+PKGEPOCH=1
+ABHOST=noarch

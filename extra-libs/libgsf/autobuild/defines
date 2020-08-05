@@ -1,0 +1,7 @@
+PKGNAME=libgsf
+PKGSEC=gnome
+PKGDEP="libxml2 gdk-pixbuf bzip2"
+BUILDDEP="gobject-introspection intltool gtk-doc"
+PKGDES="The GNOME Structured File Library"
+
+AUTOTOOLS_AFTER="--enable-introspection --enable-gtk-doc"

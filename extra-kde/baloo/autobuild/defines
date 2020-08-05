@@ -1,0 +1,10 @@
+PKGNAME=baloo
+PKGSEC=kde
+PKGDEP="kconfig kcoreaddons kcrash kdbusaddons ki18n kio kfilemetadata \
+        kidletime lmdb solid qt-5"
+BUILDDEP="doxygen extra-cmake-modules kdoctools"
+PKGDES="A framework for searching and managing metadata"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DLIBEXEC_INSTALL_DIR=lib \
+             -DBUILD_TESTING=OFF"

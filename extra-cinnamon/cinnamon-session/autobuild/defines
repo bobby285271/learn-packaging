@@ -1,0 +1,5 @@
+PKGNAME=cinnamon-session
+PKGSEC=Cinnamon
+PKGDEP="cinnamon-desktop dbus-glib gdk-pixbuf libcanberra xapps upower"
+BUILDDEP="gnome-common intltool json-glib xmlto"
+PKGDES="Cinnamon session handler"

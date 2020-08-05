@@ -1,0 +1,4 @@
+VER=2020.1
+SRCTBL="https://download.jetbrains.com/python/pycharm-community-$VER.tar.gz"
+CHKSUM="sha256::1aa49fd01ec9020c288a583ac90e777df3ae5c5dfcf4cc73d93ac7be1284a9d1"
+SUBDIR=.

@@ -1,0 +1,6 @@
+PKGNAME=choqok
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme kcmutils kdewebkit kemoticons knotifyconfig \
+        qoauth telepathy-qt"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A Twitter/Pump.io/GNU social client for KDE"

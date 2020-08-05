@@ -1,0 +1,6 @@
+PKGNAME=flexiserver
+PKGSEC=x11
+PKGDEP="lightdm"
+PKGDES="A script for Xfce user switch support"
+
+ABHOST=noarch

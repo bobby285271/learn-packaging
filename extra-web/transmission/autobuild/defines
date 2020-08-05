@@ -1,0 +1,13 @@
+PKGNAME=transmission
+PKGSEC=net
+PKGDEP="curl desktop-file-utils gtk-3 hicolor-icon-theme libappindicator libevent systemd miniupnpc"
+BUILDDEP="intltool"
+PKGDES="A lightweight GTK+ BitTorrent client"
+
+AUTOTOOLS_AFTER="--enable-utp --enable-daemon \
+                 --enable-nls --enable-cli --enable-daemon \
+                 --with-systemd-daemon"
+ABSHADOW=0
+RECONF=0
+
+PKGCONFL="transmission-remote-gtk<=1.3.1-1"

@@ -1,0 +1,4 @@
+VER=1.9.8
+REL=1
+SRCTBL="https://github.com/ilikenwf/apt-fast/archive/$VER.tar.gz"
+CHKSUM="sha256::ab9deb2a34d2b28e259bc7e49f2926f05870c4a4c29db89628f6dc408392fbaf"

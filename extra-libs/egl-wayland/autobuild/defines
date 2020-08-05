@@ -1,0 +1,8 @@
+PKGNAME=egl-wayland
+PKGSEC=libs
+PKGDEP="eglexternalplatform wayland"
+PKGDES="The EGLStream-based Wayland external platform"
+
+ABTYPE=meson
+PKGBREAK="nvidia<=430.40 nvidia+390<=390.132-1"
+PKGREP="nvidia<=430.40 nvidia+390<=390.132-1"

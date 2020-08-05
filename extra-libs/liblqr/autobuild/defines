@@ -1,0 +1,6 @@
+PKGNAME=liblqr
+PKGSEC=libs
+PKGDEP="glib"
+PKGDES="A seam-carving C/C++ library called Liquid Rescale"
+
+RECONF=0

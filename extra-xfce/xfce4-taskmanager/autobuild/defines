@@ -1,0 +1,5 @@
+PKGNAME=xfce4-taskmanager
+PKGSEC=xfce
+PKGDEP="libwnck libgtop libgksu gtk-3"
+BUILDDEP="intltool"
+PKGDES="Easy-to-use task manager for Xfce"

@@ -1,0 +1,3 @@
+VER=3.32.1
+SRCTBL="https://download.gnome.org/sources/five-or-more/${VER:0:4}/five-or-more-$VER.tar.xz"
+CHKSUM="sha256::f35dc8656d175416c397cbc0dc0f98452764c94225c004afde29f2265a2b8077"

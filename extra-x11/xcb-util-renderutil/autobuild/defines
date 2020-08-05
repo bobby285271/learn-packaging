@@ -1,0 +1,6 @@
+PKGNAME=xcb-util-renderutil
+PKGDEP="xcb-util"
+PKGSEC=x11
+PKGDES="X11 Client Side Utilities - Render Utilities"
+
+RECONF=0

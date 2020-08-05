@@ -1,0 +1,6 @@
+PKGNAME=iana-etc
+PKGDEP=glibc
+PKGDES="IANA service and protocol specifications"
+PKGSEC=misc
+
+ABHOST=noarch

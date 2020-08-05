@@ -1,0 +1,15 @@
+export USE_SYSTEM_LIBS='yes'
+
+ln -s /usr/bin/ld.bfd "$SRCDIR"/ld
+export PATH="$SRCDIR:$PATH"
+
+rm -rf thirdparty/{curl,freeglut,freetype,harfbuzz,jbig2dec,libjpeg,openjpeg,zlib}
+sed '/^JBIG2DEC_CFLAGS :=/s|$| -I./include/mupdf|' -i Makethird
+
+if [[ "${CROSS:-$ARCH}" = arm* ]]; then
+    export CFLAGS="${CFLAGS} -fPIC"
+    export CXXFLAGS="${CXXFLAGS} -fPIC"
+    export LDFLAGS="${LDFLAGS} -fPIC"
+fi
+
+sed -i '/SYS_CURL_LIBS/s|$| -lpthread|' Makethird

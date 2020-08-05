@@ -1,0 +1,8 @@
+PKGNAME=xfburn
+PKGSEC=xfce
+PKGDEP="desktop-file-utils exo gst-plugins-base-1-0 libburn libisofs"
+BUILDDEP="intltool thunar"
+PKGDES="Disc burner and project creator for Xfce"
+
+AUTOTOOLS_AFTER="--enable-gstreamer --enable-gudev"
+RECONF=no

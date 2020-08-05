@@ -1,0 +1,6 @@
+PKGNAME=libdatrie
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Implementation of double-array structure for representing trie, as proposed by Junichi Aoe"
+
+NOPARALLEL=1

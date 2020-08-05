@@ -1,0 +1,6 @@
+PKGNAME=mdds
+PKGSEC=libs
+PKGDEP=""
+PKGDES="A collection of multi-dimensional data structures and indexing algorithms"
+
+ABSHADOW=no

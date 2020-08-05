@@ -1,0 +1,4 @@
+abinfo "Installing Chipsec module tree ..."
+mkdir -pv "$PKGDIR"/usr/src/
+cp -rv "$SRCDIR"/drivers/linux \
+    "$PKGDIR"/usr/src/chipsec-"$PKGVER"

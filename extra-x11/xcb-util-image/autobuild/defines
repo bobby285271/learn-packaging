@@ -1,0 +1,6 @@
+PKGNAME=xcb-util-image
+PKGDEP="xcb-util"
+PKGSEC=x11
+PKGDES="X11 Client Side Utilities - Imaging Libraries"
+
+RECONF=0

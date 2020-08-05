@@ -1,0 +1,16 @@
+abinfo "Building Irrlicht ..."
+make -C "$SRCDIR"/source/Irrlicht \
+    NDEBUG=1 sharedlib staticlib
+
+abinfo "Installing Irrlicht ..."
+sed -e "/^INSTALL_DIR/s:=.*:=$PKGDIR/usr/lib:" \
+    -i "$SRCDIR"/source/Irrlicht/Makefile
+make -C "$SRCDIR"/source/Irrlicht install
+
+abinfo "Symlinking shared libraries ..."
+ln -sv libIrrlicht.so.$PKGVER "$PKGDIR"/usr/lib/libIrrlicht.so.1
+
+abinfo "Installing media examples and documentation ..."
+mkdir -pv "$PKGDIR"/usr/share/{irrlicht,doc/irrlicht}
+cp -av "$SRCDIR"/media "$PKGDIR"/usr/share/irrlicht
+cp -av "$SRCDIR"/doc/* "$PKGDIR"/usr/share/doc/irrlicht

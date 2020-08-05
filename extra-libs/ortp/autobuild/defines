@@ -1,0 +1,7 @@
+PKGNAME=ortp
+PKGSEC=libs
+PKGDEP="bctoolbox"
+PKGDES="A Real-time Transport Protocol (RTP) library"
+
+AUTOTOOLS_AFTER="--disable-strict"
+ABSHADOW=no

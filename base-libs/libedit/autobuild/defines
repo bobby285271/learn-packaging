@@ -1,0 +1,6 @@
+PKGNAME=libedit
+PKGSEC=libs
+PKGDEP="ncurses"
+PKGDES="Command line editor library"
+
+AUTOTOOLS_AFTER="--enable-widec"

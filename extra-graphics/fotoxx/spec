@@ -1,0 +1,3 @@
+VER=19.20
+SRCTBL="https://www.kornelix.net/downloads/downloads/fotoxx-$VER.tar.gz"
+CHKSUM="sha256::bfa6f20bc5121fbf521354ddf19489e0cfba1f8aa72db1e63fdb26fc5d935752"

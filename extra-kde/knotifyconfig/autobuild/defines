@@ -1,0 +1,8 @@
+PKGNAME=knotifyconfig
+PKGSEC=kde
+PKGDEP="kio"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A configuration framework for KNotify"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

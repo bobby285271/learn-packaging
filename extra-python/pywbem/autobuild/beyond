@@ -1,0 +1,1 @@
+rm -v "$PKGDIR"/usr/bin/*.bat

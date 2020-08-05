@@ -1,0 +1,8 @@
+PKGNAME=kparts
+PKGSEC=kde
+PKGDEP="kio"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A plugin system for document formats"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

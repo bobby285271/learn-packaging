@@ -1,0 +1,29 @@
+mkdir -p "$PKGDIR"/var/lib/gdm "$PKGDIR"/var/cache/gdm "$PKGDIR"/var/log/gdm
+chown -R -v 771:771 "$PKGDIR"/var/lib/gdm "$PKGDIR"/var/cache/gdm "$PKGDIR"/var/log/gdm
+
+chmod 711 "$PKGDIR"/var/log/gdm
+rm -r "$PKGDIR"/var/run
+
+mv "$PKGDIR"/usr/bin/gdmflexiserver{,-gdm}
+
+# Workaround buggy wayland on nvidia
+pushd "$PKGDIR"
+patch -Np2 << EOF
+diff -Naur gdm-3.30.0/abdist/etc/gdm/custom.conf gdm-3.30.0.nowayland/abdist/etc/gdm/custom.conf
+--- gdm-3.30.0/abdist/etc/gdm/custom.conf       2018-09-14 05:46:42.402911767 +0000
++++ gdm-3.30.0.nowayland/abdist/etc/gdm/custom.conf     2018-09-14 05:48:43.461218881 +0000
+@@ -1,8 +1,9 @@
+ # GDM configuration storage
+ 
+ [daemon]
+-# Uncomment the line below to force the login screen to use Xorg
+-#WaylandEnable=false
++# Wayland is still problematic for certain applications,
++# and does not work well with NVIDIA Proprietary Drivers.
++WaylandEnable=false
+ 
+ [security]
+ 
+EOF
+
+popd

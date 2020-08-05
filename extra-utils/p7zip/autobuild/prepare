@@ -1,0 +1,13 @@
+chmod -R a-s "$SRCDIR"
+
+rm -f DOC/License.txt.*
+rm -f GUI/kde4/p7zip_compress.desktop
+
+mv DOC/License.txt COPYING
+
+cd CPP/7zip/CMAKE/
+sh ./generate.sh
+cd "$SRCDIR"
+
+[ "$ARCH" = "amd64" ] && cp makefile.linux_amd64_asm makefile.machine || \
+cp makefile.linux_any_cpu makefile.machine

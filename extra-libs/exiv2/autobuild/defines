@@ -1,0 +1,15 @@
+PKGNAME=exiv2
+PKGSEC=libs
+PKGDEP="expat gcc-runtime zlib"
+PKGDES="Exif and Iptc metadata manipulation library and tools"
+
+ABTYPE=cmake
+ABSHADOW=0
+CMAKE_AFTER="-DEXIV2_ENABLE_VIDEO=ON \
+             -DEXIV2_ENABLE_BUILD_PO=ON"
+
+PKGBREAK="darktable<=1:2.2.5 gexiv2<=0.10.6 gnome-color-manager<=3.24.0-1 \
+          gthumb<=3.4.5 hugin<=2016.2.0-2 kfilemetadata<=5.40.0 \
+          kio-extras<=17.08.3 krita<=3.3.1 libkexiv2<=17.08.3 \
+          pinot<=1.08-2 pyexiv2<=0.3.2-2 strigi<=0.7.8-3 \
+          trinity-libkexiv2<=14.0.4 ufraw<=0.22-1 viewnior<=1.5-1"

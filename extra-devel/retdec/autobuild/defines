@@ -1,0 +1,11 @@
+PKGNAME=retdec
+PKGSEC=devel
+PKGDES="A retargetable machine-code decompiler based on LLVM"
+PKGDEP="bash upx bc graphviz keystone"
+BUILDDEP="git cmake make perl python-3 wget libtool ncurses zlib doxygen"
+
+ABTYPE="cmake"
+CMAKE_AFTER="-DCMAKE_INSTALL_PREFIX=/usr \
+             -DRETDEC_COMPILE_YARA=OFF \
+             -DRETDEC_DOC=ON \
+             -DRETDEC_DEV_TOOLS=ON"

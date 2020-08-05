@@ -1,0 +1,6 @@
+PKGNAME=perl-extutils-depends
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="The Perl depends module"
+
+ABHOST=noarch

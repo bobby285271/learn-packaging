@@ -1,0 +1,5 @@
+sed -e "s|$PKGDIR/usr/data|/usr/share/astrometry/data|" \
+    -i "$PKGDIR"/etc/astrometry.cfg
+rm "$PKGDIR"/usr/share/doc/astrometry/report.txt
+rm "$PKGDIR"/usr/bin/fitscopy
+rm "$PKGDIR"/usr/bin/imcopy

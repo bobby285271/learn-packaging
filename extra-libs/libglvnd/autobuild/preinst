@@ -1,0 +1,3 @@
+# FIXME: NVIDIA upgrade path.
+rm -fv /usr/lib/libOpenGL.so*
+rm -fv /usr/lib/libGLdispatch.so*

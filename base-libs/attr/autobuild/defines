@@ -1,0 +1,7 @@
+PKGNAME=attr
+PKGDES="Extended attribute support library for ACL support"
+PKGSEC=libs
+PKGDEP="glibc"
+
+RECONF=0
+NOLTO=1

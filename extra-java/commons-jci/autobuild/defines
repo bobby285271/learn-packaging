@@ -1,0 +1,6 @@
+PKGNAME=commons-jci
+PKGSEC=java
+PKGDEP="openjdk"
+PKGDES="Java Compiler Interface collection"
+ABHOST=noarch
+VER_NONE=1

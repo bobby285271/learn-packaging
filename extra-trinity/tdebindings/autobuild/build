@@ -1,0 +1,5 @@
+abinfo "Building TDE language bindings ..."
+./configure --prefix=/usr \
+            ${AUTOTOOLS_AFTER}
+make
+make install DESTDIR="$PKGDIR"

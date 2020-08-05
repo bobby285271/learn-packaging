@@ -1,0 +1,8 @@
+PKGNAME=ciel
+PKGSEC=devel
+PKGDEP="systemd tar dos2unix"
+BUILDDEP="curl go"
+PKGDES="An integrated packaging environment for AOSC OS"
+
+ABMK="PREFIX=/usr"
+MAKE_AFTER="PREFIX=/usr"

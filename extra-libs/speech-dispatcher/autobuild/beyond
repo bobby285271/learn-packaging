@@ -1,0 +1,3 @@
+install -d "$PKGDIR"/var/log/speech-dispatcher
+sed -e 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' \
+    -i "$PKGDIR"/usr/lib/pkgconfig/speech-dispatcher.pc

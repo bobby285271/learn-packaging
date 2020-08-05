@@ -1,0 +1,5 @@
+PKGNAME=lcms2
+PKGSEC=libs
+PKGDES="Little CMS 2 color management library"
+PKGDEP="libtiff"
+

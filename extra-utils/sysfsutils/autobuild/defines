@@ -1,0 +1,6 @@
+PKGNAME=sysfsutils
+PKGSEC=utils
+PKGDEP="glibc"
+PKGDES="System utilities based on Sysfs"
+
+ABSHADOW=no

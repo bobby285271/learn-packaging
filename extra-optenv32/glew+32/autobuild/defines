@@ -1,0 +1,8 @@
+PKGNAME=glew+32
+PKGSEC=libs
+PKGDEP="glu+32"
+BUILDDEP="32subsystem"
+PKGDES="The OpenGL Extension Wrangler Library"
+
+NOLTO=1
+ABHOST=noarch

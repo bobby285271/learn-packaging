@@ -1,0 +1,8 @@
+PKGNAME=ffcall
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="C library for implementing foreign function calls in embedded interpreters"
+
+NOSTATIC=0
+ABSHADOW=0
+NOPARALLEL=1

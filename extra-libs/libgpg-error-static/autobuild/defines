@@ -1,0 +1,8 @@
+PKGNAME=libgpg-error-static
+PKGDES="Support library for libgcrypt (static libraries)"
+PKGSEC=libs
+PKGDEP="libgpg-error"
+
+ABSHADOW=0
+AUTOTOOLS_AFTER="--enable-static --disable-shared"
+NOSTATIC=0

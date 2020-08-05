@@ -1,0 +1,3 @@
+VER=1.9.7
+SRCTBL="https://archive.xfce.org/src/apps/xfce4-screenshooter/${VER%.*}/xfce4-screenshooter-$VER.tar.bz2"
+CHKSUM="sha256::0f7161053a23a6413376f4d17db6b774d4849384a9b1ffe01fdb2b0035a070d1"

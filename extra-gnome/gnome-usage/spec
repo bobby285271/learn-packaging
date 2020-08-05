@@ -1,0 +1,3 @@
+VER=3.32.0
+SRCTBL="https://download.gnome.org/sources/gnome-usage/${VER:0:4}/gnome-usage-$VER.tar.xz"
+CHKSUM="sha256::30ca974cf01ebf29a66b85b0ae09d9beec77496fcda5e53f1bedbad626fbfa2d"

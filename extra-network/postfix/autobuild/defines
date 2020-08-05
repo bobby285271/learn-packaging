@@ -1,0 +1,11 @@
+PKGNAME=postfix
+PKGSEC=net
+PKGDEP="pcre cyrus-sasl libssh tinycdb db openldap postgresql sqlite openssl \
+        icu"
+if [[ "${CROSS:-$ARCH}" != "mipsel" && "${CROSS:-$ARCH}" != "powerpc" && "${CROSS:-$ARCH}" != "riscv64" ]]; then
+    PKGDEP+=" mariadb"
+fi
+PKGDES="A fast, easy to administer, and secure mail server"
+
+PKGPROV="mta mail-transfer-agent"
+PKGCONFL="exim<=4.85-0 opensmtpd<=5.7.3p1"

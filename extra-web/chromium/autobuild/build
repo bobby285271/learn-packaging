@@ -1,0 +1,72 @@
+GNFLAGS=(
+    'google_api_key="AIzaSyBGpe01okUSW2GQDIgLovY23Mj1RKzzOOY"'
+    'google_default_client_id="1006183841565.apps.googleusercontent.com"'
+    'google_default_client_secret="XN6oYWBv7O7w_heXB8TVuldr"'
+    'custom_toolchain="//build/toolchain/linux/unbundle:default"'
+    'host_toolchain="//build/toolchain/linux/unbundle:default"'
+    'is_clang=false'
+    'clang_use_chrome_plugins=false'
+    'is_debug=false'
+    'fatal_linker_warnings=false'
+    'treat_warnings_as_errors=false'
+    'fieldtrial_testing_like_official_build=true'
+    'ffmpeg_branding="Chrome"'
+    'proprietary_codecs=true'
+    'link_pulseaudio=true'
+    'linux_use_bundled_binutils=false'
+    'use_cups=true'
+    'use_gnome_keyring=false'
+    'use_gold=false'
+    'use_lld=false'
+    'use_sysroot=false'
+    'enable_hangout_services_extension=true'
+    'enable_widevine=true'
+    'enable_nacl=false'
+    'enable_vaapi=true'
+    'use_custom_libcxx=false'
+    'enable_swiftshader=false'
+    'use_cfi_icall=false')
+
+gn gen out/Release --args="${GNFLAGS[*]}" \
+    --script-executable=/usr/bin/python2
+
+ninja -C out/Release chrome chrome_sandbox chromedriver || exit 10
+
+# Instaling Chromium binaries.
+install -Dm755 out/Release/chrome "$PKGDIR"/usr/lib/chromium/chromium
+install -Dm644 chrome/installer/linux/common/desktop.template "$PKGDIR/usr/share/applications/chromium.desktop"
+install -Dm644 chrome/app/resources/manpage.1.in "$PKGDIR/usr/share/man/man1/chromium.1"
+sed -i \
+    -e "s/@@MENUNAME@@/Chromium/g" \
+    -e "s/@@PACKAGE@@/chromium/g" \
+    -e "s/@@USR_BIN_SYMLINK_NAME@@/chromium/g" \
+    "$PKGDIR/usr/share/applications/chromium.desktop" \
+    "$PKGDIR/usr/share/man/man1/chromium.1"
+cp -a out/Release/{chrome_{100,200}_percent,resources}.pak \
+      out/Release/{*.bin,chromedriver} \
+      out/Release/locales \
+      out/Release/icudtl.dat \
+      "$PKGDIR"/usr/lib/chromium/
+install -d "$PKGDIR"/usr/bin/
+ln -sv /usr/lib/chromium/chromedriver "$PKGDIR"/usr/bin/chromedriver
+
+# Icons.
+for size in 24 48 64 128 256; do
+    install -Dm644 chrome/app/theme/chromium/product_logo_$size.png \
+        "$PKGDIR"/usr/share/icons/hicolor/${size}x${size}/apps/chromium.png
+done
+for size in 16 32; do
+    install -Dm644 chrome/app/theme/default_100_percent/chromium/product_logo_$size.png \
+        "$PKGDIR"/usr/share/icons/hicolor/${size}x${size}/apps/chromium.png
+done
+
+# NaCl, if available.
+#if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+#    cp out/Release/nacl_helper{,_bootstrap} out/Release/nacl_irt_*.nexe \
+#       "$PKGDIR"/usr/lib/chromium/
+#fi
+
+pushd chromium-launcher-6
+make PREFIX=/usr
+make install DESTDIR="$PKGDIR" PREFIX=/usr
+popd

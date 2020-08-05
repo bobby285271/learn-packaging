@@ -1,0 +1,6 @@
+PKGNAME=mate-polkit
+PKGSEC=MATE
+PKGDES="PolicyKit agent for MATE"
+PKGDEP="polkit gtk-3 libappindicator"
+BUILDDEP="mate-common"
+BUILDDEP="gobject-introspection mate-common"

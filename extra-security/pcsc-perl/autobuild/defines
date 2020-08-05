@@ -1,0 +1,6 @@
+PKGNAME=pcsc-perl
+PKGSEC=perl
+PKGDEP="pcsclite perl"
+PKGDES="A Perl Module for PC/SC smart card access"
+
+ABTYPE=perl

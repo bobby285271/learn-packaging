@@ -1,0 +1,2 @@
+mkdir -p "$PKGDIR"/usr/share/themes/Mistral
+cp *.obt "$PKGDIR"/usr/share/themes/Mistral/

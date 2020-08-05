@@ -1,0 +1,3 @@
+VER=20190801
+SRCTBL="https://github.com/fontforge/fontforge/archive/$VER.tar.gz"
+CHKSUM="sha256::e4501de5bd8e7f6c68fe7d3abd4667bf44a07b981d342ffa00e8f42e155ce633"

@@ -1,0 +1,12 @@
+PKGNAME=umbrello
+PKGSEC=kde
+PKGDEP="ktexteditor"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="UML modeller for KDE"
+
+# FIXME: tests fails to build with LLVM 3.8.
+CMAKE_AFTER="-DBUILD_KF5=ON \
+             -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+             -DBUILD_TESTING=OFF"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

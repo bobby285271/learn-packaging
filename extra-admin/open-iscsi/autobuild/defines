@@ -1,0 +1,6 @@
+PKGNAME=open-iscsi
+PKGSEC=admin
+PKGDEP="kmod open-isns openssl systemd util-linux"
+PKGDES="Userland tools for iSCSI"
+
+ABSHADOW=0

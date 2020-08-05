@@ -1,0 +1,10 @@
+PKGNAME=mate-settings-daemon
+PKGSEC=MATE
+PKGDEP="dbus-glib dconf fontconfig gtk-3 libcanberra libmatekbd \
+        libmatemixer libnotify mate-desktop nss polkit"
+BUILDDEP="mate-common"
+PKGDES="MATE settings daemon"
+
+AUTOTOOLS_AFTER="--enable-polkit --enable-pulse"
+PKGBREAK="mate-desktop<=1.20.4"
+PKGREP="mate-desktop<=1.20.4"

@@ -1,0 +1,11 @@
+PKGNAME=antlr
+PKGSEC=devel
+PKGDEP="openjdk python-2 mono"
+PKGDES="Language recognition tool providing a framework to build grammatical parsers"
+
+AUTOTOOLS_DEF=""
+AUTOTOOLS_AFTER="--prefix=/usr \
+                 --enable-examples \
+                 --enable-csharp"
+MAKE_AFTER="prefix=$PKGDIR/usr"
+NOSTATIC=0

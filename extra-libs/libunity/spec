@@ -1,0 +1,5 @@
+VER=7.1.4
+REL=2
+BZRSRC='lp:libunity'
+BZRCO="318"
+SUBDIR=libunity

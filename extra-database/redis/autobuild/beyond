@@ -1,0 +1,2 @@
+install -Dm644 redis.conf "$PKGDIR"/etc/redis.conf
+ln -sf redis-server "$PKGDIR"/usr/bin/redis-sentinel

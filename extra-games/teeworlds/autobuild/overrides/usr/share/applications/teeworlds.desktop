@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Teeworlds
+Comment=A retro multiplayer shooter
+Exec=teeworlds
+Icon=teeworlds
+Terminal=false
+Categories=Game;RolePlaying;

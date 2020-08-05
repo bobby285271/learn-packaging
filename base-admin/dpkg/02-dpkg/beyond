@@ -1,0 +1,3 @@
+abinfo "Removing files from update-alternatives ..."
+rm -fv "$PKGDIR"/usr/share/man/man1/update-alternatives.1
+rm -fv "$PKGDIR"/usr/bin/update-alternatives

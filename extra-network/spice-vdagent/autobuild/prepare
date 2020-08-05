@@ -1,0 +1,14 @@
+abinfo "Tweaking UDev rules directory (/lib/udev => /usr/lib/udev ..."
+sed -e 's/udevrulesdir = \/lib/udevrulesdir = \/usr\/lib/' \
+    -i "$SRCDIR"/Makefile.am
+
+abinfo "Do not create rundir at build time ..."
+sed -e 's/$(mkdir_p) $(DESTDIR)$(localstatedir)\/run\/spice-vdagentd/true/' \
+    -i "$SRCDIR"/Makefile.am
+
+abinfo "Setting rundir to /run in tmpfiles.d ..."
+sed -e 's/\/var\/run/\/run/' \
+    -i "$SRCDIR"/data/tmpfiles.d/spice-vdagentd.conf
+
+abinfo "Re-generating autotools files ..."
+autoreconf -fi

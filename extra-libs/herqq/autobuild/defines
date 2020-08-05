@@ -1,0 +1,7 @@
+PKGNAME=herqq
+PKGSEC=libs
+PKGDEP="qt-4"
+PKGDES="Software library for building UPnP devices"
+
+PKGREP="hupnp"
+PKGPROV="hupnp"

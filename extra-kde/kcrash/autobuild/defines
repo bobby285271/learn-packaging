@@ -1,0 +1,8 @@
+PKGNAME=kcrash
+PKGSEC=kde
+PKGDEP="kcoreaddons kwindowsystem"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Support for handling application crash analysis and bug reports"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

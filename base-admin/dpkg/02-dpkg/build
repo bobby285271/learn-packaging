@@ -1,0 +1,2 @@
+abinfo "Installing DPKG ..."
+make install DESTDIR="$PKGDIR"

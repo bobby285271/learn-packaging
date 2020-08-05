@@ -1,0 +1,8 @@
+PKGNAME=at-spi2-core
+PKGSEC=gnome
+PKGDEP="dbus glib x11-lib"
+BUILDDEP="gobject-introspection gtk-doc intltool meson ninja"
+PKGDES="Protocol definitions and daemon for D-Bus at-spi"
+
+PKGBREAK="gdm<=3.17.92"
+MESON_AFTER="-Dintrospection=yes -Dx11=yes"

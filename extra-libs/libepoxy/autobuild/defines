@@ -1,0 +1,5 @@
+PKGNAME=libepoxy
+PKGSEC=libs
+PKGDEP="glibc"
+BUILDDEP="doxygen graphviz mesa"
+PKGDES="A library for handling OpenGL function pointer management for you"

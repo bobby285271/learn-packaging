@@ -1,0 +1,5 @@
+VER=20180821
+
+GITSRC="git://git.tuxfamily.org/gitroot/non/fltk.git"
+GITCO="	71a410b2e1f79f89b453c91ead3c5d668f6a7d97"
+

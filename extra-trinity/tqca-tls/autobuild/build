@@ -1,0 +1,5 @@
+abinfo "Building TQCA-TLS ..."
+./configure \
+    --tqtdir=/usr
+make
+make install INSTALL_ROOT="$PKGDIR"

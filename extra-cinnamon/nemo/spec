@@ -1,0 +1,4 @@
+VER=4.4.2
+SRCTBL="https://github.com/linuxmint/nemo/archive/$VER.tar.gz"
+CHKSUM="sha256::cda3b99c8275c57bb285f8718ef3e463349a8eebe97cc126b0daebffeb242c95"
+SUBDIR="nemo-$VER"

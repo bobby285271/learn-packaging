@@ -1,0 +1,3 @@
+VER=3.34
+SRCTBL="https://download.gnome.org/sources/seahorse/${VER:0:4}/seahorse-$VER.tar.xz"
+CHKSUM="sha256::5b40e9dc8bca6f52882d6eccc0a97cd61eb56bb054f41ea7e9bd64da32b64e9b"

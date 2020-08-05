@@ -1,0 +1,17 @@
+PKGNAME=ocamlbuild
+PKGSEC=devel
+PKGDEP="ocaml"
+BUILDDEP="ocaml"
+PKGDES="A generic build tool for OCaml"
+
+MAKE_AFTER="PREFIX=/usr \
+            OCAML_NATIVE=true \
+            OCAMLBUILD_LIBDIR=/usr/lib/ocaml \
+            MANDIR=/usr/share/man"
+
+PKGBREAK="ocaml<=4.02.3"
+PKGREP="ocaml<=4.02.3"
+
+NOPARALLEL=1
+NOSTATIC=0
+ABTYPE=plainmake

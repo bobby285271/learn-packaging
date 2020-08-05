@@ -1,0 +1,7 @@
+PKGNAME=mate-themes
+PKGSEC=MATE
+PKGDEP="librsvg murrine gtk-engines-2 mate-icon-theme"
+BUILDDEP="intltool mate-common"
+PKGDES="Default themes (GTK+, Marco, cursor) for MATE desktop"
+
+ABHOST=noarch

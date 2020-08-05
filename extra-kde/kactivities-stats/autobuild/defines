@@ -1,0 +1,11 @@
+PKGNAME=kactivities-stats
+PKGSEC=kde
+PKGDEP="kactivities"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A library for accessing the usage data collected by the activities system"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"
+
+PKGBREAK="kactvities<=5.20.0"
+PKGREP="kactvities<=5.20.0"

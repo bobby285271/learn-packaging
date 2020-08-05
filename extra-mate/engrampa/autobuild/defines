@@ -1,0 +1,10 @@
+PKGNAME=engrampa
+PKGSEC=MATE
+PKGDEP="bzip2 caja desktop-file-utils gzip libarchive tar unrar \
+        zip p7zip packagekit"
+BUILDDEP="mate-common"
+PKGDES="An archive manager for MATE"
+
+AUTOTOOLS_AFTER="--enable-packagekit"
+RECONF=no
+PKGEPOCH=1

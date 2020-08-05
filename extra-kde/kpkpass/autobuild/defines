@@ -1,0 +1,9 @@
+PKGNAME=kpkpass
+PKGSEC=kde
+PKGDEP="karchive"
+BUILDDEP="extra-cmake-modules"
+PKGDES="Library to deal with Apple Wallet pass files"
+
+CMAKE_AFTER="-DBUILD_TESTING=OFF"
+PKGBREAK="kdepim-addons<=18.04.3"
+PKGREP="kdepim-addons<=18.04.3"

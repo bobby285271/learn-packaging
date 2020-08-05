@@ -1,0 +1,5 @@
+PKGNAME=librcc
+PKGSEC=libs
+PKGDES="Auto-convert codepages"
+PKGDEP="libxml2 enca libguess db aspell"
+

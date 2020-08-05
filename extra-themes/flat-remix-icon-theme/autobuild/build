@@ -1,0 +1,2 @@
+mkdir -p "$PKGDIR"/usr/share/icons
+cp -arv Flat-Remix* "$PKGDIR"/usr/share/icons/

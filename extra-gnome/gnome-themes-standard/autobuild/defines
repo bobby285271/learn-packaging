@@ -1,0 +1,8 @@
+PKGNAME=gnome-themes-standard
+PKGSEC=gnome
+PKGDEP="cantarell-fonts librsvg"
+PKGSUG="gtk-engines-2"
+BUILDDEP="gtk-2 gtk-3 intltool"
+PKGDES="Default themes for the GNOME desktop"
+
+ABRPMAUTOPROVONLY=yes

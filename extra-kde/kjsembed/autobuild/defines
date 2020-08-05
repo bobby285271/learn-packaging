@@ -1,0 +1,7 @@
+PKGNAME=kjsembed
+PKGSEC=kde
+PKGDEP="ki18n kjs"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="An easy-to-use wrapper around the KDE ECMAScript interpreter"
+
+CMAKE_AFTER="-DBUILD_TESTING=OFF"

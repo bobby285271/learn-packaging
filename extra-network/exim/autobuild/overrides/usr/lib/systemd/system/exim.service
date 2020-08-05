@@ -1,0 +1,11 @@
+[Unit]
+Description=Exim MTA daemon
+
+[Service]
+PIDFile=/run/exim.pid
+ExecStart=/usr/bin/exim -bdf -q30m
+ExecReload=/usr/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,20 @@
+./configure --prefix=/usr \
+            --libdir=/usr/lib \
+            --sysconfdir=/etc/R \
+            --datarootdir=/usr/share \
+              rsharedir=/usr/share/R/ \
+              rincludedir=/usr/include/R/ \
+              rdocdir=/usr/share/doc/R/ \
+            --with-x \
+            --enable-R-shlib \
+            --with-lapack \
+            --with-blas ${LTO} \
+            F77=gfortran \
+            LIBnn=lib
+make
+
+make -C src/nmath/standalone shared
+
+make install DESTDIR="$PKGDIR"
+make -C "$SRCDIR"/src/unix install-pc DESTDIR="$PKGDIR"
+make -C src/nmath/standalone install DESTDIR="$PKGDIR"

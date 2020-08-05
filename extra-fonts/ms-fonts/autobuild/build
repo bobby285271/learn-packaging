@@ -1,0 +1,8 @@
+wget -i autobuild/downlist
+for i in *.exe; do
+    bsdtar -xf $i
+done
+
+mkdir -p "$PKGDIR"/usr/share/fonts/TTF
+cp *.ttf "$PKGDIR"/usr/share/fonts/TTF/
+cp *.TTF "$PKGDIR"/usr/share/fonts/TTF/

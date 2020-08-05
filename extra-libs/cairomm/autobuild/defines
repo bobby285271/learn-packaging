@@ -1,0 +1,11 @@
+PKGNAME=cairomm
+PKGSEC=libs
+PKGDEP="cairo libsigc++"
+BUILDDEP="doxygen mesa"
+PKGDES="C++ bindings for Cairo"
+
+ABSHADOW=0
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+AUTOTOOLS_AFTER__RETRO="--disable-documentation"
+AUTOTOOLS_AFTER__I486="${AUTOTOOLS_AFTER__RETRO}"

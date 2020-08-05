@@ -1,0 +1,7 @@
+PKGNAME=libuv
+PKGSEC=libs
+PKGDEP="glibc"
+BUILDDEP="sphinx"
+BUILDDEP__RETRO=""
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+PKGDES="Multi-platform support library with a focus on asynchronous I/O"

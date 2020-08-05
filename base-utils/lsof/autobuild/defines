@@ -1,0 +1,5 @@
+PKGNAME=lsof
+PKGSEC=utils
+PKGDEP="libtirpc"
+PKGDES="Lists open files for running Unix processes"
+

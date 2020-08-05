@@ -1,0 +1,7 @@
+PKGNAME=libwacom
+PKGSEC=libs
+PKGDEP="glib systemd"
+BUILDDEP="doxygen"
+PKGDES="Library to identify Wacom tablets and their features"
+
+ABSHADOW=no

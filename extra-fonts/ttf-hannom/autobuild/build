@@ -1,0 +1,2 @@
+install -vDm644 "HAN NOM A.ttf" "$PKGDIR"/usr/share/fonts/TTF/HannomA.ttf
+install -vDm644 "HAN NOM B.ttf" "$PKGDIR"/usr/share/fonts/TTF/HannomB.ttf

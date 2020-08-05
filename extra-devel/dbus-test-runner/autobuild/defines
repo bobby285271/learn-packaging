@@ -1,0 +1,5 @@
+PKGNAME=dbus-test-runner
+PKGSEC=libs
+PKGDEP="dbus-glib"
+BUILDDEP="gnome-common"
+PKGDES="Runs tests under a new DBus session"

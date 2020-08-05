@@ -1,0 +1,8 @@
+PKGNAME=kconfig
+PKGSEC=kde
+PKGDEP="qt-5"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Framework providing configuration system"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DLIBEXEC_INSTALL_DIR=lib"

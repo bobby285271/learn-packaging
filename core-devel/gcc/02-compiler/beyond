@@ -1,0 +1,63 @@
+abinfo "Installing/Registering BFD plugins..."
+mkdir -p "$PKGDIR"/usr/lib/bfd-plugins
+ln -sv /usr/lib/gcc/${ARCH_TARGET[$ARCH]}/$PKGVER/liblto_plugin.so \
+       "$PKGDIR"/usr/lib/bfd-plugins/liblto_plugin.so
+
+abinfo "Creating symlink - FHS expects "cpp" to be in /usr/lib..."
+ln -sv /usr/bin/cpp "$PKGDIR"/usr/lib/cpp
+
+# Mysteriously this doesn't work for riscv64
+if [[ "${CROSS:-$ARCH}" != "riscv64" ]]; then
+    abinfo "Moving a misplaced file that confuses ldconfig(8) ..."
+    mkdir -pv "$PKGDIR"/usr/share/gdb/auto-load/usr/lib
+    mv -v "$PKGDIR"/usr/lib/*gdb.py "$PKGDIR"/usr/share/gdb/auto-load/usr/lib || true
+fi
+
+abinfo "Removing files in gcc-runtime..."
+RTLIBS="asan lsan ubsan vtv itm quadmath atomic gcc_s stdc++ gfortran gomp \
+        gomp-plugin-host_nonshm objc go"
+
+# VTV not available for PowerPC 32/64.
+if [[ "${CROSS:-$ARCH}" != "powerpc" && "${CROSS:-$ARCH}" != "ppc64" ]]; then
+    RTLIBS+=" libvtv "
+fi
+
+# Tsan not available for PowerPC 32.
+if [[ "${CROSS:-$ARCH}" != "powerpc" ]]; then
+    RTLIBS+=" tsan "
+fi
+
+# Intel Cilk Runtime is only for x86.
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    RTLIBS+=" cilkrts "
+fi
+
+for i in ${RTLIBS[@]}; do
+    abinfo "Removing lib${i} ..."
+    rm -fv "$PKGDIR"/usr/lib/lib${i}.so*
+done
+
+if [ "${CROSS:-$ARCH}" = "amd64" ]; then
+    abinfo "Removing libmpx ..."
+    rm -fv "$PKGDIR"/usr/lib/libmpx*.so*
+fi
+
+abinfo "Removing locale and texinfo documentation from gcc-runtime ..."
+rm -fv "$PKGDIR"/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
+rm -fv "$PKGDIR"/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
+rm -fv "$PKGDIR"/usr/share/info/libgomp.info
+rm -fv "$PKGDIR"/usr/share/info/libquadmath.info
+rm -fv "$PKGDIR"/usr/share/info/libitm.info
+
+if [[ "${CROSS:-$ARCH}" != "riscv64" && "${CROSS:-$ARCH}" != "powerpc" && \
+      "${CROSS:-$ARCH}" != "i486" ]]; then
+    abinfo "Preparing go and gofmt for alternatives ..."
+    mv -v "$PKGDIR"/usr/bin/go{,-gnu}
+    mv -v "$PKGDIR"/usr/bin/gofmt{,-gnu}
+else
+    abinfo "Generating wrapper script for platforms that do not unsupport gccgo ..."
+    echo "#! /bin/bash" > "$PKGDIR"/usr/bin/go
+    echo "echo GNU Go is not available on this architecture. ; exit 1" >> "$PKGDIR"/usr/bin/go
+    cp -v "$PKGDIR"/usr/bin/go{,fmt}
+    chmod -v 755 "$PKGDIR"/usr/bin/go{,fmt}
+fi

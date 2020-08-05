@@ -1,0 +1,4 @@
+PKGNAME=faac
+PKGDES="An encoder for Advanced Audio Coding (AAC)"
+PKGSEC=libs
+PKGDEP="mp4v2"

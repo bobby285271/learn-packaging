@@ -1,0 +1,5 @@
+PKGNAME=dconf
+PKGDES="A low level configuration system"
+PKGSEC=admin
+PKGDEP="glib"
+BUILDDEP="vala gtk-doc meson ninja"

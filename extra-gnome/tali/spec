@@ -1,0 +1,3 @@
+VER=3.36.0
+SRCTBL="https://download.gnome.org/sources/tali/${VER:0:4}/tali-$VER.tar.xz"
+CHKSUM="sha256::426c43ee01e4db7440eee28bf7382cce9bf395fd1139c0bc59f0cf65f916d84e"

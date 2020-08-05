@@ -1,0 +1,11 @@
+PKGNAME=retext
+PKGSEC=editors
+PKGDEP="desktop-file-utils docutils gconf markdown pyenchant pymarkups \
+        pyqt5 xdg-utils"
+BUILDDEP="imagemagick"
+PKGDES="A simple editor for Markdown and ReStructuredText markup languages"
+
+ABTYPE=python
+ABHOST=noarch
+
+NOPYTHON2=1

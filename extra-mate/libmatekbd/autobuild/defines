@@ -1,0 +1,7 @@
+PKGNAME=libmatekbd
+PKGSEC=MATE
+PKGDEP="dconf gtk-3 iso-codes libxklavier"
+BUILDDEP="mate-common"
+PKGDES="MATE keyboard library"
+
+PKGEPOCH=1

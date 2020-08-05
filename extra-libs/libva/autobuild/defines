@@ -1,0 +1,12 @@
+PKGNAME=libva
+PKGDES="Video Acceleration (VA) API for Linux"
+PKGDEP="libdrm"
+BUILDDEP="mesa doxygen"
+BUILDDEP__RETRO="mesa"
+BUILDDEP__I486="${BUILDDEP__RETRO}"
+PKGSEC=libs
+
+ABTYPE=meson
+PKGBREAK="avidemux<=2.7.1 ffmpeg<=4.0.2 gstreamer-vaapi<=1.14.3-2 kodi<=1:17.6-2 \
+          libva-intel-driver<=1.8.3 libva-vdpau-driver<=0.7.4-3 libvdpau-va-gl<=0.4.2 \
+          mesa<=1:18.2.2 mpv<=0.29.0 pipewire<=0.2.3-2"

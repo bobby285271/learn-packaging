@@ -1,0 +1,7 @@
+PKGNAME=soundfont-fluid-gm
+PKGSEC=sound
+PKGDES="FluidR3_GM soundfont"
+PKGDEP=""
+BUILDDEP=""
+
+ABHOST=noarch

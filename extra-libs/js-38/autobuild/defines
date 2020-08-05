@@ -1,0 +1,27 @@
+PKGNAME=js-38
+PKGSEC=libs
+PKGDEP="nspr readline zlib icu"
+PKGDES="Mozilla's JavaScript engine (mainline, 38)"
+
+AUTOTOOLS_AFTER="--with-system-nspr \
+	--enable-threadsafe \
+	--enable-readline \
+	--enable-xterm-updates \
+	--enable-shared-js \
+	--enable-gcgenerational \
+	--disable-optimize \
+	--with-system-zlib \
+	--enable-system-ffi \
+	--with-system-icu \
+	--without-intl-api \
+	--enable-pie"
+NOPARALLEL=yes
+if [[ "${CROSS:-$ARCH}" = "powerpc" || "${CROSS:-$ARCH}" = "ppc64" || \
+      "${CROSS:-$ARCH}" = "armel" ]]; then
+    AB_FLAGS_SPECS=0
+fi
+
+if [[ "${CROSS:-$ARCH}" = "mips64el" ]]; then
+    AUTOTOOLS_AFTER+=" --disable-ion --disable-methodjit"
+fi
+

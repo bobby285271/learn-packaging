@@ -1,0 +1,3 @@
+VER=30
+GITSRC="https://github.com/andyholmes/gnome-shell-extension-gsconnect"
+GITCO="v$VER"

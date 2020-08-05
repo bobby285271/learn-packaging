@@ -1,0 +1,4 @@
+PKGNAME=iperf3
+PKGSEC=net
+PKGDEP="lksctp-tools"
+PKGDES="A TCP, UDP, and SCTP network bandwidth measurement tool"

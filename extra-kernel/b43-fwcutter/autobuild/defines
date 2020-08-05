@@ -1,0 +1,5 @@
+PKGNAME=b43-fwcutter
+PKGEPOCH=1
+PKGDEP=b43-tools
+PKGDES="Transitional package for b43-tools"
+PKGSEC=kernel

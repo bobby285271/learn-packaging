@@ -1,0 +1,8 @@
+PKGNAME=totem-pl-parser
+PKGSEC=gnome
+PKGDEP="gmime-3 libsoup libarchive libquvi"
+BUILDDEP="intltool gobject-introspection vala meson ninja"
+PKGDES="Totem playlist parser library"
+
+ABTYPE=meson
+MESON_AFTER="-Denable-gtk-doc=true"

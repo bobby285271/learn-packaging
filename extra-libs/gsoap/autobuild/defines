@@ -1,0 +1,9 @@
+PKGNAME=gsoap
+PKGSEC=devel
+PKGDEP="openssl zlib"
+PKGDES="Development toolkit for Web Services and XML data bindings for C & C++"
+
+NOPARALLEL=yes
+AUTOTOOLS_AFTER="--enable-openssl"
+ABSHADOW=no
+NOSTATIC=no

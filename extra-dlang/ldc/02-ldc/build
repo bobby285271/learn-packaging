@@ -1,0 +1,10 @@
+make -C build \
+    install DESTDIR="$PKGDIR"
+
+rm -rfv "$PKGDIR"/usr/include
+rm -rfv "$PKGDIR"/usr/lib
+
+ln -sv ldc2 \
+    "$PKGDIR"/usr/share/bash-completion/completions/ldc
+ln -sv ldc2 "$PKGDIR"/usr/bin/ldc
+ln -sv ldmd2 "$PKGDIR"/usr/bin/ldmd

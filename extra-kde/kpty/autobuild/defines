@@ -1,0 +1,8 @@
+PKGNAME=kpty
+PKGSEC=kde
+PKGDEP="kcoreaddons ki18n libutempter"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="A framework for PTY abstraction"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

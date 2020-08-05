@@ -1,0 +1,26 @@
+PKGNAME=llvm-runtime
+PKGSEC=libs
+PKGDEP="gcc-runtime libedit libffi ncurses zlib"
+BUILDDEP="cmake swig doxygen ocaml findlib llvm"
+PKGDES="Low Level Virtual Machine Infrastructure (runtime libraries)"
+
+AB_FLAGS_O3=1
+USECLANG=1
+NOLTO=1
+
+CMAKE_AFTER="-DLLVM_BUILD_LLVM_DYLIB=ON \
+             -DLLVM_DYLIB_EXPORT_ALL=ON \
+             -DLLVM_LINK_LLVM_DYLIB=ON \
+             -DLLVM_ENABLE_RTTI=ON \
+             -DLLVM_ENABLE_FFI=ON \
+             -DLLVM_BUILD_DOCS=OFF \
+             -DFFI_INCLUDE_DIR=$(pkg-config --variable=includedir libffi) \
+             -DLLVM_BINUTILS_INCDIR=/usr/include \
+             -DLLVM_INSTALL_UTILS=ON \
+             -DLLVM_ENABLE_LLD=OFF"
+
+PKGBREAK="beignet<=20180820 ccls<=0.20181225.8-1 \
+          gnustep-make<=2.7.0-6 ldc<=1.17.0-1 \
+          libobjc2<=1.8.1-1 llvm<=7.0.1-4 mesa<=1:19.1.6 openstf<=3.3.0 \
+          pocl<=1:1.2 qtcreator<=4.9.2"
+PKGREP="llvm<=3.7.0-2"

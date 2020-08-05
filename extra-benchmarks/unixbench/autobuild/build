@@ -1,0 +1,16 @@
+make -C UnixBench/ OPTON="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
+
+mkdir -p "$PKGDIR"/usr/{bin,lib/unixbench}
+cp -av "$SRCDIR"/UnixBench/{pgms,results,testdir,tmp,Run} "$PKGDIR"/usr/lib/unixbench
+
+echo -e \
+"#!/bin/sh
+cd /usr/lib/unixbench/
+./Run \$@ 2>/dev/null" \
+    >> "$PKGDIR"/usr/bin/unixbench
+
+echo "check:" >> "$PKGDIR"/usr/lib/unixbench/Makefile
+
+chmod +x "$PKGDIR"/usr/bin/unixbench
+chmod +x "$PKGDIR"/usr/lib/unixbench/Run
+chmod ugoa+w "$PKGDIR"/usr/lib/unixbench/{results,testdir,tmp}

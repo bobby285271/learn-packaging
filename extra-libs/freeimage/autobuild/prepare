@@ -1,0 +1,14 @@
+if [[ "${CROSS:-$ARCH}" = "armel" ]]; then
+    export CFLAGS="${CFLAGS} -fPIC"
+    export CXXFLAGS="${CXXFLAGS} -fPIC"
+    export LDFLAGS="${LDFLAGS} -fPIC"
+fi
+
+if [[ "${CROSS:-$ARCH}" = "ppc64" || "${CROSS:-$ARCH}" = "powerpc" ]]; then
+    export CFLAGS="${CFLAGS/-msecure-plt/}"
+    export CXXFLAGS="${CXXFLAGS/-msecure-plt/}"
+    export CFLAGS="${CFLAGS/-maltivec=be/}"
+    export CXXFLAGS="${CXXFLAGS/-maltivec=be/}"
+fi
+
+export CXXFLAGS="${CXXFLAGS} -Wno-narrowing"

@@ -1,0 +1,9 @@
+PKGNAME=file-roller
+PKGDES="Archive manager for GNOME"
+PKGDEP="desktop-file-utils gtk-3 hicolor-icon-theme dconf libarchive file \
+        json-glib libnotify p7zip lrzip"
+BUILDDEP="intltool itstool nautilus"
+PKGSEC=gnome
+
+AUTOTOOLS_AFTER="--disable-schemas-compile"
+ABSHADOW=no

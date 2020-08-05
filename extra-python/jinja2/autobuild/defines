@@ -1,0 +1,7 @@
+PKGNAME=jinja2
+PKGSEC=python
+PKGDEP="setuptools markupsafe"
+PKGDES="A simple pythonic template language written in Python"
+
+ABHOST=noarch
+ABTYPE=python

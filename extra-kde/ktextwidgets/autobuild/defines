@@ -1,0 +1,8 @@
+PKGNAME=ktextwidgets
+PKGSEC=kde
+PKGDEP="kcompletion kiconthemes kservice sonnet"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Advanced text editing widgets"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

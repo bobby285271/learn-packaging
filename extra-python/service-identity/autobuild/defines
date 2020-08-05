@@ -1,0 +1,7 @@
+PKGNAME=service-identity
+PKGSEC=python
+PKGDEP="attrs characteristic idna pyasn1-modules pyopenssl"
+BUILDDEP="setuptools"
+PKGDES="Service identity verification for pyOpenSSL"
+
+ABHOST=noarch

@@ -1,0 +1,36 @@
+rm -rf pkgs/sqlite3*
+
+cd unix
+./configure --prefix=/usr \
+            --mandir=/usr/share/man \
+            --enable-threads --enable-64bit LIBS=-lm
+make
+
+sed -e "s@^\(TCL_SRC_DIR='\).*@\1/usr/include'@" \
+    -e "/TCL_B/s@='\(-L\)\?.*unix@='\1/usr/lib@" \
+    -i tclConfig.sh
+
+make DESTDIR="$PKGDIR" install
+make DESTDIR="$PKGDIR" install-private-headers
+
+ln -v -sf tclsh8.6 "$PKGDIR"/usr/bin/tclsh
+ln -sv /usr/lib/libtcl8.6.so "$PKGDIR"/usr/lib/libtcl.so
+chmod -v 755 "$PKGDIR"/usr/lib/libtcl8.6.so 
+cd ..
+
+sed -e "s#$SRCDIR/unix#/usr/lib#" \
+    -e "s#$SRCDIR#/usr/include#" \
+    -i "$PKGDIR/usr/lib/tclConfig.sh"
+
+tdbcver=tdbc1.1.1
+sed -e "s#$SRCDIR/unix/pkgs/$tdbcver#/usr/lib/$tdbcver#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver/generic#/usr/include#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver/library#/usr/lib/tcl${PKGVER%.*}#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver#/usr/include#" \
+    -i "$PKGDIR/usr/lib/$tdbcver/tdbcConfig.sh"
+
+itclver=itcl4.2.0
+sed -e "s#$SRCDIR/unix/pkgs/$itclver#/usr/lib/$itclver#" \
+    -e "s#$SRCDIR/pkgs/$itclver/generic#/usr/include#" \
+    -e "s#$SRCDIR/pkgs/$itclver#/usr/include#" \
+    -i "$PKGDIR/usr/lib/$itclver/itclConfig.sh"

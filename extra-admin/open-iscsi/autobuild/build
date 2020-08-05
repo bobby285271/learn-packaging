@@ -1,0 +1,18 @@
+make user LIB_DIR=/usr/lib
+make install DESTDIR="$PKGDIR" LIB_DIR=/usr/lib
+
+abinfo "Arch Linux: Installing systemd units ..."
+install -Dvm0644 etc/systemd/iscsid.service \
+    "$PKGDIR"/usr/lib/systemd/system/iscsid.service
+install -Dvm0644 etc/systemd/iscsid.socket \
+    "$PKGDIR"/usr/lib/systemd/system/iscsid.socket
+install -Dvm0644 etc/systemd/iscsi.service \
+    "$PKGDIR"/usr/lib/systemd/system/iscsi.service
+
+abinfo "Arch Linux: Installing configuration files ..."
+install -Dvm0644 "$SRCDIR"/etc/iscsid.conf \
+    "$PKGDIR"/etc/iscsi
+echo -n > "$PKGDIR"/etc/iscsi/initiatorname.iscsi
+
+abinfo "Moving /sbin => /usr/bin ..."
+mv -v "$PKGDIR"/{sbin,usr/bin}

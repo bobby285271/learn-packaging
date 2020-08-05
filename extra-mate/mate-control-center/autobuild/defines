@@ -1,0 +1,10 @@
+PKGNAME=mate-control-center
+PKGSEC=MATE
+PKGDEP="dbus-glib dconf desktop-file-utils gsettings-desktop-schemas \
+        mate-desktop mate-icon-theme \
+        mate-menus mate-settings-daemon marco libgtop libmatekbd \
+        libunique3 librsvg startup-notification yelp libappindicator"
+BUILDDEP="docbook2x mate-common yelp-tools"
+PKGDES="The MATE control center"
+
+AUTOTOOLS_AFTER="--disable-update-mimedb"

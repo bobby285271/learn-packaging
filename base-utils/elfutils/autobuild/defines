@@ -1,0 +1,16 @@
+PKGNAME=elfutils
+PKGSEC=utils
+PKGDEP="bzip2 xz zlib"
+PKGDES="Libraries and utilities to handle ELF object files and DWARF debugging information"
+
+AUTOTOOLS_AFTER="--program-prefix=eu-"
+PKGREP="libelf"
+PKGCONFL="libelf"
+PKGPROV="libelf"
+ABSHADOW=0
+NOPARALLEL=1
+NOSTATIC=0
+NOLTO=1
+
+PKGBREAK="libdwarf<=20180706"
+PKGREP="libdwarf<=20180706"

@@ -1,0 +1,3 @@
+VER=3.36.1
+SRCTBL="https://download.gnome.org/sources/gnome-mahjongg/${VER:0:4}/gnome-mahjongg-$VER.tar.xz"
+CHKSUM="sha256::ed7758cf77cc7d8ec27459a415a842ab56b3ad371547e1cd58ea825c5529b0a8"

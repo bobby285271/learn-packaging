@@ -1,0 +1,6 @@
+PKGNAME=libusb
+PKGDES="A library providing USB device access and manipulation support"
+PKGDEP="glibc systemd"
+PKGSEC=libs
+
+NOPARALLEL=yes

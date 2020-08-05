@@ -1,0 +1,7 @@
+PKGNAME=python-gflags
+PKGSEC=python
+PKGDEP="python-2 python-3"
+PKGDES="Command line flags module for Python"
+
+ABTYPE=python
+ABHOST=noarch

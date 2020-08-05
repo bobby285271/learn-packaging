@@ -1,0 +1,10 @@
+PKGNAME=traitlets
+PKGSEC=python
+PKGDEP="decorator"
+PKGDES="A configuration system for Python applications."
+
+ABTYPE=python
+ABHOST=noarch
+
+PKGBREAK="ipython<=6.2.1"
+PKGREP="ipython<=6.2.1"

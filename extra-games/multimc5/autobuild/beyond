@@ -1,0 +1,4 @@
+install -Dvm0644 "$SRCDIR"/application/resources/multimc/scalable/multimc.svg \
+    "$PKGDIR"/usr/share/pixmaps/multimc.svg
+install -Dvm0644 "$SRCDIR"/application/package/linux/multimc.desktop \
+    "$PKGDIR"/usr/share/applications/multimc.desktop

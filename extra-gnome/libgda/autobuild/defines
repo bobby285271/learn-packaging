@@ -1,0 +1,13 @@
+PKGNAME=libgda
+PKGSEC=gnome
+PKGDEP="gtksourceview-3 libxslt json-glib ncurses libsoup postgresql python-2 \
+        libsecret hicolor-icon-theme desktop-file-utils graphviz gdk-pixbuf iso-codes \
+        openssl libgcrypt openldap sqlite"
+BUILDDEP="intltool gtk-doc vim vala"
+PKGDES="GNOME database abstraction library and routines"
+
+# FIXME: MariaDB incompatibility.
+AUTOTOOLS_AFTER="--without-bdb --enable-json --enable-gda-gi --enable-system-sqlite \
+                 --enable-binreloc --enable-gdaui-gi --enable-vala --enable-gdaui-vala \
+                 --with-mysql=no --enable-gtk-doc --disable-java VALA_API_VERSION=0.40"
+ABSHADOW=no

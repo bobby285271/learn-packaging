@@ -1,0 +1,5 @@
+PKGNAME=obconf-qt
+PKGSEC=x11
+PKGDEP="openbox qt-5"
+PKGDES="Qt based OpenBox configurator"
+NOLTO=no

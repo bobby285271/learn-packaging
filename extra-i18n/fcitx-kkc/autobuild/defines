@@ -1,0 +1,5 @@
+ABTYPE=cmake
+PKGNAME=fcitx-kkc
+PKGSEC=x11
+PKGDEP="fcitx-qt5 libkkc libkkc-data skk-jisyo"
+PKGDES="Fcitx wrapper for libkkc"

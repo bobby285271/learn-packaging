@@ -1,0 +1,9 @@
+PKGNAME=accountsservice
+PKGSEC=libs
+PKGDEP="glib polkit systemd"
+BUILDDEP="intltool gtk-doc gobject-introspection"
+PKGDES="D-Bus interface for user account query and manipulation"
+
+ABSHADOW=no
+MESON_AFTER="-Dsystemd=true -Duser_heuristics=false -Dadmin_group=wheel -Dminimum_uid=1000"
+AUTOTOOLS_AFTER="--enable-systemd"

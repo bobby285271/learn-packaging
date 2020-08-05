@@ -1,0 +1,5 @@
+./configure --prefix=/usr \
+            --with-boost-libdir=/usr/lib \
+            --enable-qt --without-curl
+rake ${MAKEFLAGS} V=1
+rake install DESTDIR="$PKGDIR"

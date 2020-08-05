@@ -1,0 +1,8 @@
+PKGNAME=opam
+PKGSEC=ocaml
+PKGDEP="aspcud ocaml bubblewrap"
+PKGDES="OCaml Package Manager"
+
+NOPARALLEL=1
+AB_FLAGS_SPECS=0
+AB_FLAGS_PIC=1

@@ -1,0 +1,3 @@
+VER=1.45.1
+GITSRC="https://github.com/microsoft/vscode/"
+GITCO="tags/$VER"

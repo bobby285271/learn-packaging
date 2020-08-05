@@ -1,0 +1,11 @@
+PKGNAME=xfce4-session
+PKGDES="Session manager for Xfce"
+PKGSEC=xfce
+PKGDEP="libwnck libxfce4ui x11-app polkit-gnome upower systemd light-locker"
+BUILDDEP="intltool"
+
+AUTOTOOLS_AFTER="--enable-polkit \
+                 --disable-static \
+                 --disable-debug"
+RECONF=0
+PKGEPOCH=1

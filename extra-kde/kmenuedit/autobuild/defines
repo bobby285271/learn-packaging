@@ -1,0 +1,9 @@
+PKGNAME=kmenuedit
+PKGSEC=kde
+PKGDEP="khotkeys"
+BUILDDEP="extra-cmake-modules kdesignerplugin kdoctools"
+PKGDES="KDE applications menu editor"
+
+CMAKE_AFTER="-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+             -DBUILD_TESTING=OFF"
+PKGCONFL="tde-i18n"

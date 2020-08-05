@@ -1,0 +1,4 @@
+PKGNAME=scim-m17n
+PKGSEC=x11
+PKGDEP="scim m17n-db m17n-lib"
+PKGDES="Multilingual input method module for SCIM"

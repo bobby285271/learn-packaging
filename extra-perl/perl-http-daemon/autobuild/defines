@@ -1,0 +1,6 @@
+PKGNAME=perl-http-daemon
+PKGSEC=perl
+PKGDEP="perl-http-date perl-http-message perl-lwp-mediatypes"
+PKGDES="A simple HTTP server class"
+
+ABHOST=noarch

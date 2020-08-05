@@ -1,0 +1,6 @@
+PKGNAME=ruby-pg
+PKGSEC=ruby
+PKGDEP="ruby postgresql"
+PKGDES="Ruby interface to PostgreSQL runtime libraries"
+
+ABTYPE=ruby

@@ -1,0 +1,7 @@
+PKGNAME=kapidox
+PKGSEC=kde
+PKGDEP="jinja2 pyyaml"
+BUILDDEP="extra-cmake-modules"
+PKGDES="Frameworks API documentary tools"
+
+ABHOST=noarch

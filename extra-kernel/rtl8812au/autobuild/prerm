@@ -1,0 +1,2 @@
+unset ARCH
+dkms remove rtl8812au/20190903 --all || true > /dev/null

@@ -1,0 +1,4 @@
+PKGNAME=liblangtag
+PKGSEC=libs
+PKGDEP="glib gobject-introspection libxml2"
+PKGDES="Library to access tags for language identification"

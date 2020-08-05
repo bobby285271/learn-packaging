@@ -1,0 +1,6 @@
+cp -rv distorm-$PKGVER{,-3}
+
+sed -e '1i#!/usr/bin/env python2' \
+    -i distorm-$PKGVER/examples/python/sample.py
+sed -e '1i#!/usr/bin/env python3' \
+    -i distorm-$PKGVER-3/examples/python/sample.py

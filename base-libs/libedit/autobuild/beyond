@@ -1,0 +1,2 @@
+rm "$PKGDIR"/usr/share/man/man3/history.3
+cp "$PKGDIR"/usr/share/man/man3/editline.3 "$PKGDIR"/usr/share/man/man3/el.3

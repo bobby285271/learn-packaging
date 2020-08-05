@@ -1,0 +1,11 @@
+PKGNAME=sqlclient
+PKGSEC=gnustep
+PKGDEP="gnustep-performance mariadb postgresql"
+if [[ "${CROSS:-$ARCH}" = "powerpc" ]]; then
+    PKGDEP="${PKGDEP/mariadb/}"
+fi 
+BUILDDEP="gnustep-make"
+PKGDES="SQL client library for GNUstep"
+
+ABSHADOW=0
+AUTOTOOLS_AFTER="--sysconfdir=/etc/GNUstep"

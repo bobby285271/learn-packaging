@@ -1,0 +1,7 @@
+PKGNAME=libe-book
+PKGSEC=libs
+PKGDEP="librevenge libxml2"
+BUILDDEP="boost cppunit doxygen gperf"
+PKGDES="Library for importing of reflowable e-Book formats"
+
+ABSHADOW=0

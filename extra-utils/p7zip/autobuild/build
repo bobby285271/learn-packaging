@@ -1,0 +1,13 @@
+make all2 7zG \
+     OPTFLAGS="${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS}" \
+     DEST_HOME=/usr \
+     DEST_BIN=/usr/bin \
+     DEST_SHARE=/usr/lib/p7zip \
+     DEST_MAN=/usr/share/man || true
+
+make install \
+     DEST_HOME=/usr \
+     DEST_BIN=/usr/bin \
+     DEST_SHARE=/usr/lib/p7zip \
+     DEST_MAN=/usr/share/man \
+     DEST_DIR="$PKGDIR" || true

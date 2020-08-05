@@ -1,0 +1,2 @@
+make -C doc
+make install_rdf INSTALLROOT="$PKGDIR"

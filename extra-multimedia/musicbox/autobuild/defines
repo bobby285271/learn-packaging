@@ -1,0 +1,9 @@
+PKGNAME=musicbox
+PKGSEC=sound
+PKGDEP="requests-cache beautifulsoup4 pycryptodome future \
+        mpg123 pycryptodomex"
+BUILDDEP="setuptools"
+PKGDES="CLI Version of Netease-CloudMusic"
+
+NOPYTHON2=yes
+ABHOST=noarch

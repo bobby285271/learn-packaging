@@ -1,0 +1,7 @@
+PKGNAME=cbm
+PKGSEC=net
+PKGDEP="gcc-runtime ncurses"
+BUILDDEP="xmlto"
+PKGDES="Display the current network traffic in colors"
+
+ABSHADOW=0

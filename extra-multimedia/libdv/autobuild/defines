@@ -1,0 +1,7 @@
+PKGNAME=libdv
+PKGSEC=libs
+PKGDEP="popt sdl"
+PKGDES="The Quarsar DV codec"
+
+AUTOTOOLS_AFTER="--disable-gtk"
+ABSHADOW=no

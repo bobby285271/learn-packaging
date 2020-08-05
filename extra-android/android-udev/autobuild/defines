@@ -1,0 +1,6 @@
+PKGNAME=android-udev
+PKGSEC=libs
+PKGDEP="libmtp"
+PKGDES="UDev rules to help connecting Android devices properly"
+
+ABHOST=noarch

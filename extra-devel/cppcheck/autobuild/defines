@@ -1,0 +1,5 @@
+PKGNAME=cppcheck
+PKGSEC=devel
+PKGDEP="pygments"
+BUILDDEP="docbook-xsl"
+PKGDES="A tool for static C/C++ code analysis"

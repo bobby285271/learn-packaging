@@ -1,0 +1,4 @@
+PKGNAME=perl-net-ssleay
+PKGSEC=perl
+PKGDEP="openssl perl"
+PKGDES="Openssl extension for Perl"

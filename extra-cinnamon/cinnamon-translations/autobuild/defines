@@ -1,0 +1,6 @@
+PKGNAME=cinnamon-translations
+PKGSEC=Cinnamon
+PKGDEP=""
+PKGDES="Translations for Cinnamon desktop"
+
+ABHOST=noarch

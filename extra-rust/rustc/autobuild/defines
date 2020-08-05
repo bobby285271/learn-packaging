@@ -1,0 +1,17 @@
+PKGNAME=rustc
+PKGEPOCH=1
+PKGSEC=devel
+PKGDEP="gcc-runtime llvm-runtime http-parser"
+BUILDDEP="cmake curl libffi llvm ninja"
+PKGDES="General purpose, multi-paradigm programming language (compiler and runtime)"
+
+NOLTO=1
+PKGPROV="rust"
+
+# FIXME: LLVM 4.0 not yet supported.
+#        https://github.com/rust-lang/rust/issues/37609
+
+PKGBREAK="cargo<=0.17.0-1 rustfmt<=0.8.3-1"
+PKGREP="cargo<=0.17.0-1 rustfmt<=0.8.3-1"
+
+LLVMVER=9.0.1

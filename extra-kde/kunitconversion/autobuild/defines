@@ -1,0 +1,8 @@
+PKGNAME=kunitconversion
+PKGSEC=kde
+PKGDEP="ki18n"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Support for international unit conversion"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

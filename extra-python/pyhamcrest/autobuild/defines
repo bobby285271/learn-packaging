@@ -1,0 +1,6 @@
+PKGNAME=pyhamcrest
+PKGSEC=python
+PKGDES="Hamcrest framework for matcher objects"
+
+ABTYPE=python
+ABHOST=noarch

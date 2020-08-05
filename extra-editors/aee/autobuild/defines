@@ -1,0 +1,6 @@
+PKGNAME=aee
+PKGSEC=editors
+PKGDEP="glibc"
+PKGDES="An easy to use text editor"
+
+NOPARALLEL=1

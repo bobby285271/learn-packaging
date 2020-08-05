@@ -1,0 +1,7 @@
+PKGNAME=kmbox
+PKGSEC=kde
+PKGDEP="kmime"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="KDE library for accessing mail storages in MBox format"
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

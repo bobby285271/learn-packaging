@@ -1,0 +1,13 @@
+abinfo "Building bcache-tools ..."
+make
+
+abinfo "Preparing directories for installation ..."
+mkdir -pv "$PKGDIR"/usr/bin
+mkdir -pv "$PKGDIR"/usr/lib/udev/rules.d
+mkdir -pv "$PKGDIR"/usr/share/man/man8
+
+abinfo "Installing bcache-tools ..."
+make UDEVLIBDIR=/usr/lib/udev \
+     DRACUTLIBDIR=/usr/lib/dracut \
+     DESTDIR="$PKGDIR" \
+     install

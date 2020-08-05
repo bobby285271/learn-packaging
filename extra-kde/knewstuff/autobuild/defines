@@ -1,0 +1,8 @@
+PKGNAME=knewstuff
+PKGSEC=kde
+PKGDEP="kio kirigami2 kpackage"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Support for downloading application assets from the Internet"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

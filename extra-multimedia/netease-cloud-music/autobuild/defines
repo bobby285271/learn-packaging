@@ -1,0 +1,6 @@
+PKGNAME=netease-cloud-music
+PKGSEC=sound
+PKGDES="Client for NetEase Cloud Music"
+
+FAIL_ARCH="!(amd64)"
+ABSTRIP=0

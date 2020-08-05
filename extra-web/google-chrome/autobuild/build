@@ -1,0 +1,22 @@
+# FIXME: no way to specify version to be downloaded.
+FILENAME="google-chrome-stable_current_amd64.deb"
+FILEHASH="b32490fdb38db0ab0c35b07daab8bc1bfc27586dc3afb535e5f4e81e9f3f7f27"
+abinfo "Downloading pre-built binaries"
+wget https://dl.google.com/linux/direct/$FILENAME
+
+abinfo "Computing file hash"
+sha256sum -c <(echo $FILEHASH $FILENAME)
+
+abinfo "Extracting archive file"
+dpkg -x $FILENAME chrome/
+
+abinfo "Deploying files"
+mkdir -p "$PKGDIR"/usr/{lib/google-chrome,share/pixmaps}
+cp -arv chrome/opt/google/chrome/* "$PKGDIR"/usr/lib/google-chrome/
+cp -rv chrome/usr "$PKGDIR"/
+
+ln -sfv /usr/lib/google-chrome/product_logo_256.png \
+       "$PKGDIR"/usr/share/pixmaps/google-chrome.png
+ln -sfv /usr/lib/google-chrome/google-chrome \
+       "$PKGDIR"/usr/bin/google-chrome-stable
+rm -f /etc/cron.daily/google-chrome

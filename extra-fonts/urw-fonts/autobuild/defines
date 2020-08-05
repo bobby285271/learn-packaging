@@ -1,0 +1,6 @@
+PKGNAME=urw-fonts
+PKGSEC=fonts
+PKGDEP="fontconfig"
+PKGDES="Standard Ghostscript fonts from URW"
+
+ABHOST=noarch

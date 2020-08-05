@@ -1,0 +1,6 @@
+PKGNAME=hyphen
+PKGSEC=libs
+PKGDEP="hunspell perl"
+PKGDES="Library for high quality hyphenation and justification"
+
+RECONF=0

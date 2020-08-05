@@ -1,0 +1,11 @@
+make LDFLAGS="${LDFLAGS} -lssl -lcrypto"
+
+install -Dvm755 vsftpd "$PKGDIR"/usr/bin/vsftpd
+install -Dvm644 vsftpd.conf "$PKGDIR"/etc/vsftpd.conf
+
+install -Dvm644 vsftpd.8 "$PKGDIR"/usr/share/man/man8/vsftpd.8
+install -Dvm644 vsftpd.conf.5 "$PKGDIR"/usr/share/man/man5/vsftpd.conf.5
+install -Dvm644 EXAMPLE/INTERNET_SITE/vsftpd.xinetd "$PKGDIR"/etc/xinetd.d/vsftpd
+install -Dvm644 RedHat/vsftpd.log "$PKGDIR"/etc/logrotate.d/vsftpd
+
+install -dvm755 "$PKGDIR"/usr/share/empty

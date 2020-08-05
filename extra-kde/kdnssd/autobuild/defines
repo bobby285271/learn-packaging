@@ -1,0 +1,8 @@
+PKGNAME=kdnssd
+PKGSEC=kde
+PKGDEP="qt-5 avahi"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Abstration to system DNSSD features"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

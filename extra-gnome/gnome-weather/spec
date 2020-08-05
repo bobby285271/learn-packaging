@@ -1,0 +1,3 @@
+VER=3.34.0
+SRCTBL="https://download.gnome.org/sources/gnome-weather/${VER:0:4}/gnome-weather-$VER.tar.xz"
+CHKSUM="sha256::24867e21fcb92b81cd0cf09bbf8bc216ccc55d9a66ac21928b66c413f4efc3bc"

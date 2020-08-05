@@ -1,0 +1,28 @@
+PKGNAME=mono
+PKGSEC=cli-mono
+PKGDES="Sponsored by Microsoft, Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime"
+PKGDEP="libgdiplus python-3 zlib"
+BUILDDEP="curl devel-base git"
+
+ABSHADOW=0
+
+# FTBFS with LTO
+# mono-tls.c:234: error: undefined reference to 'mono_tls_thread'
+# mono-tls.c:235: error: undefined reference to 'mono_tls_jit_tls'
+# mono-tls.c:236: error: undefined reference to 'mono_tls_domain'
+# mono-tls.c:237: error: undefined reference to 'mono_tls_lmf_addr'
+# collect2: error: ld returned 1 exit status
+NOLTO=1
+
+NOSTATIC=0
+
+if [[ "${CROSS:-$ARCH}" = "armel" ]]; then
+  PARA_ARMV7A="--with-csc=mcs"
+fi
+
+AUTOTOOLS_DEF=""
+AUTOTOOLS_STRICT=0
+AUTOTOOLS_AFTER="--prefix=/usr \
+                 --sysconfdir=/etc \
+                 --disable-llvm \
+                 $PARA_ARMV7A"

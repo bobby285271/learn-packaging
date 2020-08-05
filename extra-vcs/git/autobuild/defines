@@ -1,0 +1,17 @@
+PKGNAME=git
+PKGSEC=vcs
+PKGDEP="curl expat openssl pcre2 perl perl-error cvsps perl-authen-sasl \
+        libwww-perl perl-mime-tools perl-net-smtp-ssl perl-term-readkey \
+        python-2 tk perl-dbi subversion brotli"
+BUILDDEP="gettext asciidoc xmlto emacs"
+PKGDES="Fast distributed version control system"
+
+ABELFDEP=0
+ABRPMAUTOPROVONLY=1
+NOPARALLEL=1
+AB_FLAGS_O3=1
+
+PKGDEP__RETRO="curl expat openssl pcre2"
+PKGDEP__I486="$PKGDEP__RETRO"
+BUILDDEP__RETRO=""
+BUILDDEP__I486="$BUILDDEP__RETRO"

@@ -1,0 +1,58 @@
+# Adapted from Arch Linux.
+
+./configure --prefix=/usr --with-gmp=system
+make
+make libgap.la
+
+# Install libgap so we can link packages against it
+mkdir -pv tmp-install
+libtool --mode=install install libgap.la \
+    "$SRCDIR"/tmp-install
+
+cd "$SRCDIR"/pkg
+# See https://trac.sagemath.org/ticket/27372
+export LDFLAGS+=" -L$SRCDIR/tmp-install -lgap"
+export LD_LIBRARY_PATH="$SRCDIR/tmp-install"
+../bin/BuildPackages.sh
+
+cd "$SRCDIR"
+
+install -Dvm644 src/*.h -t \
+    "$PKGDIR"/usr/include/gap
+install -Dvm644 gen/config.h \
+    -t "$PKGDIR"/usr/include/gap
+install -Dvm644 src/hpc/*.h \
+    -t "$PKGDIR"/usr/include/gap/hpc
+
+install -dv "$PKGDIR"/usr/lib
+libtool --mode=install install libgap.la \
+    "$PKGDIR"/usr/lib
+
+mkdir -pv "$PKGDIR"/usr/{bin,lib/gap/pkg}
+cp -rv grp lib \
+    "$PKGDIR"/usr/lib/gap
+for _pkg in ${_standardpkgs[@]}; do
+    cp -rv pkg/$_pkg "$PKGDIR"/usr/lib/gap/pkg
+done
+install -Dvm755 gap \
+    -t "$PKGDIR"/usr/lib/gap
+
+mkdir -pv "$PKGDIR"/usr/share
+ln -sv /usr/lib/gap \
+    -t "$PKGDIR"/usr/share # expected by sagemath
+
+cp -rv doc "$PKGDIR"/usr/lib/gap
+
+# fix RPATH
+find "$PKGDIR"/usr/lib/gap/pkg/ -name '*.so' | \
+    xargs chrpath -d
+
+# remove bundled planarity
+rm -rfv "$PKGDIR"/usr/lib/gap/pkg/digraphs-*/bin/lib/
+
+# remove leftover binaries and source files
+find "$PKGDIR"/usr/lib/gap/pkg -name .libs -o -name '*.o' | \
+    xargs rm -rfv
+find "$PKGDIR"/usr/lib/gap/pkg -type d -name src | \
+    xargs rm -rfv
+rm -rfv "$PKGDIR"/usr/lib/gap/pkg/log

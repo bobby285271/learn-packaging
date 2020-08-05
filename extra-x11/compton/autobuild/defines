@@ -1,0 +1,8 @@
+PKGNAME=compton
+PKGSEC=x11
+PKGDEP="dbus desktop-file-utils hicolor-icon-theme mesa pcre systemd \
+        x11-app libconfig"
+BUILDDEP="asciidoc cmake setconf"
+PKGDES="A compositor for X11"
+
+ABMK="compton docs"

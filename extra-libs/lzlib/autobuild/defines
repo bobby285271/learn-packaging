@@ -1,0 +1,6 @@
+PKGNAME=lzlib
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="A compression library for the lzip file format, written in C"
+
+ABSHADOW=no

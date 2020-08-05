@@ -1,0 +1,1 @@
+install -Dm 0644 ${SRCDIR}/nuget.exe ${PKGDIR}/usr/lib/nuget/nuget.exe

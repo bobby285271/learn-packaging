@@ -1,0 +1,8 @@
+PKGNAME=cracklib
+PKGSEC=libs
+PKGDEP="gzip python-2"
+PKGDES="A library used to enforce strong passwords"
+
+ABSHADOW=no
+AUTOTOOLS_AFTER="--with-python \
+                 --with-default-dict=/usr/share/cracklib/pw_dict"

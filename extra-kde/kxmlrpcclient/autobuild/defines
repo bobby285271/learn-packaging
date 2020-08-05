@@ -1,0 +1,8 @@
+PKGNAME=kxmlrpcclient
+PKGSEC=kde
+PKGDEP="kio"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="XML-RPC client library for KDE"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

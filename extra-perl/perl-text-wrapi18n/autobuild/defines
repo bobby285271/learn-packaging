@@ -1,0 +1,6 @@
+PKGNAME=perl-text-wrapi18n
+PKGSEC=perl
+PKGDEP="perl-text-charwidth"
+PKGDES="Perl line wrapping module"
+
+ABHOST=noarch

@@ -1,0 +1,30 @@
+# Adapted from Arch Linux (extra/seabios).
+
+mkdir "$SRCDIR"/binaries
+
+# Build routine from Fedora.
+build_bios() {
+  make clean distclean
+  cp -v $1 .config
+  make oldnoconfig V=1
+
+  make V=1 $4
+
+  cp -v out/$2 "$SRCDIR"/binaries/$3
+}
+
+cd "$SRCDIR"
+
+# SeaBIOS.
+build_bios "$SRCDIR"/autobuild/config.csm Csm16.bin bios-csm.bin
+build_bios "$SRCDIR"/autobuild/config.coreboot bios.bin.elf bios-coreboot.bin
+build_bios "$SRCDIR"/autobuild/config.seabios-128k bios.bin bios.bin
+build_bios "$SRCDIR"/autobuild/config.seabios-256k bios.bin bios-256k.bin
+
+# SeaVGABIOS.
+for config in "$SRCDIR"/autobuild/{config.vga.isavga,config.vga.stdvga,config.vga.cirrus,config.vga.qxl,config.vga.vmware,config.vga.ramfb,config.vga.virtio,config.vga.bochs-display}; do
+    name=${config#*config.vga.}
+    build_bios ${config} vgabios.bin vgabios-${name}.bin out/vgabios.bin
+done
+
+install -Dvm644 -t "$PKGDIR"/usr/share/qemu "$SRCDIR"/binaries/*.bin

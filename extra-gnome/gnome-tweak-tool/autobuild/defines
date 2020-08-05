@@ -1,0 +1,7 @@
+PKGNAME=gnome-tweak-tool
+PKGSEC=gnome
+PKGDEP="gnome-tweaks"
+PKGDES="Transitional package for GNOME Tweaks"
+
+ABHOST=noarch
+PKGEPOCH=1

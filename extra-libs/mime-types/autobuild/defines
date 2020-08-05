@@ -1,0 +1,6 @@
+PKGNAME=mime-types
+PKGSEC=misc
+PKGDEP=""
+PKGDES="Provides /etc/mime.types"
+
+ABHOST=noarch

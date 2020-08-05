@@ -1,0 +1,9 @@
+PKGNAME=plasma-workspace-wallpapers
+PKGSEC=kde
+PKGDEP=""
+BUILDDEP="extra-cmake-modules"
+PKGDES="Wallpapers for the KDE Plasma Workspace (KDE Framework/Plasma 5)"
+
+PKGBREAK="kde-wallpapers<=15.08.3-2"
+PKGREP="kde-wallpapers<=15.08.3-2"
+ABHOST=noarch

@@ -1,0 +1,4 @@
+PKGNAME=sbc
+PKGSEC=libs
+PKGDEP="libsndfile"
+PKGDES="Bluetooth SubBand Codec (SBC) library"

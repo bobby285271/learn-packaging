@@ -1,0 +1,9 @@
+PKGNAME=fribidi+32
+PKGSEC=libs
+PKGDEP="glib+32"
+BUILDDEP="32subsystem"
+PKGDES="Free implementation of BiDi algorithm (optenv32)"
+
+NOPARALLEL=yes
+NOLTO=yes
+ABHOST=noarch

@@ -1,0 +1,6 @@
+PKGNAME=camlp5
+PKGSEC=ocaml
+PKGDEP="ocaml"
+PKGDES="Preprocessor/Pretty Printer for OCaml"
+
+NOSTATIC=0

@@ -1,0 +1,2 @@
+export AUTOTOOLS_DEF="--prefix=/usr --libdir=/usr/lib"
+cp /usr/share/automake-1.16/config.* .

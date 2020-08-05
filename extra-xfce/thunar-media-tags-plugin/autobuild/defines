@@ -1,0 +1,5 @@
+PKGNAME=thunar-media-tags-plugin
+PKGDES="Media files tagging support for Thunar"
+PKGDEP="taglib thunar"
+BUILDDEP="intltool"
+PKGSEC=xfce

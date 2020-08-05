@@ -1,0 +1,16 @@
+PKGNAME=dante
+PKGSEC=net
+PKGDEP="linux-pam krb5 cyrus-sasl openldap"
+PKGDES="SOCKS v4 and v5 compatible proxy server and client"
+
+AUTOTOOLS_AFTER="--enable-drt-fallback \
+                 --with-gssapi \
+                 --with-krb5 \
+                 --with-sasl \
+                 --with-ldap \
+                 --without-upnp \
+                 --without-libwrap \
+                 --with-pam"
+ABSHADOW=no
+NOLTO=yes
+AB_FLAGS_SPECS=0

@@ -1,0 +1,5 @@
+ABSHADOW=no
+PKGNAME=libvisual
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="Abstraction library that come between applications and audio visualization plugins"

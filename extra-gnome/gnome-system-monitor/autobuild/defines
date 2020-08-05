@@ -1,0 +1,5 @@
+PKGNAME=gnome-system-monitor
+PKGSEC=gnome
+PKGDEP="libgtop gtkmm-3 librsvg systemd desktop-file-utils"
+BUILDDEP="appstream-glib docbook-xsl intltool itstool"
+PKGDES="A system monitor for GNOME"

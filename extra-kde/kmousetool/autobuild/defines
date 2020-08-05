@@ -1,0 +1,8 @@
+PKGNAME=kmousetool
+PKGSEC=kde
+PKGDEP="hicolor-icon-theme knotifications kxmlgui"
+BUILDDEP="extra-cmake-modules kdoctools"
+PKGDES="A mouse clicking helper for users who suffer from RSI"
+
+PKGREP+=" kde-l10n<=16.12.3"
+PKGBREAK+=" kde-l10n<=16.12.3"

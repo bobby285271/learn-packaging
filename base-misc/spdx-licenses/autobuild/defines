@@ -1,0 +1,6 @@
+PKGNAME=spdx-licenses
+PKGSEC=doc
+PKGDES="SPDX standard licenses"
+
+ABHOST=noarch
+PKGEPOCH=1

@@ -1,0 +1,7 @@
+PKGNAME=opencl-registry-api
+PKGSEC=devel
+PKGSUG="libcl"
+BUILDDEP="curl"
+PKGDES="OpenCL (Open Computing Language) header files"
+
+ABHOST=noarch

@@ -1,0 +1,4 @@
+VER=1.11.1
+SRCTBL="https://github.com/epico/ibus-libpinyin/archive/$VER.tar.gz"
+CHKSUM="sha256::a30d5cd15920c669df296593ffd9747f07faeb0edf752bc83ebf8a5db608ea76"
+SUBDIR=ibus-libpinyin-$VER

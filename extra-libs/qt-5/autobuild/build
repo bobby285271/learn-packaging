@@ -1,0 +1,77 @@
+export QTDIR="$SRCDIR"
+export LD_LIBRARY_PATH="${QTDIR}/qt5base/lib:${QTDIR}/qt5tools/lib:${LD_LIBRARY_PATH}"
+export QT_PLUGIN_PATH="${QTDIR}/qt5base/plugins"
+
+./configure -confirm-license -opensource \
+            -prefix /usr \
+            -bindir /usr/bin \
+            -docdir /usr/share/doc/qt5 \
+            -headerdir /usr/include/qt5 \
+            -archdatadir /usr/lib/qt5 \
+            -datadir /usr/share/qt5 \
+            -sysconfdir /etc/xdg \
+            -examplesdir /usr/share/doc/qt5/examples \
+            -plugin-sql-psql \
+            $MYSQL \
+            -plugin-sql-sqlite \
+            -plugin-sql-odbc \
+            -system-sqlite \
+            -openssl-linked \
+            -optimized-qmake \
+            -dbus-linked \
+            -system-harfbuzz \
+            -journald \
+            -libinput \
+            -libproxy \
+            -no-use-gold-linker \
+            $SSEOPT $OPENGL \
+            -no-reduce-relocations \
+            $NOMAKE
+make
+
+for i in $COMPLIST; do
+    cd $i; make; cd "$SRCDIR"
+done
+
+make install INSTALL_ROOT="$PKGDIR" -j1
+
+for i in $COMPLIST; do
+    cd $i; make install INSTALL_ROOT="$PKGDIR" -j1; cd "$SRCDIR"
+done
+
+install -d -m755 "$PKGDIR"/usr/include/qtxcb-private
+cp -r "$SRCDIR"/qtbase/src/plugins/platforms/xcb/*.h \
+    "$PKGDIR"/usr/include/qtxcb-private/
+
+cd "$SRCDIR"/qtwebkit-$WKVER
+mkdir build
+cd build
+cmake .. ${CMAKE_DEF} -DPORT=Qt \
+         -DENABLE_TOOLS=OFF \
+         -DLIB_INSTALL_DIR=/usr/lib ${QTWKAFTER} -G Ninja
+sed -e '/LINK_LIBRARIES = / s/$/ -latomic/' -i build.ninja
+ninja
+DESTDIR="$PKGDIR" ninja install
+
+cd "$SRCDIR"
+
+find "$PKGDIR"/usr/lib -type f -name '*.prl' \
+     -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+find "$PKGDIR" -name "*.pc" \
+               -exec perl -pi -e "s, -L$SRCDIR/?\S+,,g" {} \;
+find "$PKGDIR" -name "*.pc" \
+               -exec perl -pi -e "s, -L$WEBKITDIR/?\S+,,g" {} \;
+
+sed -e 's|qt/Qt5WebKit|qt/QtWebKit|' \
+    -i "$PKGDIR"/usr/lib/pkgconfig/Qt5WebKit.pc
+sed -e 's|qt/Qt5WebKitWidgets|qt/QtWebKitWidgets|' \
+    -i "$PKGDIR"/usr/lib/pkgconfig/Qt5WebKitWidgets.pc
+sed -e '/Name/a Description: Qt WebKit module' \
+    -i "$PKGDIR"/usr/lib/pkgconfig/Qt5WebKit.pc
+sed -e '/Name/a Description: Qt WebKitWidgets module' \
+    -i "$PKGDIR"/usr/lib/pkgconfig/Qt5WebKitWidgets.pc
+
+for b in "$PKGDIR"/usr/bin/*; do
+    ln -sv $(basename $b) "$PKGDIR"/usr/bin/$(basename $b)-qt5
+done

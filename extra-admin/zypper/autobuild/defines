@@ -1,0 +1,5 @@
+PKGNAME=zypper
+PKGDES="A powerful command line package manager for RPM"
+PKGSEC=utils
+PKGDEP="libzypp augeas readline"
+BUILDDEP="asciidoctor"

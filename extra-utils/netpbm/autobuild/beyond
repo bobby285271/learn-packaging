@@ -1,0 +1,2 @@
+rm "$PKGDIR"/usr/share/man/man5/pbm.5
+rm "$PKGDIR"/usr/share/man/man5/pgm.5

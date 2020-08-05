@@ -1,0 +1,5 @@
+PKGNAME=libburn
+PKGSEC=libs
+PKGDEP="glibc"
+BUILDDEP="doxygen"
+PKGDES="Libraries to support disc burning"

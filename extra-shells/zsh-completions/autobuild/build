@@ -1,0 +1,2 @@
+mkdir -p "$PKGDIR"/usr/share/zsh/site-functions
+install -Dm644 src/* "$PKGDIR"/usr/share/zsh/site-functions/

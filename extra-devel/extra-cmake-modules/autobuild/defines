@@ -1,0 +1,7 @@
+PKGNAME=extra-cmake-modules
+PKGSEC=devel
+PKGDEP=""
+PKGDES="Extra modules and scripts for CMake"
+
+CMAKE_AFTER="-DBUILD_QTHELP_DOCS=ON"
+ABHOST=noarch

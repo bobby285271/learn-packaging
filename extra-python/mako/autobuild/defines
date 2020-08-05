@@ -1,0 +1,6 @@
+PKGNAME=mako
+PKGSEC=python
+PKGDEP="beaker markupsafe"
+PKGDES="Hyper-fast and lightweight template engine for Python"
+
+ABHOST=noarch

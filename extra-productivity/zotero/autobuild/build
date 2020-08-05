@@ -1,0 +1,9 @@
+mkdir -pv $PKGDIR/usr/{bin,lib/zotero}
+
+cp -av Zotero_linux-x86_64/* "$PKGDIR"/usr/lib/zotero
+ln -sv /usr/lib/zotero/zotero "$PKGDIR"/usr/bin/zotero
+
+for i in 16 32 48 256; do
+    install -Dvm644 "$PKGDIR"/usr/lib/zotero/chrome/icons/default/default${i}.png \
+        "$PKGDIR"/usr/share/icons/hicolor/${i}x${i}/apps/zotero.png
+done

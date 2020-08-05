@@ -1,0 +1,7 @@
+PKGNAME=nftables
+PKGSEC=net
+PKGDEP="gmp libnftnl ncurses readline"
+PKGDES="Netfilter tables userspace tools"
+
+AUTOTOOLS_AFTER="--sysconfdir=/usr/share \
+                 --disable-man-doc"

@@ -1,0 +1,8 @@
+PKGNAME=kbookmarks
+PKGSEC=kde
+PKGDEP="kxmlgui"
+BUILDDEP="doxygen extra-cmake-modules"
+PKGDES="Bookmark management/manipulation support"
+
+CMAKE_AFTER="-DBUILD_QCH=ON \
+             -DBUILD_TESTING=OFF"

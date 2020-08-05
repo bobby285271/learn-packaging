@@ -1,0 +1,10 @@
+abinfo "Building gptfdisk ..."
+make
+
+abinfo "Installing programs and manpages ..."
+install -dv "$PKGDIR"/usr/{bin,share/{doc/gdisk,man/man8}}
+install -vt "$PKGDIR"/usr/bin \
+    "$SRCDIR"/{,c,s}gdisk "$SRCDIR"/fixparts
+install -vm644 -t \
+    "$PKGDIR"/usr/share/man/man8 \
+    "$SRCDIR"/{{,c,s}gdisk,fixparts}.8

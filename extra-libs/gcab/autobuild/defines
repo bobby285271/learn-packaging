@@ -1,0 +1,5 @@
+PKGNAME=gcab
+PKGSEC=libs
+PKGDEP="glib xz zlib"
+BUILDDEP="gobject-introspection intltool meson ninja vala"
+PKGDES="GObject Introspection interface description for gcab"

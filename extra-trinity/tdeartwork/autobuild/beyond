@@ -1,0 +1,5 @@
+abinfo "Removing xscreensaver binaries ..."
+rm -v "$PKGDIR"/usr/bin/xscreensaver-*
+
+abinfo "Removing GVim icons ..."
+rm -fv "$PKGDIR"/usr/share/icons/locolor/*/apps/gvim.*

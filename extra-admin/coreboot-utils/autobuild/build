@@ -1,0 +1,85 @@
+abinfo "Building romcc ..."
+make -C util/romcc romcc
+
+abinfo "Building nvramtool ..."
+make CFLAGS="-DCMOS_HAL=1 -I." -C util/nvramtool
+
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+    for i in amdfwtool ifdtool intelmetool \
+             inteltool intelvbttool ectool superiotool; do
+        abinfo "Building $i ..."
+        make -C util/$i
+    done
+
+    abinfo "Building viatool ..."
+    make CFLAGS="-I." -C util/viatool
+
+    abinfo "Building msrtool ..."
+    cd "$SRCDIR"/util/msrtool
+    ./configure --prefix=/usr
+    make
+    cd "$SRCDIR"
+fi
+
+for i in cbfstool cbmem; do
+    abinfo "Building $i ..."
+    make -C util/$i       
+done
+
+abinfo "Creating directories ..."
+install -dv "$PKGDIR"/usr/bin
+install -dv "$PKGDIR"/usr/share
+install -dv "$PKGDIR"/usr/share/man/man1
+
+if [[ "${CROSS:-$ARCH}" = "amd64" ]]; then
+for i in amdfwtool ifdtool intelvbttool viatool; do
+    abinfo "Installing $i ..."
+    install -Dvm755 "$SRCDIR"/util/${i}/${i} \
+        "$PKGDIR"/usr/bin
+done
+
+abinfo "Installing msrtool ..."
+make -C util/msrtool DESTDIR="$PKGDIR" \
+    PREFIX=/usr install
+
+for i in intelmetool inteltool; do
+    abinfo "Installing $i ..."
+    make DESTDIR="$PKGDIR" \
+         PREFIX=/usr -C util/$i install
+done
+
+abinfo "Installing ectool ..."
+make PREFIX="$PKGDIR"/usr -C util/ectool install
+
+for i in nvramtool superiotool; do
+    abinfo "Installing $i ..."
+    make DESTDIR="$PKGDIR" \
+         PREFIX=/usr -C util/$i install
+done
+fi
+
+for i in cbfstool cbmem romcc; do
+    abinfo "Installing $i ..."
+    install -Dvm755 "$SRCDIR"/util/${i}/${i} \
+        "$PKGDIR"/usr/bin
+done
+
+abinfo "Installing romcc man page..."
+install -vm644 "$SRCDIR"/util/romcc/romcc.1 \
+    "$PKGDIR"/usr/share/man/man1/
+
+for i in nvramtool; do
+    abinfo "Installing $i ..."
+    make DESTDIR="$PKGDIR" \
+         PREFIX=/usr -C util/$i install
+done
+
+abinfo "Moving /usr/sbin => /usr/bin ..."
+cp -av "$PKGDIR"/usr/sbin/* \
+    "$PKGDIR"/usr/bin/
+rm -rv "$PKGDIR"/usr/sbin
+
+abinfo "Installing README ..."
+mkdir -pv "$PKGDIR"/usr/share/doc/coreboot-utils
+cp -v "$SRCDIR"/README* \
+   "$PKGDIR"/usr/share/doc/coreboot-utils/

@@ -1,0 +1,3 @@
+install -vDm644 ukai.ttc "$PKGDIR"/usr/share/fonts/TTF/ukai.ttc
+mkdir -p "$PKGDIR"/etc/fonts/conf.avail/
+cp -v *.conf "$PKGDIR"/etc/fonts/conf.avail/

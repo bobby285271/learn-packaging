@@ -1,0 +1,9 @@
+PKGNAME=jemalloc
+PKGSEC=libs
+PKGDEP="glibc"
+PKGDES="General-purpose scalable concurrent malloc implementation"
+
+ABSHADOW=0
+NOSTATIC=0
+
+PKGBREAK="blender<=2.75 mariadb<=10.1"

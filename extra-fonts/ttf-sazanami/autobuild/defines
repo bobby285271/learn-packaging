@@ -1,0 +1,6 @@
+PKGNAME=ttf-sazanami
+PKGSEC=fonts
+PKGDES="Sazanami Japanese TrueType font family"
+PKGDEP="fontconfig"
+
+ABHOST=noarch

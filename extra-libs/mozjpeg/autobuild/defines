@@ -1,0 +1,6 @@
+PKGNAME=mozjpeg
+PKGDES="An improved JPEG encoder by Mozilla (transitional package)"
+PKGDEP="libjpeg-turbo"
+PKGSEC=libs
+
+PKGEPOCH=1

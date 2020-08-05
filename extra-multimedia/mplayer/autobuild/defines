@@ -1,0 +1,69 @@
+PKGNAME=mplayer
+PKGEPOCH=1
+PKGDES="A cross-platform multimedia player"
+PKGSEC=video
+PKGDEP="a52dec aalib desktop-file-utils enca faac faad2 ffmpeg fontconfig \
+        fribidi gnutls gsm jack lame libass libbluray libcaca libcdio-paranoia \
+        dcadec libdvdnav libmad libmng libtheora libvdpau libvpx mesa mpg123 \
+        opencore-amr opus pulseaudio rtmpdump schroedinger samba sdl \
+        v4l-utils x264 xvidcore openal-soft libdv lttng-ust lirc libdca twolame"
+BUILDDEP__AMD64="${BUILDDEP} yasm"
+PKGDEP__RETRO=" \
+        aalib desktop-file-utils enca faac faad2 ffmpeg fontconfig fribidi \
+        gnutls lame libass libcaca libcdio-paranoia libdvdnav libmad \
+        libtheora libvdpau mesa mpg123 rtmpdump x264 xvidcore twolame gtk-2"
+PKGDEP__I486="${PKGDEP__RETRO}"
+BUILDDEP__I486="yasm"
+
+AUTOTOOLS_AFTER="--prefix=/usr \
+                 --disable-gui \
+                 --disable-arts \
+                 --enable-liblzo \
+                 --enable-speex \
+                 --enable-openal \
+                 --enable-libdv \
+                 --disable-musepack \
+                 --disable-esd \
+                 --disable-mga \
+                 --disable-ass-internal \
+                 --enable-cdparanoia \
+                 --enable-xvmc \
+                 --enable-radio \
+                 --enable-radio-capture \
+                 --enable-smb \
+                 --language=all \
+                 --confdir=/etc/mplayer \
+                 --disable-ffmpeg_a"
+AUTOTOOLS_AFTER__AMD64=" \
+                 ${AUTOTOOLS_AFTER} \
+                 --enable-runtime-cpudetection"
+
+AUTOTOOLS_AFTER__RETRO=" \
+                 --prefix=/usr \
+                 --enable-gui \
+                 --disable-arts \
+                 --enable-liblzo \
+                 --disable-speex \
+                 --disable-openal \
+                 --disable-libdv \
+                 --disable-musepack \
+                 --disable-esd \
+                 --disable-mga \
+                 --disable-ass-internal \
+                 --enable-cdparanoia \
+                 --enable-xvmc \
+                 --disable-radio \
+                 --disable-radio-capture \
+                 --disable-smb \
+                 --language=all \
+                 --confdir=/etc/mplayer \
+                 --disable-ffmpeg_a"
+AUTOTOOLS_AFTER__I486=" \
+                 ${AUTOTOOLS_AFTER__RETRO} \
+                 --enable-runtime-cpudetection"
+AUTOTOOLS_AFTER__POWERPC=" \
+                 ${AUTOTOOLS_AFTER__RETRO} \
+                 --disable-altivec"
+
+ABSHADOW=0
+NOLTO=1

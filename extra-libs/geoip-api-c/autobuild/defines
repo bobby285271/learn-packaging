@@ -1,0 +1,6 @@
+PKGNAME=geoip-api-c
+PKGSEC=libs
+PKGDEP="zlib geoip-database"
+PKGDES="Non-DNS IP-to-country resolver C library & utils"
+
+AUTOTOOLS_AFTER="--sysconfdir=/etc/geoip --mandir=/usr/share/man"

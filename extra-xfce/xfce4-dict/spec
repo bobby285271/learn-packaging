@@ -1,0 +1,4 @@
+VER=0.8.3
+REL=1
+GITSRC="https://github.com/xfce-mirror/xfce4-dict"
+GITCO="tags/xfce4-dict-$VER"

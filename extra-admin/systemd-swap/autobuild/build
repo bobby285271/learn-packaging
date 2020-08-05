@@ -1,0 +1,5 @@
+make
+make install PREFIX="$PKGDIR"
+
+mkdir -p "$PKGDIR"/usr/
+mv -v "$PKGDIR"/lib "$PKGDIR"/usr/
